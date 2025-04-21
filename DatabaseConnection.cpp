@@ -53,6 +53,14 @@ namespace Models
                 Instance->Execute("CREATE TABLE Users (Id INTEGER PRIMARY KEY AUTOINCREMENT, Username TEXT NOT NULL UNIQUE, FirstName TEXT, LastName TEXT, Password TEXT NOT NULL, Email TEXT NOT NULL, Role INTEGER NOT NULL)");
                 Instance->Execute("INSERT INTO Users VALUES (null, 'admin', 'Administrator', null, 'admin', 'admin@system.com', 0)");
             }
+
+            if (!Instance->TableExists("Inventory")) {
+                Instance->Execute("CREATE TABLE Inventory (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE, Stock INTEGER, Price REAL, CategoryId INTEGER)");
+            }
+
+            if (!Instance->TableExists("Categories")) {
+                Instance->Execute("CREATE TABLE Categories (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE)");
+            }
         }
 
         // no return queries

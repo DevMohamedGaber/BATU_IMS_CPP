@@ -10,6 +10,8 @@ namespace Models
 {
 	public ref class User
 	{
+	public: static User^ CurrentUser = nullptr;
+
 	public:
 		// properties
 		long Id;
