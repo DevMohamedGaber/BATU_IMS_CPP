@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{68c63d62-6ee1-49c0-bce2-49b277dd9abf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{b5315e6c-0949-4291-bf3f-522319ff6ddd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{a605fec8-a575-4463-a686-038a9a28c936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Login">
+      <UniqueIdentifier>{8ce5c3fe-14ba-439e-82bf-d67f11848844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Login">
+      <UniqueIdentifier>{87e63193-fb42-4c5c-9fd0-f7dfa331b190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{94b8e774-8a1d-4bb1-bf24-582a07c536be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\User">
+      <UniqueIdentifier>{3a19e2fe-6051-4d02-8bd8-7aed7caf27f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Core\PasswordHasher">
+      <UniqueIdentifier>{49900625-6c15-4223-b59f-665a4afb2f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Interfaces">
+      <UniqueIdentifier>{9720e452-e7a2-4ded-9f8a-587f8a4c9516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Enums">
+      <UniqueIdentifier>{23e4c67d-d99b-492a-93dc-d161abdbaf98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utilities">
+      <UniqueIdentifier>{a8e8dc68-6ad7-4026-a7fa-80ccaf0eed87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Home">
+      <UniqueIdentifier>{21b99fee-3737-4d29-a4f7-176af5ec9aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Dashboard">
+      <UniqueIdentifier>{fd866255-dbf1-47fb-ad20-d52b41cbc2af}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EntryPoint.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginForm.cpp">
+      <Filter>Views\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginController.cpp">
+      <Filter>Controllers\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Models\User</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseConnection.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="PasswordHasher.cpp">
+      <Filter>Core\PasswordHasher</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite\sqlite3.c">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Role.h">
+      <Filter>Core\Enums</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities.cpp">
+      <Filter>Core\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="DashboardForm.cpp">
+      <Filter>Views\Dashboard</Filter>
+    </ClCompile>
+    <ClCompile Include="HomePage.cpp">
+      <Filter>Views\Home</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LoginForm.h">
+      <Filter>Views\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginController.h">
+      <Filter>Controllers\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Models\User</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseConnection.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite\sqlite3.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordHasher.h">
+      <Filter>Core\PasswordHasher</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Core\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="DashboardForm.h">
+      <Filter>Views\Dashboard</Filter>
+    </ClInclude>
+    <ClInclude Include="HomePage.h">
+      <Filter>Views\Home</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\login_BG.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

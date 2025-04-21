@@ -1,0 +1,10 @@
+﻿  DashboardForm.cpp
+  EntryPoint.cpp
+  LoginForm.cpp
+  Generating Code...
+  DashboardForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+User.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
+EntryPoint.obj : warning LNK4248: unresolved typeref token (0100001C) for 'sqlite3'; image may not run
+DatabaseConnection.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
+DatabaseConnection.obj : warning LNK4248: unresolved typeref token (0100001E) for 'sqlite3_stmt'; image may not run
+  BATU_IMS_CPP.vcxproj -> C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\x64\Debug\BATU_IMS_CPP.exe
