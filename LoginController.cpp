@@ -1,5 +1,6 @@
 #pragma once
 #include "User.h"
+#include "Users.h"
 #include "Utilities.h"
 using namespace System;
 using namespace Models;
@@ -19,7 +20,7 @@ namespace Controllers
 				return "Password cannot be empty.";
 			}
 
-			User^ user = User::GetUserByUsername(username);
+			User^ user = Users::GetUserByUsername(username);
 
 			if (user == nullptr) {
 				return "Username not found";

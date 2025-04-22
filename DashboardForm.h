@@ -17,7 +17,8 @@ namespace Views
 	private:
 		Panel^ _panelContainer;
 		UserControl^ _currentView;
-		static DashboardForm^ Instance;
+	private: System::Windows::Forms::Panel^ panel1;
+		   static DashboardForm^ Instance;
 
 	public:
 		DashboardForm(void)
@@ -53,18 +54,35 @@ namespace Views
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
+			// 
+			// panel1
+			// 
+			this->panel1->AutoSize = true;
+			this->panel1->BackColor = System::Drawing::Color::SteelBlue;
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panel1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->MaximumSize = System::Drawing::Size(300, 0);
+			this->panel1->MinimumSize = System::Drawing::Size(300, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(300, 829);
+			this->panel1->TabIndex = 0;
 			// 
 			// DashboardForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1135, 829);
+			this->ClientSize = System::Drawing::Size(1410, 829);
+			this->Controls->Add(this->panel1);
 			this->Name = L"DashboardForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"DashboardForm";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 
 	public:

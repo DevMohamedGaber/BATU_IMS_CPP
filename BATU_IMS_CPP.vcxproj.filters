@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Views">
       <UniqueIdentifier>{68c63d62-6ee1-49c0-bce2-49b277dd9abf}</UniqueIdentifier>
     </Filter>
@@ -48,6 +44,15 @@
     <Filter Include="Views\Dashboard">
       <UniqueIdentifier>{fd866255-dbf1-47fb-ad20-d52b41cbc2af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\Inventory">
+      <UniqueIdentifier>{4cf2e523-f7a8-47fb-8552-507bfa5bf4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Category">
+      <UniqueIdentifier>{58f334e4-e738-4bfb-8df9-42d7be9de583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Connection">
+      <UniqueIdentifier>{2ea4a8dd-76f7-45d8-9266-d0d4e8247925}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -59,11 +64,8 @@
     <ClCompile Include="LoginController.cpp">
       <Filter>Controllers\Login</Filter>
     </ClCompile>
-    <ClCompile Include="User.cpp">
+    <ClCompile Include="Users.cpp">
       <Filter>Models\User</Filter>
-    </ClCompile>
-    <ClCompile Include="DatabaseConnection.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="PasswordHasher.cpp">
       <Filter>Core\PasswordHasher</Filter>
@@ -71,7 +73,7 @@
     <ClCompile Include="sqlite\sqlite3.c">
       <Filter>Libs</Filter>
     </ClCompile>
-    <ClCompile Include="Role.h">
+    <ClCompile Include="UserRole.h">
       <Filter>Core\Enums</Filter>
     </ClCompile>
     <ClCompile Include="Utilities.cpp">
@@ -83,6 +85,15 @@
     <ClCompile Include="HomePage.cpp">
       <Filter>Views\Home</Filter>
     </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Models\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Categories.cpp">
+      <Filter>Models\Category</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseConnection.cpp">
+      <Filter>Models\Connection</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -91,11 +102,8 @@
     <ClInclude Include="LoginController.h">
       <Filter>Controllers\Login</Filter>
     </ClInclude>
-    <ClInclude Include="User.h">
+    <ClInclude Include="Users.h">
       <Filter>Models\User</Filter>
-    </ClInclude>
-    <ClInclude Include="DatabaseConnection.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="sqlite\sqlite3.h">
       <Filter>Libs</Filter>
@@ -112,10 +120,23 @@
     <ClInclude Include="HomePage.h">
       <Filter>Views\Home</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Resources\login_BG.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClInclude Include="Inventory.h">
+      <Filter>Models\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Categories.h">
+      <Filter>Models\Category</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseConnection.h">
+      <Filter>Models\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Models\User</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Models\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Category.h">
+      <Filter>Models\Category</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

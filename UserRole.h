@@ -1,6 +1,7 @@
+#pragma once
 namespace Core
 {
-	public enum class Role
+	public enum class UserRole
 	{
 		Admin,
 		Staff,

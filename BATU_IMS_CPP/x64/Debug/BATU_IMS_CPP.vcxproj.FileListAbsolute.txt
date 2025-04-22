@@ -1,5 +1,5 @@
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATU_IMS_CPP.vcxproj.AssemblyReference.cache
-C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.LoginForm.resources
-C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATU_IMS_CPP.vcxproj.GenerateResource.cache
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.DashboardForm.resources
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.HomePage.resources
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.LoginForm.resources
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATU_IMS_CPP.vcxproj.GenerateResource.cache

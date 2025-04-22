@@ -115,20 +115,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Categories.cpp" />
     <ClCompile Include="DashboardForm.cpp" />
     <ClCompile Include="DatabaseConnection.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
     <ClCompile Include="HomePage.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="LoginController.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PasswordHasher.cpp" />
-    <ClCompile Include="Role.h" />
+    <ClCompile Include="UserRole.h" />
     <ClCompile Include="sqlite\sqlite3.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="User.cpp" />
+    <ClCompile Include="Users.cpp" />
     <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +141,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Categories.h" />
+    <ClInclude Include="Category.h" />
     <ClInclude Include="DashboardForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -146,6 +150,8 @@
     <ClInclude Include="HomePage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="LoginController.h" />
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
@@ -153,6 +159,7 @@
     <ClInclude Include="PasswordHasher.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="Users.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>
@@ -165,9 +172,6 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.h</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Resources\login_BG.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

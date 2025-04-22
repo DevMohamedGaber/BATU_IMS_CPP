@@ -1,12 +1,14 @@
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Categories.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Categories.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\DashboardForm.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\DashboardForm.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\DatabaseConnection.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\DatabaseConnection.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\EntryPoint.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\EntryPoint.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\HomePage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\HomePage.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Inventory.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Inventory.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\LoginController.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginForm.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\LoginForm.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\PasswordHasher.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\PasswordHasher.obj
-C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Role.h;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Role.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\UserRole.h;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\UserRole.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\sqlite\sqlite3.c;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\sqlite3.obj
-C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\User.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\User.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Users.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Users.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Utilities.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Utilities.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.obj

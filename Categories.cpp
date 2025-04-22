@@ -1,12 +1,14 @@
 #include "DatabaseConnection.h"
 #include "Utilities.h"
+#include "Category.h"
+using namespace System::Collections::Generic;
 using namespace System;
 using namespace Core;
 using namespace std;
 
 namespace Models
 {
-	public ref class Category sealed
+	public ref class Categories sealed
 	{
 	public:
 		int Id;
@@ -25,16 +27,16 @@ namespace Models
 			if (rows.empty() || rows[0].empty()) {
 				return nullptr;
 			}
-			return Map(rows[0]);
+			return Category::Map(rows[0]);
 		}
 
-		static vector<Category> GetAllCategories()
+		static List<Category^>^ GetAllCategories()
 		{
-			vector<Category> categories;
 			string sql = "SELECT * FROM Categories";
 			vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+			auto categories = gcnew List<Category^>();
 			for (const auto& row : rows) {
-				categories.push_back(*Map(row));
+				categories->Add(Category::Map(row));
 			}
 			return categories;
 		}
@@ -49,15 +51,6 @@ namespace Models
 		{
 			string sql = "DELETE FROM Categories WHERE Id = " + std::to_string(id);
 			DatabaseConnection::Instance->Execute(sql);
-		}
-
-	private:
-		static Category^ Map(const vector<string>& row)
-		{
-			Category^ category = gcnew Category();
-			category->Id = stoi(row[0]);
-			category->Name = gcnew String(row[1].c_str());
-			return category;
 		}
 	};
 }
