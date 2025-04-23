@@ -3,3 +3,7 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCP
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.HomePage.resources
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.LoginForm.resources
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATU_IMS_CPP.vcxproj.GenerateResource.cache
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.ItemListPage.resources
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddItemPage.resources
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.CategoriesListPage.resources
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddCategoryPage.resources

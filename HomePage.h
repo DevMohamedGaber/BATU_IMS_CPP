@@ -70,8 +70,9 @@ namespace Views
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
+			this->BackColor = System::Drawing::SystemColors::ButtonShadow;
 			this->Controls->Add(this->label1);
-			this->Name = L"Home";
+			this->Name = L"HomePage";
 			this->Size = System::Drawing::Size(971, 610);
 			this->ResumeLayout(false);
 			this->PerformLayout();

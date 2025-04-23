@@ -1,12 +1,10 @@
-﻿  Categories.cpp
-  Inventory.cpp
-  LoginController.cpp
-  UserRole.h
-  Users.cpp
+﻿  CategoriesController.cpp
+  CategoriesListPage.cpp
+  DashboardForm.cpp
   Generating Code...
-  Categories.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
 Users.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
-Inventory.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
+Inventory.obj : warning LNK4248: unresolved typeref token (01000014) for 'sqlite3'; image may not run
 EntryPoint.obj : warning LNK4248: unresolved typeref token (0100001C) for 'sqlite3'; image may not run
 DatabaseConnection.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 Categories.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run

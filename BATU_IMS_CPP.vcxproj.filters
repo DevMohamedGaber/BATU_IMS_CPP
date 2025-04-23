@@ -10,9 +10,6 @@
     <Filter Include="Models">
       <UniqueIdentifier>{a605fec8-a575-4463-a686-038a9a28c936}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Views\Login">
-      <UniqueIdentifier>{8ce5c3fe-14ba-439e-82bf-d67f11848844}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Controllers\Login">
       <UniqueIdentifier>{87e63193-fb42-4c5c-9fd0-f7dfa331b190}</UniqueIdentifier>
     </Filter>
@@ -41,9 +38,6 @@
     <Filter Include="Views\Home">
       <UniqueIdentifier>{21b99fee-3737-4d29-a4f7-176af5ec9aeb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Views\Dashboard">
-      <UniqueIdentifier>{fd866255-dbf1-47fb-ad20-d52b41cbc2af}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Models\Inventory">
       <UniqueIdentifier>{4cf2e523-f7a8-47fb-8552-507bfa5bf4f7}</UniqueIdentifier>
     </Filter>
@@ -53,13 +47,67 @@
     <Filter Include="Models\Connection">
       <UniqueIdentifier>{2ea4a8dd-76f7-45d8-9266-d0d4e8247925}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Inventory">
+      <UniqueIdentifier>{8f3225f1-3cc8-40f0-a908-6ef53a57c2c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\_Dashboard">
+      <UniqueIdentifier>{fd866255-dbf1-47fb-ad20-d52b41cbc2af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\_Login">
+      <UniqueIdentifier>{8ce5c3fe-14ba-439e-82bf-d67f11848844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Inventory\Add">
+      <UniqueIdentifier>{b5d28f9d-48e2-49a1-8362-9f01a2d326d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Inventory\List">
+      <UniqueIdentifier>{d86c274d-0306-48f2-9bee-fe6d25d694ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Inventory\View">
+      <UniqueIdentifier>{5a3e6e46-ae01-4697-accc-b3b0991d0c4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Categories">
+      <UniqueIdentifier>{b05b36c0-06e4-49cd-bd1f-cc31c1cb901e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Users">
+      <UniqueIdentifier>{1a00403b-8665-4e22-a8cd-3cc236994d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Categories\Add">
+      <UniqueIdentifier>{ec0c6e88-6211-44c9-ba10-237e25f3c0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Categories\List">
+      <UniqueIdentifier>{7a4a5629-2279-4332-9842-b9a156a57100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Categories\Edit">
+      <UniqueIdentifier>{960c1283-9aeb-4a4d-b154-3ee3ab712f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Inventory\Edit">
+      <UniqueIdentifier>{1d542897-cb2a-4e19-9888-e167c0e9d3eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Users\List">
+      <UniqueIdentifier>{a1f233dd-9ec4-4bd6-a8ac-b21f2eba6165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Users\Add">
+      <UniqueIdentifier>{1a2edf92-5b63-4979-8e6c-b27b3997d6e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Users\Edit">
+      <UniqueIdentifier>{009e5194-ecad-49f8-94b7-3f15b93a4a56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Users\View">
+      <UniqueIdentifier>{b4fd8f5f-3c11-4863-b9a5-3a24de7b29ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Inventory">
+      <UniqueIdentifier>{ab1aab9e-9234-4fd1-8beb-76bdcb048acc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Categories">
+      <UniqueIdentifier>{31a7dff1-96a6-403a-9ecf-ed280f0ef8dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="LoginForm.cpp">
-      <Filter>Views\Login</Filter>
+      <Filter>Views\_Login</Filter>
     </ClCompile>
     <ClCompile Include="LoginController.cpp">
       <Filter>Controllers\Login</Filter>
@@ -80,7 +128,7 @@
       <Filter>Core\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="DashboardForm.cpp">
-      <Filter>Views\Dashboard</Filter>
+      <Filter>Views\_Dashboard</Filter>
     </ClCompile>
     <ClCompile Include="HomePage.cpp">
       <Filter>Views\Home</Filter>
@@ -94,10 +142,28 @@
     <ClCompile Include="DatabaseConnection.cpp">
       <Filter>Models\Connection</Filter>
     </ClCompile>
+    <ClCompile Include="ItemListPage.cpp">
+      <Filter>Views\Inventory\List</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryController.cpp">
+      <Filter>Controllers\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="AddItemPage.cpp">
+      <Filter>Views\Inventory\Add</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoriesController.cpp">
+      <Filter>Controllers\Categories</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoriesListPage.cpp">
+      <Filter>Views\Categories\List</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCategoryPage.cpp">
+      <Filter>Views\Categories\Add</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
-      <Filter>Views\Login</Filter>
+      <Filter>Views\_Login</Filter>
     </ClInclude>
     <ClInclude Include="LoginController.h">
       <Filter>Controllers\Login</Filter>
@@ -115,7 +181,7 @@
       <Filter>Core\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="DashboardForm.h">
-      <Filter>Views\Dashboard</Filter>
+      <Filter>Views\_Dashboard</Filter>
     </ClInclude>
     <ClInclude Include="HomePage.h">
       <Filter>Views\Home</Filter>
@@ -137,6 +203,24 @@
     </ClInclude>
     <ClInclude Include="Category.h">
       <Filter>Models\Category</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemListPage.h">
+      <Filter>Views\Inventory\List</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryController.h">
+      <Filter>Controllers\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="AddItemPage.h">
+      <Filter>Views\Inventory\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoriesController.h">
+      <Filter>Controllers\Categories</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoriesListPage.h">
+      <Filter>Views\Categories\List</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCategoryPage.h">
+      <Filter>Views\Categories\Add</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

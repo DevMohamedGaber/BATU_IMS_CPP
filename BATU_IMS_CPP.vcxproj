@@ -115,12 +115,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddCategoryPage.cpp" />
+    <ClCompile Include="AddItemPage.cpp" />
     <ClCompile Include="Categories.cpp" />
+    <ClCompile Include="CategoriesController.cpp" />
+    <ClCompile Include="CategoriesListPage.cpp" />
     <ClCompile Include="DashboardForm.cpp" />
     <ClCompile Include="DatabaseConnection.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="InventoryController.cpp" />
+    <ClCompile Include="ItemListPage.cpp" />
     <ClCompile Include="LoginController.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PasswordHasher.cpp" />
@@ -141,7 +147,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddCategoryPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AddItemPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Categories.h" />
+    <ClInclude Include="CategoriesController.h" />
+    <ClInclude Include="CategoriesListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Category.h" />
     <ClInclude Include="DashboardForm.h">
       <FileType>CppForm</FileType>
@@ -151,7 +167,11 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="InventoryController.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="LoginController.h" />
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
@@ -163,11 +183,23 @@
     <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCategoryPage.resx">
+      <DependentUpon>AddCategoryPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddItemPage.resx">
+      <DependentUpon>AddItemPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriesListPage.resx">
+      <DependentUpon>CategoriesListPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemListPage.resx">
+      <DependentUpon>ItemListPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.h</DependentUpon>

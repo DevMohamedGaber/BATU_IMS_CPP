@@ -1,5 +1,9 @@
+  BATUIMSCPP.AddCategoryPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.AddItemPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.DashboardForm.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.HomePage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.ItemListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.LoginForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly BATU_IMS_CPP, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
@@ -16,6 +20,28 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class Views.AddCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Models.Category: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
+Class Controllers.CategoriesController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetCategoriesList(): PrivateScope, Public, Static, HideBySig
+    AddNewCategory(String): PrivateScope, Public, Static, HideBySig
+Class Views.AddItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.DatabaseConnection: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
   Interfaces:
     System.IDisposable
@@ -28,30 +54,21 @@ Class Models.DatabaseConnection: AutoLayout, AnsiClass, Class, Public, Sealed, B
     LastInsertId(): PrivateScope, Public, HideBySig
     TableExists(basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Models.Categories: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetAll(): PrivateScope, Public, Static, HideBySig
+    GetById(Int32): PrivateScope, Public, Static, HideBySig
+    Insert(String): PrivateScope, Public, Static, HideBySig
+    Update(Category): PrivateScope, Public, Static, HideBySig
+    Delete(Int32): PrivateScope, Public, Static, HideBySig
+    Exists(String): PrivateScope, Public, Static, HideBySig
 Class Core.Utilities: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     GetNativeString(basic_string<char\,std::char_traits<char>\,std::allocator<char> >*, String): PrivateScope, Public, Static, HideBySig
     IsNullOrWhiteSpace(basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
-Class Models.Category: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Int32 Id : Public
-    System.String Name : Public
-  Methods:
-    Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
-Class Models.Categories: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Int32 Id : Public
-    System.String Name : Public
-  Methods:
-    AddCategory(String): PrivateScope, Public, Static, HideBySig
-    GetCategoryById(Int32): PrivateScope, Public, Static, HideBySig
-    GetAllCategories(): PrivateScope, Public, Static, HideBySig
-    UpdateCategory(Category): PrivateScope, Public, Static, HideBySig
-    DeleteCategory(Int32): PrivateScope, Public, Static, HideBySig
-Class Views.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class Views.CategoriesListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.DashboardForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
@@ -60,6 +77,12 @@ Class Views.DashboardForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Methods:
     Start(): PrivateScope, Public, Static, HideBySig
     SwitchView(UserControl): PrivateScope, Public, Static, HideBySig
+Class Views.ItemListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Controllers.LoginController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -69,28 +92,37 @@ Class Views.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Item: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Int32 Id : Public
-    System.String Name : Public
-    Int32 Stock : Public
-    Double Price : Public
-    Models.Category Category : Public
+  Properties:
+    Models.Category Category 'get set' : 
+    Double Price 'get set' : 
+    Int32 Stock 'get set' : 
+    System.String Name 'get set' : 
+    Int32 Id   'get set' : 
   Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Stock(): PrivateScope, Public, HideBySig, SpecialName
+    set_Stock(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Price(): PrivateScope, Public, HideBySig, SpecialName
+    set_Price(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Category(): PrivateScope, Public, HideBySig, SpecialName
+    set_Category(Category): PrivateScope, Public, HideBySig, SpecialName
     Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
 Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Int32 Id : Public
-    System.String Name : Public
-    Int32 Stock : Public
-    Double Price : Public
-    Models.Category Category : Public
   Methods:
     AddItem(String, Double, Int32): PrivateScope, Public, Static, HideBySig
     GetItemById(Int32): PrivateScope, Public, Static, HideBySig
     GetAllItems(): PrivateScope, Public, Static, HideBySig
     UpdateItem(Item): PrivateScope, Public, Static, HideBySig
     DeleteItem(Int32): PrivateScope, Public, Static, HideBySig
+Class Controllers.InventoryController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetListViewData(): PrivateScope, Public, Static, HideBySig
+    AddNewItem(String, String, Int32): PrivateScope, Public, Static, HideBySig
 Class Models.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:

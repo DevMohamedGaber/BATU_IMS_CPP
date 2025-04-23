@@ -1,9 +1,15 @@
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddCategoryPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddCategoryPage.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddItemPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddItemPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Categories.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Categories.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CategoriesController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\CategoriesController.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CategoriesListPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\CategoriesListPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\DashboardForm.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\DashboardForm.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\DatabaseConnection.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\DatabaseConnection.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\EntryPoint.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\EntryPoint.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\HomePage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\HomePage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Inventory.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Inventory.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\InventoryController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\InventoryController.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\ItemListPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\ItemListPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\LoginController.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginForm.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\LoginForm.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\PasswordHasher.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\PasswordHasher.obj
