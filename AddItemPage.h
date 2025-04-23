@@ -125,6 +125,7 @@ namespace Views {
 			addBtn->TabIndex = 8;
 			addBtn->Text = L"Add";
 			addBtn->UseVisualStyleBackColor = false;
+			addBtn->Click += gcnew System::EventHandler(this, &AddItemPage::addBtn_Click);
 			// 
 			// nameInput
 			// 
@@ -201,5 +202,6 @@ namespace Views {
 #pragma endregion
 	private: 
 		System::Void AddItemPage_Load(System::Object^ sender, System::EventArgs^ e);
+		System::Void addBtn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

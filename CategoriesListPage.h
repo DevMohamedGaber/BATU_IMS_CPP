@@ -105,6 +105,7 @@ namespace Views {
 			// 
 			// dataTable
 			// 
+			this->dataTable->AllowUserToAddRows = false;
 			this->dataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataTable->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataTable->Location = System::Drawing::Point(30, 130);

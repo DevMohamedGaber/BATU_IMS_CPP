@@ -1,6 +1,7 @@
-﻿  CategoriesController.cpp
-  CategoriesListPage.cpp
-  DashboardForm.cpp
+﻿  AddItemPage.cpp
+  Inventory.cpp
+  InventoryController.cpp
+  ItemListPage.cpp
   Generating Code...
   AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
 Users.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run

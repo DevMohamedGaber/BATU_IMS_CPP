@@ -38,11 +38,11 @@ namespace Views {
 	private: System::Windows::Forms::Button^ addNewBtn;
 	private: System::Windows::Forms::DataGridView^ dataTable;
 
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Id;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Name;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stock;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Price;
-	private: System::Windows::Forms::DataGridViewLinkColumn^ Category;
+
+
+
+
+
 
 	protected:
 
@@ -63,11 +63,6 @@ namespace Views {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->addNewBtn = (gcnew System::Windows::Forms::Button());
 			this->dataTable = (gcnew System::Windows::Forms::DataGridView());
-			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Category = (gcnew System::Windows::Forms::DataGridViewLinkColumn());
 			header = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataTable))->BeginInit();
@@ -111,11 +106,8 @@ namespace Views {
 			// 
 			// dataTable
 			// 
+			this->dataTable->AllowUserToAddRows = false;
 			this->dataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataTable->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
-				this->Id, this->Name,
-					this->Stock, this->Price, this->Category
-			});
 			this->dataTable->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataTable->Location = System::Drawing::Point(30, 119);
 			this->dataTable->Name = L"dataTable";
@@ -125,48 +117,13 @@ namespace Views {
 			this->dataTable->Size = System::Drawing::Size(1091, 665);
 			this->dataTable->TabIndex = 1;
 			// 
-			// Id
-			// 
-			this->Id->HeaderText = L"Id";
-			this->Id->MinimumWidth = 6;
-			this->Id->Name = L"Id";
-			this->Id->Width = 125;
-			// 
-			// Name
-			// 
-			this->Name->HeaderText = L"Name";
-			this->Name->MinimumWidth = 6;
-			this->Name->Name = L"Name";
-			this->Name->Width = 125;
-			// 
-			// Stock
-			// 
-			this->Stock->HeaderText = L"Stock";
-			this->Stock->MinimumWidth = 6;
-			this->Stock->Name = L"Stock";
-			this->Stock->Width = 125;
-			// 
-			// Price
-			// 
-			this->Price->HeaderText = L"Price";
-			this->Price->MinimumWidth = 6;
-			this->Price->Name = L"Price";
-			this->Price->Width = 125;
-			// 
-			// Category
-			// 
-			this->Category->HeaderText = L"Category";
-			this->Category->MinimumWidth = 6;
-			this->Category->Name = L"Category";
-			this->Category->Width = 125;
-			// 
 			// ItemListPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->dataTable);
 			this->Controls->Add(this->panel1);
-			this->Name->Name = L"ItemListPage";
+			this->Name = L"ItemListPage";
 			this->Padding = System::Windows::Forms::Padding(30);
 			this->Size = System::Drawing::Size(1151, 814);
 			this->Load += gcnew System::EventHandler(this, &ItemListPage::ItemListPage_Load);
