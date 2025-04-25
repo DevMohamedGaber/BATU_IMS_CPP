@@ -1,7 +1,7 @@
 #pragma once
-#include "Inventory.h"
+#include "Item.h"
 
-using namespace System::Collections::Generic;
+using namespace Collections::Generic;
 using namespace Models;
 
 namespace Controllers
@@ -10,6 +10,9 @@ namespace Controllers
 	{
 	public:
 		static List<Item^>^ GetListViewData();
-		static String^ AddNewItem(System::String^ name, System::String^ price, int categoryId);
+		static Item^ GetItemById(int id);
+		static String^ AddNewItem(String^ name, String^ price, int categoryId);
+		static void DeleteItem(int id);
+		static String^ EditItem(Item^ item);
 	};
 }

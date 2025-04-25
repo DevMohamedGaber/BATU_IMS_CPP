@@ -19,8 +19,8 @@ namespace Models
 			Item^ item = gcnew Item();
 			item->Id = row[0].empty() ? 0 : stol(row[0]);
 			item->Name = gcnew System::String(row[1].c_str());
-			item->Stock = Convert::ToInt32(row[2].c_str());
-			item->Price = Convert::ToDouble(row[3].c_str());
+			item->Stock = stoi(row[2]);
+			item->Price = stod(row[3]);
 			item->Category = gcnew Models::Category();
 			item->Category->Id = stoi(row[4]);
 			item->Category->Name = gcnew System::String(row[5].c_str());

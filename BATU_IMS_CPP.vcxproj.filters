@@ -104,6 +104,9 @@
     <Filter Include="Views\Categories\View">
       <UniqueIdentifier>{e23a5c22-a7dc-4aa5-a768-587d377c0eeb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Customers">
+      <UniqueIdentifier>{499faa33-2a2b-4430-a8e7-0cd74992d01c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -168,6 +171,12 @@
     </ClCompile>
     <ClCompile Include="EditCategoryPage.cpp">
       <Filter>Views\Categories\Edit</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewItemPage.cpp">
+      <Filter>Views\Inventory\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EditItemPage.cpp">
+      <Filter>Views\Inventory\Edit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +245,12 @@
     </ClInclude>
     <ClInclude Include="EditCategoryPage.h">
       <Filter>Views\Categories\Edit</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewItemPage.h">
+      <Filter>Views\Inventory\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EditItemPage.h">
+      <Filter>Views\Inventory\Edit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,4 +1,10 @@
-﻿  EditCategoryPage.cpp
+﻿  AddItemPage.cpp
+  EditItemPage.cpp
+  Inventory.cpp
+  InventoryController.cpp
+  ItemListPage.cpp
+  ViewItemPage.cpp
+  Generating Code...
   AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
 Users.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 Inventory.obj : warning LNK4248: unresolved typeref token (01000014) for 'sqlite3'; image may not run

@@ -6,6 +6,7 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CategoriesListPage.cpp;C:\Users\
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\DashboardForm.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\DashboardForm.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\DatabaseConnection.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\DatabaseConnection.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\EditCategoryPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\EditCategoryPage.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\EditItemPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\EditItemPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\EntryPoint.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\EntryPoint.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\HomePage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\HomePage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Inventory.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Inventory.obj
@@ -19,4 +20,5 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\sqlite\sqlite3.c;C:\Users\Mohame
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Users.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Users.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Utilities.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Utilities.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\ViewCategoryPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\ViewCategoryPage.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\ViewItemPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\ViewItemPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.obj

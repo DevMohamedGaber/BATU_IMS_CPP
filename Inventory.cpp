@@ -40,7 +40,7 @@ namespace Models
 
 	bool Inventory::UpdateItem(Item^ item)
 	{
-		string sql = "UPDATE Inventory SET Name = '" + Utilities::GetNativeString(item->Name) + "', Price = " + std::to_string(item->Price) + ", CategoryId = " + std::to_string(item->Category->Id) + " WHERE Id = " + std::to_string(item->Id);
+		string sql = "UPDATE Inventory SET Name = '" + Utilities::GetNativeString(item->Name) + "', Price = " + Utilities::GetNativeString((item->Price.ToString("F2"))) + ", CategoryId = " + std::to_string(item->Category->Id) + " WHERE Id = " + std::to_string(item->Id);
 		return DatabaseConnection::Instance->Execute(sql);
 	}
 

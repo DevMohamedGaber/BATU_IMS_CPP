@@ -3,10 +3,12 @@
   BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.DashboardForm.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.EditCategoryPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.EditItemPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.HomePage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ItemListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.LoginForm.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.ViewItemPage.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly BATU_IMS_CPP, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -44,9 +46,6 @@ Class Controllers.CategoriesController: AutoLayout, AnsiClass, Class, Public, Be
     EditCategory(Category): PrivateScope, Public, Static, HideBySig
     GetCategoryById(Int32): PrivateScope, Public, Static, HideBySig
     DeleteCategory(Int32): PrivateScope, Public, Static, HideBySig
-Class Views.AddItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.UserControl
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Item: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
@@ -67,19 +66,17 @@ Class Models.Item: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     get_Category(): PrivateScope, Public, HideBySig, SpecialName
     set_Category(Category): PrivateScope, Public, HideBySig, SpecialName
     Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
-Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Methods:
-    AddItem(String, Double, Int32): PrivateScope, Public, Static, HideBySig
-    GetItemById(Int32): PrivateScope, Public, Static, HideBySig
-    GetAllItems(): PrivateScope, Public, Static, HideBySig
-    UpdateItem(Item): PrivateScope, Public, Static, HideBySig
-    DeleteItem(Int32): PrivateScope, Public, Static, HideBySig
 Class Controllers.InventoryController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     GetListViewData(): PrivateScope, Public, Static, HideBySig
+    GetItemById(Int32): PrivateScope, Public, Static, HideBySig
     AddNewItem(String, String, Int32): PrivateScope, Public, Static, HideBySig
+    DeleteItem(Int32): PrivateScope, Public, Static, HideBySig
+    EditItem(Item): PrivateScope, Public, Static, HideBySig
+Class Views.AddItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.DatabaseConnection: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
   Interfaces:
     System.IDisposable
@@ -128,6 +125,13 @@ Class Views.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Views.EditCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Category): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.EditItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Item): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.ViewItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Item): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Controllers.LoginController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -135,6 +139,14 @@ Class Controllers.LoginController: AutoLayout, AnsiClass, Class, Public, BeforeF
 Class Views.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AddItem(String, Double, Int32): PrivateScope, Public, Static, HideBySig
+    GetItemById(Int32): PrivateScope, Public, Static, HideBySig
+    GetAllItems(): PrivateScope, Public, Static, HideBySig
+    UpdateItem(Item): PrivateScope, Public, Static, HideBySig
+    DeleteItem(Int32): PrivateScope, Public, Static, HideBySig
 Class Models.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
