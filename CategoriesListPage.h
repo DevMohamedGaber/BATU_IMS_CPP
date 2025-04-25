@@ -106,16 +106,20 @@ namespace Views {
 			// dataTable
 			// 
 			this->dataTable->AllowUserToAddRows = false;
+			this->dataTable->AllowUserToDeleteRows = false;
 			this->dataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataTable->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->dataTable->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
 			this->dataTable->Location = System::Drawing::Point(30, 130);
 			this->dataTable->Name = L"dataTable";
 			this->dataTable->RowHeadersVisible = false;
 			this->dataTable->RowHeadersWidth = 51;
 			this->dataTable->RowTemplate->Height = 24;
+			this->dataTable->ShowEditingIcon = false;
 			this->dataTable->Size = System::Drawing::Size(1123, 555);
 			this->dataTable->TabIndex = 1;
 			this->dataTable->Visible = false;
+			this->dataTable->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CategoriesListPage::dataTable_CellClick);
 			// 
 			// noDataLabel
 			// 
@@ -153,5 +157,6 @@ namespace Views {
 	private: 
 		System::Void addNewBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void CategoriesListPage_Load(System::Object^ sender, System::EventArgs^ e);
+		System::Void dataTable_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 	};
 }

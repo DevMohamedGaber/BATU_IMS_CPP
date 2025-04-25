@@ -101,6 +101,9 @@
     <Filter Include="Controllers\Categories">
       <UniqueIdentifier>{31a7dff1-96a6-403a-9ecf-ed280f0ef8dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Categories\View">
+      <UniqueIdentifier>{e23a5c22-a7dc-4aa5-a768-587d377c0eeb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -159,6 +162,12 @@
     </ClCompile>
     <ClCompile Include="AddCategoryPage.cpp">
       <Filter>Views\Categories\Add</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewCategoryPage.cpp">
+      <Filter>Views\Categories\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EditCategoryPage.cpp">
+      <Filter>Views\Categories\Edit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +230,12 @@
     </ClInclude>
     <ClInclude Include="AddCategoryPage.h">
       <Filter>Views\Categories\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewCategoryPage.h">
+      <Filter>Views\Categories\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EditCategoryPage.h">
+      <Filter>Views\Categories\Edit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

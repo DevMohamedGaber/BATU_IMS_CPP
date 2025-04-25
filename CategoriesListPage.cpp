@@ -2,6 +2,7 @@
 #include "CategoriesController.h"
 #include "DashboardForm.h"
 #include "AddCategoryPage.h"
+#include "ViewCategoryPage.h"
 using namespace Controllers;
 using namespace System;
 using namespace Models;
@@ -31,5 +32,13 @@ namespace Views
 
 		dataTable->DataSource = table;
 		dataTable->Visible = true;
+	}
+	// on click of a row, open the view category page
+	Void CategoriesListPage::dataTable_CellClick(Object^ sender, DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex < 0) {
+			return;
+		}
+		int id = Convert::ToInt32(dataTable->Rows[e->RowIndex]->Cells["Id"]->Value);
+		DashboardForm::SwitchView(gcnew ViewCategoryPage(id));
 	}
 }

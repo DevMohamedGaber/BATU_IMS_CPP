@@ -122,6 +122,7 @@
     <ClCompile Include="CategoriesListPage.cpp" />
     <ClCompile Include="DashboardForm.cpp" />
     <ClCompile Include="DatabaseConnection.cpp" />
+    <ClCompile Include="EditCategoryPage.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -138,6 +139,7 @@
     </ClCompile>
     <ClCompile Include="Users.cpp" />
     <ClCompile Include="Utilities.cpp" />
+    <ClCompile Include="ViewCategoryPage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -163,6 +165,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DatabaseConnection.h" />
+    <ClInclude Include="EditCategoryPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="HomePage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -181,6 +186,9 @@
     <ClInclude Include="User.h" />
     <ClInclude Include="Users.h" />
     <ClInclude Include="Utilities.h" />
+    <ClInclude Include="ViewCategoryPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddCategoryPage.resx">
@@ -195,6 +203,9 @@
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditCategoryPage.resx">
+      <DependentUpon>EditCategoryPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.h</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCategoryPage.resx">
+      <DependentUpon>ViewCategoryPage.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

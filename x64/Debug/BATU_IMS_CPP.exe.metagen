@@ -2,9 +2,11 @@
   BATUIMSCPP.AddItemPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.DashboardForm.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.EditCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.HomePage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ItemListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.LoginForm.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly BATU_IMS_CPP, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -39,6 +41,9 @@ Class Controllers.CategoriesController: AutoLayout, AnsiClass, Class, Public, Be
   Methods:
     GetCategoriesList(): PrivateScope, Public, Static, HideBySig
     AddNewCategory(String): PrivateScope, Public, Static, HideBySig
+    EditCategory(Category): PrivateScope, Public, Static, HideBySig
+    GetCategoryById(Int32): PrivateScope, Public, Static, HideBySig
+    DeleteCategory(Int32): PrivateScope, Public, Static, HideBySig
 Class Views.AddItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -110,12 +115,19 @@ Class Views.DashboardForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Methods:
     Start(): PrivateScope, Public, Static, HideBySig
     SwitchView(UserControl): PrivateScope, Public, Static, HideBySig
+Class Views.ViewCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Category): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.ItemListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.EditCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Category): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Controllers.LoginController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:

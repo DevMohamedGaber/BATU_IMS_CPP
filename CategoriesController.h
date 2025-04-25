@@ -9,5 +9,8 @@ namespace Controllers
 	public:
 		static List<Category^>^ GetCategoriesList();
 		static String^ AddNewCategory(String^ name);
+		static String^ EditCategory(Category^ category);
+		static Category^ GetCategoryById(int id);
+		static void DeleteCategory(int id);
 	};
 }
