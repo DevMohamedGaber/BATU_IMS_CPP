@@ -119,6 +119,9 @@
     <Filter Include="Models\Customer">
       <UniqueIdentifier>{e832fb92-4412-47e0-b230-6345f0a0bcb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Customers\Add">
+      <UniqueIdentifier>{12c41772-ceae-4f23-bd1e-e041268549b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -192,6 +195,15 @@
     </ClCompile>
     <ClCompile Include="Customers.cpp">
       <Filter>Models\Customer</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomersListPage.cpp">
+      <Filter>Views\Customers\List</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomersController.cpp">
+      <Filter>Controllers\Customers</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCustomerPage.cpp">
+      <Filter>Views\Customers\Add</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +284,15 @@
     </ClInclude>
     <ClInclude Include="Customers.h">
       <Filter>Models\Customer</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomersListPage.h">
+      <Filter>Views\Customers\List</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomersController.h">
+      <Filter>Controllers\Customers</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCustomerPage.h">
+      <Filter>Views\Customers\Add</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

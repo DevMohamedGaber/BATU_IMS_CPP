@@ -8,6 +8,7 @@ namespace Models
 {
 	public ref class Customers sealed
 	{
+	public:
 		static List<Customer^>^ GetAll();
 		static Customer^ GetById(int id);
 		static bool Insert(String^ FirstName, String^ LastName, String^ Email);

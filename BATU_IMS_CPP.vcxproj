@@ -116,11 +116,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AddCategoryPage.cpp" />
+    <ClCompile Include="AddCustomerPage.cpp" />
     <ClCompile Include="AddItemPage.cpp" />
     <ClCompile Include="Categories.cpp" />
     <ClCompile Include="CategoriesController.cpp" />
     <ClCompile Include="CategoriesListPage.cpp" />
     <ClCompile Include="Customers.cpp" />
+    <ClCompile Include="CustomersController.cpp" />
+    <ClCompile Include="CustomersListPage.cpp" />
     <ClCompile Include="DashboardForm.cpp" />
     <ClCompile Include="DatabaseConnection.cpp" />
     <ClCompile Include="EditCategoryPage.cpp" />
@@ -155,6 +158,9 @@
     <ClInclude Include="AddCategoryPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="AddCustomerPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="AddItemPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -166,6 +172,9 @@
     <ClInclude Include="Category.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Customers.h" />
+    <ClInclude Include="CustomersListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="DashboardForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -176,6 +185,7 @@
     <ClInclude Include="EditItemPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="CustomersController.h" />
     <ClInclude Include="HomePage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -205,11 +215,17 @@
     <EmbeddedResource Include="AddCategoryPage.resx">
       <DependentUpon>AddCategoryPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddCustomerPage.resx">
+      <DependentUpon>AddCustomerPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddItemPage.resx">
       <DependentUpon>AddItemPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriesListPage.resx">
       <DependentUpon>CategoriesListPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomersListPage.resx">
+      <DependentUpon>CustomersListPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.h</DependentUpon>

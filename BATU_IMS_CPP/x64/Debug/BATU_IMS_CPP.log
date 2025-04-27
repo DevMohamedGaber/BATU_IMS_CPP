@@ -1,15 +1,10 @@
-﻿  AddItemPage.cpp
-  EditItemPage.cpp
-  Inventory.cpp
-  InventoryController.cpp
-  ItemListPage.cpp
-  ViewItemPage.cpp
-  Generating Code...
+﻿  CustomersListPage.cpp
   AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
 Users.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 Inventory.obj : warning LNK4248: unresolved typeref token (01000014) for 'sqlite3'; image may not run
 EntryPoint.obj : warning LNK4248: unresolved typeref token (0100001C) for 'sqlite3'; image may not run
 DatabaseConnection.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
+Customers.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 Categories.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 DatabaseConnection.obj : warning LNK4248: unresolved typeref token (0100001E) for 'sqlite3_stmt'; image may not run
   BATU_IMS_CPP.vcxproj -> C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\x64\Debug\BATU_IMS_CPP.exe

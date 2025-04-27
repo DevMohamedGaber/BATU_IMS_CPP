@@ -2,6 +2,7 @@
 #include "DashboardForm.h"
 #include "ItemListPage.h"
 #include "HomePage.h"
+#include "CustomersListPage.h"
 
 namespace Views
 {
@@ -44,5 +45,8 @@ namespace Views
 	}
 	System::Void DashboardForm::categoriesBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew CategoriesListPage());
+	}
+	System::Void DashboardForm::customersBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew CustomersListPage());
 	}
 }

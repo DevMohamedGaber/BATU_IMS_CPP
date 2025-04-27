@@ -7,7 +7,7 @@ namespace Models
 {
 	List<Customer^>^ Customers::GetAll()
 	{
-		string sql = "SELECT * FROM Inventory Customers";
+		string sql = "SELECT * FROM Customers";
 		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
 		auto items = gcnew List<Customer^>();
 		for (const auto& row : rows) {

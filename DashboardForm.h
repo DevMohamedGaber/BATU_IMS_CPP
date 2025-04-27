@@ -59,12 +59,14 @@ namespace Views
 			System::Windows::Forms::Button^ categoriesBtn;
 			System::Windows::Forms::Button^ usersBtn;
 			System::Windows::Forms::Button^ homeBtn;
+			System::Windows::Forms::Button^ customersBtn;
 			this->_panelContainer = (gcnew System::Windows::Forms::Panel());
 			sideNavBarPanel = (gcnew System::Windows::Forms::Panel());
 			inventoryBtn = (gcnew System::Windows::Forms::Button());
 			categoriesBtn = (gcnew System::Windows::Forms::Button());
 			usersBtn = (gcnew System::Windows::Forms::Button());
 			homeBtn = (gcnew System::Windows::Forms::Button());
+			customersBtn = (gcnew System::Windows::Forms::Button());
 			sideNavBarPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -72,6 +74,7 @@ namespace Views
 			// 
 			sideNavBarPanel->AutoSize = true;
 			sideNavBarPanel->BackColor = System::Drawing::Color::SteelBlue;
+			sideNavBarPanel->Controls->Add(customersBtn);
 			sideNavBarPanel->Controls->Add(inventoryBtn);
 			sideNavBarPanel->Controls->Add(categoriesBtn);
 			sideNavBarPanel->Controls->Add(usersBtn);
@@ -152,6 +155,21 @@ namespace Views
 			this->_panelContainer->Size = System::Drawing::Size(1010, 829);
 			this->_panelContainer->TabIndex = 1;
 			// 
+			// customersBtn
+			// 
+			customersBtn->BackColor = System::Drawing::Color::DodgerBlue;
+			customersBtn->FlatAppearance->BorderSize = 0;
+			customersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			customersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			customersBtn->Location = System::Drawing::Point(0, 369);
+			customersBtn->Name = L"customersBtn";
+			customersBtn->Size = System::Drawing::Size(402, 60);
+			customersBtn->TabIndex = 4;
+			customersBtn->Text = L"Customers";
+			customersBtn->UseVisualStyleBackColor = false;
+			customersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::customersBtn_Click);
+			// 
 			// DashboardForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -177,5 +195,6 @@ namespace Views
 		System::Void homeBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void inventoryBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void categoriesBtn_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void customersBtn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

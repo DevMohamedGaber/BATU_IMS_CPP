@@ -1,6 +1,8 @@
   BATUIMSCPP.AddCategoryPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.AddCustomerPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddItemPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.CustomersListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.DashboardForm.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.EditCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.EditItemPage.resources - Embedded, ContainedInManifestFile, 
@@ -46,6 +48,31 @@ Class Controllers.CategoriesController: AutoLayout, AnsiClass, Class, Public, Be
     EditCategory(Category): PrivateScope, Public, Static, HideBySig
     GetCategoryById(Int32): PrivateScope, Public, Static, HideBySig
     DeleteCategory(Int32): PrivateScope, Public, Static, HideBySig
+Class Views.AddCustomerPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Models.Customer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Email 'get set' : 
+    System.String LastName 'get set' : 
+    System.String FirstName 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_FirstName(): PrivateScope, Public, HideBySig, SpecialName
+    set_FirstName(String): PrivateScope, Public, HideBySig, SpecialName
+    get_LastName(): PrivateScope, Public, HideBySig, SpecialName
+    set_LastName(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Email(): PrivateScope, Public, HideBySig, SpecialName
+    set_Email(String): PrivateScope, Public, HideBySig, SpecialName
+    Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
+Class Controllers.CustomersController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetCustomersList(): PrivateScope, Public, Static, HideBySig
+    AddNewCustomer(String, String, String): PrivateScope, Public, Static, HideBySig
 Class Models.Item: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
@@ -116,6 +143,17 @@ Class Views.ViewCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Category): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Models.Customers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetAll(): PrivateScope, Public, Static, HideBySig
+    GetById(Int32): PrivateScope, Public, Static, HideBySig
+    Insert(String, String, String): PrivateScope, Public, Static, HideBySig
+    Update(Customer): PrivateScope, Public, Static, HideBySig
+    Delete(Int32): PrivateScope, Public, Static, HideBySig
+Class Views.CustomersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.ItemListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

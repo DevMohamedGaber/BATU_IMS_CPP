@@ -61,6 +61,10 @@ namespace Models
             if (!Instance->TableExists("Categories")) {
                 Instance->Execute("CREATE TABLE Categories (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE)");
             }
+
+			if (!Instance->TableExists("Customers")) {
+				Instance->Execute("CREATE TABLE Customers (Id INTEGER PRIMARY KEY AUTOINCREMENT, FirstName TEXT NOT NULL, LastName TEXT NOT NULL, Email TEXT NOT NULL UNIQUE)");
+			}
         }
 
         // no return queries
