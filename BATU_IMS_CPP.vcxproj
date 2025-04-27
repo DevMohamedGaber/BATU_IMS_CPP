@@ -138,6 +138,7 @@
     <ClCompile Include="LoginController.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PasswordHasher.cpp" />
+    <ClCompile Include="suppliers.cpp" />
     <ClCompile Include="UserRole.h" />
     <ClCompile Include="sqlite\sqlite3.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -209,6 +210,8 @@
     </ClInclude>
     <ClInclude Include="PasswordHasher.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
+    <ClInclude Include="Supplier.h" />
+    <ClInclude Include="Suppliers.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="Users.h" />
     <ClInclude Include="Utilities.h" />

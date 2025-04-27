@@ -26,9 +26,6 @@
     <Filter Include="Core\PasswordHasher">
       <UniqueIdentifier>{49900625-6c15-4223-b59f-665a4afb2f4e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Interfaces">
-      <UniqueIdentifier>{9720e452-e7a2-4ded-9f8a-587f8a4c9516}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Enums">
       <UniqueIdentifier>{23e4c67d-d99b-492a-93dc-d161abdbaf98}</UniqueIdentifier>
     </Filter>
@@ -128,6 +125,21 @@
     <Filter Include="Views\Customers\Edit">
       <UniqueIdentifier>{0b86e789-7879-4b22-abf3-176b5e9cec4d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Suppliers\List">
+      <UniqueIdentifier>{fd93ff9c-7660-41c9-8ab0-af84927b4f46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Suppliers\View">
+      <UniqueIdentifier>{fd86d299-03ed-41c0-866d-a2a7fd42f696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Suppliers\Add">
+      <UniqueIdentifier>{0985b8bc-e46f-4d1b-891a-21307960c8f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Suppliers\Edit">
+      <UniqueIdentifier>{870065a5-f271-4860-a7c9-9b06ceb558fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Supplier">
+      <UniqueIdentifier>{aa5f664e-bf66-4190-b446-a6aed99958b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -216,6 +228,9 @@
     </ClCompile>
     <ClCompile Include="CustomerEditPage.cpp">
       <Filter>Views\Customers\Edit</Filter>
+    </ClCompile>
+    <ClCompile Include="suppliers.cpp">
+      <Filter>Models\Supplier</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -311,6 +326,12 @@
     </ClInclude>
     <ClInclude Include="CustomerEditPage.h">
       <Filter>Views\Customers</Filter>
+    </ClInclude>
+    <ClInclude Include="Supplier.h">
+      <Filter>Models\Supplier</Filter>
+    </ClInclude>
+    <ClInclude Include="Suppliers.h">
+      <Filter>Models\Supplier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
