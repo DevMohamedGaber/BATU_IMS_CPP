@@ -14,5 +14,7 @@ namespace Models
 		static bool Insert(String^ FirstName, String^ LastName, String^ Email);
 		static bool Update(Customer^ item);
 		static void Delete(int id);
+		static bool ExistsByName(String^ firstName, String^ lastName);
+		static bool ExistsByEmail(String^ email);
 	};
 }

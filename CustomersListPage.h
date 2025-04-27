@@ -103,14 +103,15 @@ namespace Views {
 			// 
 			this->noDataLabel->AutoSize = true;
 			this->noDataLabel->BackColor = System::Drawing::Color::Transparent;
-			this->noDataLabel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->noDataLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->noDataLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->noDataLabel->Location = System::Drawing::Point(30, 130);
+			this->noDataLabel->ForeColor = System::Drawing::SystemColors::GrayText;
+			this->noDataLabel->Location = System::Drawing::Point(85, 174);
 			this->noDataLabel->Name = L"noDataLabel";
-			this->noDataLabel->Size = System::Drawing::Size(331, 39);
+			this->noDataLabel->Size = System::Drawing::Size(264, 31);
 			this->noDataLabel->TabIndex = 5;
 			this->noDataLabel->Text = L"No Data Found Here";
+			this->noDataLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->noDataLabel->Visible = false;
 			// 
 			// dataTable
@@ -129,6 +130,7 @@ namespace Views {
 			this->dataTable->Size = System::Drawing::Size(1035, 643);
 			this->dataTable->TabIndex = 4;
 			this->dataTable->Visible = false;
+			this->dataTable->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CustomersListPage::dataTable_CellClick);
 			// 
 			// CustomersListPage
 			// 
@@ -151,5 +153,6 @@ namespace Views {
 #pragma endregion
 		System::Void addNewBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void CustomersListPage_Load(System::Object^ sender, System::EventArgs^ e);
+		System::Void dataTable_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 };
 }

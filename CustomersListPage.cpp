@@ -2,6 +2,8 @@
 #include "CustomersController.h"
 #include "DashboardForm.h"
 #include "AddCustomerPage.h"
+#include "CustomerViewPage.h"
+
 using namespace Controllers;
 
 namespace Views {
@@ -37,5 +39,12 @@ namespace Views {
 
 		dataTable->DataSource = table;
 		dataTable->Visible = true;
+	}
+
+	Void CustomersListPage::dataTable_CellClick(Object^ sender, DataGridViewCellEventArgs^ e)
+	{
+		if (e->RowIndex < 0) return; // Ignore header row clicks
+		int customerId = Convert::ToInt32(dataTable->Rows[e->RowIndex]->Cells["Id"]->Value);
+		DashboardForm::SwitchView(gcnew CustomerViewPage(customerId));
 	}
 }

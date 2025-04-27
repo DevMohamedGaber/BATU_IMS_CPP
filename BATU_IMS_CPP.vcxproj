@@ -121,9 +121,11 @@
     <ClCompile Include="Categories.cpp" />
     <ClCompile Include="CategoriesController.cpp" />
     <ClCompile Include="CategoriesListPage.cpp" />
+    <ClCompile Include="CustomerEditPage.cpp" />
     <ClCompile Include="Customers.cpp" />
     <ClCompile Include="CustomersController.cpp" />
     <ClCompile Include="CustomersListPage.cpp" />
+    <ClCompile Include="CustomerViewPage.cpp" />
     <ClCompile Include="DashboardForm.cpp" />
     <ClCompile Include="DatabaseConnection.cpp" />
     <ClCompile Include="EditCategoryPage.cpp" />
@@ -171,8 +173,14 @@
     </ClInclude>
     <ClInclude Include="Category.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="CustomerEditPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Customers.h" />
     <ClInclude Include="CustomersListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="CustomerViewPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="DashboardForm.h">
@@ -224,8 +232,14 @@
     <EmbeddedResource Include="CategoriesListPage.resx">
       <DependentUpon>CategoriesListPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerEditPage.resx">
+      <DependentUpon>CustomerEditPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomersListPage.resx">
       <DependentUpon>CustomersListPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerViewPage.resx">
+      <DependentUpon>CustomerViewPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.h</DependentUpon>

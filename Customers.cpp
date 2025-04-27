@@ -40,4 +40,16 @@ namespace Models
 		string sql = "DELETE FROM Customers WHERE Id = " + to_string(id);
 		DatabaseConnection::Instance->Execute(sql);
 	}
+	bool Customers::ExistsByName(String^ firstName, String^ lastName)
+	{
+		string sql = "SELECT COUNT(*) FROM Customers WHERE FirstName = '" + Utilities::GetNativeString(firstName) + "' AND LastName = '" + Utilities::GetNativeString(lastName) + "'";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		return !rows.empty() && !rows[0].empty() && stoi(rows[0][0]) > 0;
+	}
+	bool Customers::ExistsByEmail(String^ email)
+	{
+		string sql = "SELECT COUNT(*) FROM Customers WHERE Email = '" + Utilities::GetNativeString(email) + "'";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		return !rows.empty() && !rows[0].empty() && stoi(rows[0][0]) > 0;
+	}
 }

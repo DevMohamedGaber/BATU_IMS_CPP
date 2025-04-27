@@ -2,7 +2,9 @@
   BATUIMSCPP.AddCustomerPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddItemPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.CustomerEditPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CustomersListPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.CustomerViewPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.DashboardForm.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.EditCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.EditItemPage.resources - Embedded, ContainedInManifestFile, 
@@ -73,6 +75,9 @@ Class Controllers.CustomersController: AutoLayout, AnsiClass, Class, Public, Sea
   Methods:
     GetCustomersList(): PrivateScope, Public, Static, HideBySig
     AddNewCustomer(String, String, String): PrivateScope, Public, Static, HideBySig
+    GetCustomerById(Int32): PrivateScope, Public, Static, HideBySig
+    DeleteCustomer(Int32): PrivateScope, Public, Static, HideBySig
+    EditCustomer(Customer): PrivateScope, Public, Static, HideBySig
 Class Models.Item: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
@@ -143,6 +148,13 @@ Class Views.ViewCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Category): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.CustomerEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Customer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.CustomerViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Customer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Customers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -151,6 +163,8 @@ Class Models.Customers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     Insert(String, String, String): PrivateScope, Public, Static, HideBySig
     Update(Customer): PrivateScope, Public, Static, HideBySig
     Delete(Int32): PrivateScope, Public, Static, HideBySig
+    ExistsByName(String, String): PrivateScope, Public, Static, HideBySig
+    ExistsByEmail(String): PrivateScope, Public, Static, HideBySig
 Class Views.CustomersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

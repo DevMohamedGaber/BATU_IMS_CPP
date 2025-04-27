@@ -122,6 +122,12 @@
     <Filter Include="Views\Customers\Add">
       <UniqueIdentifier>{12c41772-ceae-4f23-bd1e-e041268549b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Customers\View">
+      <UniqueIdentifier>{3b80539c-ac6f-4d80-aed4-f2fbe8d4fb20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Customers\Edit">
+      <UniqueIdentifier>{0b86e789-7879-4b22-abf3-176b5e9cec4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -204,6 +210,12 @@
     </ClCompile>
     <ClCompile Include="AddCustomerPage.cpp">
       <Filter>Views\Customers\Add</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomerViewPage.cpp">
+      <Filter>Views\Customers\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomerEditPage.cpp">
+      <Filter>Views\Customers\Edit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -293,6 +305,12 @@
     </ClInclude>
     <ClInclude Include="AddCustomerPage.h">
       <Filter>Views\Customers\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerViewPage.h">
+      <Filter>Views\Customers\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerEditPage.h">
+      <Filter>Views\Customers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

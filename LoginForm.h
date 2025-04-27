@@ -165,7 +165,7 @@ namespace Views {
 			// 
 			this->usernameInput->BackColor = System::Drawing::Color::SlateGray;
 			this->usernameInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->usernameInput->ForeColor = System::Drawing::Color::White;
 			this->usernameInput->Location = System::Drawing::Point(191, 261);
@@ -173,7 +173,7 @@ namespace Views {
 			this->usernameInput->MaximumSize = System::Drawing::Size(438, 50);
 			this->usernameInput->MinimumSize = System::Drawing::Size(438, 50);
 			this->usernameInput->Name = L"usernameInput";
-			this->usernameInput->Size = System::Drawing::Size(438, 23);
+			this->usernameInput->Size = System::Drawing::Size(438, 50);
 			this->usernameInput->TabIndex = 2;
 			this->usernameInput->Text = L"admin";
 			this->usernameInput->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -197,7 +197,7 @@ namespace Views {
 			// 
 			this->passwordInput->BackColor = System::Drawing::Color::SlateGray;
 			this->passwordInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->passwordInput->ForeColor = System::Drawing::Color::White;
 			this->passwordInput->Location = System::Drawing::Point(191, 380);
@@ -206,7 +206,7 @@ namespace Views {
 			this->passwordInput->MinimumSize = System::Drawing::Size(438, 50);
 			this->passwordInput->Name = L"passwordInput";
 			this->passwordInput->PasswordChar = '*';
-			this->passwordInput->Size = System::Drawing::Size(438, 23);
+			this->passwordInput->Size = System::Drawing::Size(438, 50);
 			this->passwordInput->TabIndex = 10;
 			this->passwordInput->Text = L"admin";
 			this->passwordInput->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
