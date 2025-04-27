@@ -107,6 +107,18 @@
     <Filter Include="Views\Customers">
       <UniqueIdentifier>{499faa33-2a2b-4430-a8e7-0cd74992d01c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Suppliers">
+      <UniqueIdentifier>{9d955010-9393-4b29-9d27-cc6fd3eacf0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Customers\List">
+      <UniqueIdentifier>{cfe26490-3757-4971-999e-4f591f632a50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Customers">
+      <UniqueIdentifier>{20f31d07-df2f-4400-b107-aa9ceacd6610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Customer">
+      <UniqueIdentifier>{e832fb92-4412-47e0-b230-6345f0a0bcb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -177,6 +189,9 @@
     </ClCompile>
     <ClCompile Include="EditItemPage.cpp">
       <Filter>Views\Inventory\Edit</Filter>
+    </ClCompile>
+    <ClCompile Include="Customers.cpp">
+      <Filter>Models\Customer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +266,12 @@
     </ClInclude>
     <ClInclude Include="EditItemPage.h">
       <Filter>Views\Inventory\Edit</Filter>
+    </ClInclude>
+    <ClInclude Include="Customer.h">
+      <Filter>Models\Customer</Filter>
+    </ClInclude>
+    <ClInclude Include="Customers.h">
+      <Filter>Models\Customer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

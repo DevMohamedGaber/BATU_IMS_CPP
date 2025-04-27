@@ -120,6 +120,7 @@
     <ClCompile Include="Categories.cpp" />
     <ClCompile Include="CategoriesController.cpp" />
     <ClCompile Include="CategoriesListPage.cpp" />
+    <ClCompile Include="Customers.cpp" />
     <ClCompile Include="DashboardForm.cpp" />
     <ClCompile Include="DatabaseConnection.cpp" />
     <ClCompile Include="EditCategoryPage.cpp" />
@@ -163,6 +164,8 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Category.h" />
+    <ClInclude Include="Customer.h" />
+    <ClInclude Include="Customers.h" />
     <ClInclude Include="DashboardForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
