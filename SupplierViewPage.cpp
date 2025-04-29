@@ -1,7 +1,7 @@
 #include "SupplierViewPage.h"
 #include "SuppliersController.h"
 #include "DashboardForm.h"
-//#include "SupplierEditPage.h"
+#include "SupplierEditPage.h"
 #include "SuppliersListPage.h"
 
 using namespace Controllers;
@@ -26,7 +26,7 @@ namespace Views
 		DashboardForm::SwitchView(gcnew SuppliersListPage());
 	}
 	Void SupplierViewPage::editBtn_Click(Object^ sender, EventArgs^ e) {
-		//DashboardForm::SwitchView(gcnew SupplierEditPage(supplier));
+		DashboardForm::SwitchView(gcnew SupplierEditPage(supplier));
 	}
 	Void SupplierViewPage::deleteBtn_Click(Object^ sender, EventArgs^ e) {
 		if (MessageBox::Show("Are you sure you want to delete this supplier?", "Delete Supplier", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes) {

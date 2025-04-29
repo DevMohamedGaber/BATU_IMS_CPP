@@ -139,6 +139,7 @@
     <ClCompile Include="LoginController.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PasswordHasher.cpp" />
+    <ClCompile Include="SupplierEditPage.cpp" />
     <ClCompile Include="suppliers.cpp" />
     <ClCompile Include="SuppliersController.cpp" />
     <ClCompile Include="SuppliersListPage.cpp" />
@@ -218,6 +219,9 @@
     <ClInclude Include="PasswordHasher.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
     <ClInclude Include="Supplier.h" />
+    <ClInclude Include="SupplierEditPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Suppliers.h" />
     <ClInclude Include="SuppliersController.h" />
     <ClInclude Include="SuppliersListPage.h">
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierEditPage.resx">
+      <DependentUpon>SupplierEditPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuppliersListPage.resx">
       <DependentUpon>SuppliersListPage.h</DependentUpon>

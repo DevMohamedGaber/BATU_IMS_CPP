@@ -12,6 +12,7 @@
   BATUIMSCPP.HomePage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ItemListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.LoginForm.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.SupplierEditPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SuppliersListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SupplierViewPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
@@ -249,6 +250,13 @@ Struct Core.UserRole: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldI
     Core.UserRole Admin = 0 : Public, Static, Literal, HasDefault
     Core.UserRole Staff = 1 : Public, Static, Literal, HasDefault
     Core.UserRole Retailer = 2 : Public, Static, Literal, HasDefault
+Class Views.SupplierEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.SupplierViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -258,7 +266,3 @@ Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     Update(Supplier): PrivateScope, Public, Static, HideBySig
     Delete(Int32): PrivateScope, Public, Static, HideBySig
     Exists(String): PrivateScope, Public, Static, HideBySig
-Class Views.SupplierViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.UserControl
-    Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

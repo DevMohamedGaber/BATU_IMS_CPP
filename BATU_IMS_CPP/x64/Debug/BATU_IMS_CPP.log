@@ -1,7 +1,4 @@
-﻿  AddSupplierPage.cpp
-  SuppliersListPage.cpp
-  SupplierViewPage.cpp
-  Generating Code...
+﻿  SupplierEditPage.cpp
   AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
 Users.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 suppliers.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run
