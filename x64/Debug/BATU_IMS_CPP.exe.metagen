@@ -114,6 +114,22 @@ Class Views.AddItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Views.AddSupplierPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Models.Supplier: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 Id : Public
+    System.String Name : Public
+    System.ValueType ContractedAt DateTime IsBoxed : Public
+  Methods:
+    Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
+Class Controllers.SuppliersController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetSuppliersList(): PrivateScope, Public, Static, HideBySig
+    AddNewSupplier(String, ValueType DateTime IsBoxed): PrivateScope, Public, Static, HideBySig
+    GetSupplierById(Int32): PrivateScope, Public, Static, HideBySig
+    DeleteSupplier(Int32): PrivateScope, Public, Static, HideBySig
+    EditSupplier(Supplier): PrivateScope, Public, Static, HideBySig
 Class Models.DatabaseConnection: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
   Interfaces:
     System.IDisposable
@@ -232,14 +248,6 @@ Struct Core.UserRole: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldI
     Core.UserRole Admin = 0 : Public, Static, Literal, HasDefault
     Core.UserRole Staff = 1 : Public, Static, Literal, HasDefault
     Core.UserRole Retailer = 2 : Public, Static, Literal, HasDefault
-Class Models.Supplier: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Int32 Id : Public
-    System.String Name : Public
-    System.ValueType ContractedAt DateTime IsBoxed : Public
-  Methods:
-    Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
 Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -249,11 +257,3 @@ Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     Update(Supplier): PrivateScope, Public, Static, HideBySig
     Delete(Int32): PrivateScope, Public, Static, HideBySig
     Exists(String): PrivateScope, Public, Static, HideBySig
-Class Controllers.SuppliersController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Methods:
-    GetSuppliersList(): PrivateScope, Public, Static, HideBySig
-    AddNewSupplier(String, ValueType DateTime IsBoxed): PrivateScope, Public, Static, HideBySig
-    GetSupplierById(Int32): PrivateScope, Public, Static, HideBySig
-    DeleteSupplier(Int32): PrivateScope, Public, Static, HideBySig
-    EditSupplier(Supplier): PrivateScope, Public, Static, HideBySig
