@@ -10,7 +10,7 @@ namespace Models {
 	public:
 		static List<Supplier^>^ GetAll();
 		static Supplier^ GetById(int id);
-		static bool Insert(String^ Name);
+		static bool Insert(String^ Name, String^ ContractAt);
 		static bool Update(Supplier^ supplier);
 		static void Delete(int id);
 		static bool Exists(String^ Name);

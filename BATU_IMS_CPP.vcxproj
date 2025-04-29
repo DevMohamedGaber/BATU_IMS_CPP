@@ -118,6 +118,7 @@
     <ClCompile Include="AddCategoryPage.cpp" />
     <ClCompile Include="AddCustomerPage.cpp" />
     <ClCompile Include="AddItemPage.cpp" />
+    <ClCompile Include="AddSupplierPage.cpp" />
     <ClCompile Include="Categories.cpp" />
     <ClCompile Include="CategoriesController.cpp" />
     <ClCompile Include="CategoriesListPage.cpp" />
@@ -139,6 +140,8 @@
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PasswordHasher.cpp" />
     <ClCompile Include="suppliers.cpp" />
+    <ClCompile Include="SuppliersController.cpp" />
+    <ClCompile Include="SuppliersListPage.cpp" />
     <ClCompile Include="UserRole.h" />
     <ClCompile Include="sqlite\sqlite3.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -165,6 +168,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="AddItemPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AddSupplierPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Categories.h" />
@@ -212,6 +218,10 @@
     <ClInclude Include="sqlite\sqlite3.h" />
     <ClInclude Include="Supplier.h" />
     <ClInclude Include="Suppliers.h" />
+    <ClInclude Include="SuppliersController.h" />
+    <ClInclude Include="SuppliersListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="User.h" />
     <ClInclude Include="Users.h" />
     <ClInclude Include="Utilities.h" />
@@ -231,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddItemPage.resx">
       <DependentUpon>AddItemPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSupplierPage.resx">
+      <DependentUpon>AddSupplierPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriesListPage.resx">
       <DependentUpon>CategoriesListPage.h</DependentUpon>
@@ -261,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersListPage.resx">
+      <DependentUpon>SuppliersListPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCategoryPage.resx">
       <DependentUpon>ViewCategoryPage.h</DependentUpon>

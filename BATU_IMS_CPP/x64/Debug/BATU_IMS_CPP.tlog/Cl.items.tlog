@@ -1,6 +1,7 @@
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddCategoryPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddCategoryPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddCustomerPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddCustomerPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddItemPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddItemPage.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddSupplierPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddSupplierPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Categories.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Categories.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CategoriesController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\CategoriesController.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CategoriesListPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\CategoriesListPage.obj
@@ -22,6 +23,8 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginController.cpp;C:\Users\Moh
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginForm.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\LoginForm.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\PasswordHasher.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\PasswordHasher.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\suppliers.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\suppliers.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\SuppliersController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\SuppliersController.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\SuppliersListPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\SuppliersListPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\UserRole.h;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\UserRole.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\sqlite\sqlite3.c;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\sqlite3.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Users.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Users.obj

@@ -1,4 +1,25 @@
-﻿  suppliers.cpp
+﻿  AddSupplierPage.cpp
+  CategoriesListPage.cpp
+  CustomerEditPage.cpp
+  CustomersController.cpp
+  CustomersListPage.cpp
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CustomersController.cpp(26,64): warning C4129: 's': unrecognized character escape sequence
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CustomersController.cpp(26,64): warning C4129: '.': unrecognized character escape sequence
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CustomersController.cpp(67,74): warning C4129: 's': unrecognized character escape sequence
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CustomersController.cpp(67,74): warning C4129: '.': unrecognized character escape sequence
+  CustomerViewPage.cpp
+  DashboardForm.cpp
+  EditCategoryPage.cpp
+  EditItemPage.cpp
+  EntryPoint.cpp
+  ItemListPage.cpp
+  LoginForm.cpp
+  suppliers.cpp
+  SuppliersController.cpp
+  SuppliersListPage.cpp
+  ViewCategoryPage.cpp
+  ViewItemPage.cpp
+  Generating Code...
   AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
 Users.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 suppliers.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run

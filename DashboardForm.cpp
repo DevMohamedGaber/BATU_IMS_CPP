@@ -3,6 +3,7 @@
 #include "ItemListPage.h"
 #include "HomePage.h"
 #include "CustomersListPage.h"
+#include "SuppliersListPage.h"
 
 namespace Views
 {
@@ -14,6 +15,7 @@ namespace Views
 		SwitchView(gcnew HomePage());
 		Instance->ShowDialog();
 	}
+
 	void DashboardForm::SwitchView(UserControl^ newView)
 	{
 		// Clear previous view
@@ -36,17 +38,21 @@ namespace Views
 		// Optional: Update window title
 		Instance->Text = "BATU - Inventory Management System - " + newView->Name;
 	}
-	System::Void DashboardForm::homeBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Event handlers for buttons
+	Void DashboardForm::homeBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew HomePage());
 	}
-	System::Void DashboardForm::inventoryBtn_Click(System::Object^ sender, System::EventArgs^ e)
+	Void DashboardForm::inventoryBtn_Click(Object^ sender, EventArgs^ e)
 	{
 		DashboardForm::SwitchView(gcnew ItemListPage());
 	}
-	System::Void DashboardForm::categoriesBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void DashboardForm::categoriesBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew CategoriesListPage());
 	}
-	System::Void DashboardForm::customersBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void DashboardForm::customersBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew CustomersListPage());
+	}
+	Void DashboardForm::suppliersBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew SuppliersListPage());
 	}
 }

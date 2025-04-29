@@ -55,18 +55,20 @@ namespace Views
 		void InitializeComponent(void)
 		{
 			System::Windows::Forms::Panel^ sideNavBarPanel;
+			System::Windows::Forms::Button^ customersBtn;
 			System::Windows::Forms::Button^ inventoryBtn;
 			System::Windows::Forms::Button^ categoriesBtn;
 			System::Windows::Forms::Button^ usersBtn;
 			System::Windows::Forms::Button^ homeBtn;
-			System::Windows::Forms::Button^ customersBtn;
+			System::Windows::Forms::Button^ suppliersBtn;
 			this->_panelContainer = (gcnew System::Windows::Forms::Panel());
 			sideNavBarPanel = (gcnew System::Windows::Forms::Panel());
+			customersBtn = (gcnew System::Windows::Forms::Button());
 			inventoryBtn = (gcnew System::Windows::Forms::Button());
 			categoriesBtn = (gcnew System::Windows::Forms::Button());
 			usersBtn = (gcnew System::Windows::Forms::Button());
 			homeBtn = (gcnew System::Windows::Forms::Button());
-			customersBtn = (gcnew System::Windows::Forms::Button());
+			suppliersBtn = (gcnew System::Windows::Forms::Button());
 			sideNavBarPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -74,6 +76,7 @@ namespace Views
 			// 
 			sideNavBarPanel->AutoSize = true;
 			sideNavBarPanel->BackColor = System::Drawing::Color::SteelBlue;
+			sideNavBarPanel->Controls->Add(suppliersBtn);
 			sideNavBarPanel->Controls->Add(customersBtn);
 			sideNavBarPanel->Controls->Add(inventoryBtn);
 			sideNavBarPanel->Controls->Add(categoriesBtn);
@@ -87,6 +90,21 @@ namespace Views
 			sideNavBarPanel->Name = L"sideNavBarPanel";
 			sideNavBarPanel->Size = System::Drawing::Size(400, 829);
 			sideNavBarPanel->TabIndex = 0;
+			// 
+			// customersBtn
+			// 
+			customersBtn->BackColor = System::Drawing::Color::DodgerBlue;
+			customersBtn->FlatAppearance->BorderSize = 0;
+			customersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			customersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			customersBtn->Location = System::Drawing::Point(-2, 293);
+			customersBtn->Name = L"customersBtn";
+			customersBtn->Size = System::Drawing::Size(402, 60);
+			customersBtn->TabIndex = 4;
+			customersBtn->Text = L"Customers";
+			customersBtn->UseVisualStyleBackColor = false;
+			customersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::customersBtn_Click);
 			// 
 			// inventoryBtn
 			// 
@@ -125,7 +143,7 @@ namespace Views
 			usersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			usersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			usersBtn->Location = System::Drawing::Point(0, 289);
+			usersBtn->Location = System::Drawing::Point(0, 641);
 			usersBtn->Name = L"usersBtn";
 			usersBtn->Size = System::Drawing::Size(402, 60);
 			usersBtn->TabIndex = 1;
@@ -155,20 +173,20 @@ namespace Views
 			this->_panelContainer->Size = System::Drawing::Size(1010, 829);
 			this->_panelContainer->TabIndex = 1;
 			// 
-			// customersBtn
+			// suppliersBtn
 			// 
-			customersBtn->BackColor = System::Drawing::Color::DodgerBlue;
-			customersBtn->FlatAppearance->BorderSize = 0;
-			customersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			customersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			suppliersBtn->BackColor = System::Drawing::Color::DodgerBlue;
+			suppliersBtn->FlatAppearance->BorderSize = 0;
+			suppliersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			suppliersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			customersBtn->Location = System::Drawing::Point(0, 369);
-			customersBtn->Name = L"customersBtn";
-			customersBtn->Size = System::Drawing::Size(402, 60);
-			customersBtn->TabIndex = 4;
-			customersBtn->Text = L"Customers";
-			customersBtn->UseVisualStyleBackColor = false;
-			customersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::customersBtn_Click);
+			suppliersBtn->Location = System::Drawing::Point(-1, 384);
+			suppliersBtn->Name = L"suppliersBtn";
+			suppliersBtn->Size = System::Drawing::Size(402, 60);
+			suppliersBtn->TabIndex = 5;
+			suppliersBtn->Text = L"Suppliers";
+			suppliersBtn->UseVisualStyleBackColor = false;
+			suppliersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::suppliersBtn_Click);
 			// 
 			// DashboardForm
 			// 
@@ -196,5 +214,6 @@ namespace Views
 		System::Void inventoryBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void categoriesBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void customersBtn_Click(System::Object^ sender, System::EventArgs^ e);
-};
+		System::Void suppliersBtn_Click(System::Object^ sender, System::EventArgs^ e);
+	};
 }

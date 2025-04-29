@@ -41,9 +41,6 @@
     <Filter Include="Models\Category">
       <UniqueIdentifier>{58f334e4-e738-4bfb-8df9-42d7be9de583}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Models\Connection">
-      <UniqueIdentifier>{2ea4a8dd-76f7-45d8-9266-d0d4e8247925}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Views\Inventory">
       <UniqueIdentifier>{8f3225f1-3cc8-40f0-a908-6ef53a57c2c8}</UniqueIdentifier>
     </Filter>
@@ -140,6 +137,12 @@
     <Filter Include="Models\Supplier">
       <UniqueIdentifier>{aa5f664e-bf66-4190-b446-a6aed99958b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\Supp,iers">
+      <UniqueIdentifier>{1e2eb402-be0f-4ada-b5bb-564de5e4e235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\_Connection">
+      <UniqueIdentifier>{2ea4a8dd-76f7-45d8-9266-d0d4e8247925}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -179,7 +182,7 @@
       <Filter>Models\Category</Filter>
     </ClCompile>
     <ClCompile Include="DatabaseConnection.cpp">
-      <Filter>Models\Connection</Filter>
+      <Filter>Models\_Connection</Filter>
     </ClCompile>
     <ClCompile Include="ItemListPage.cpp">
       <Filter>Views\Inventory\List</Filter>
@@ -232,6 +235,15 @@
     <ClCompile Include="suppliers.cpp">
       <Filter>Models\Supplier</Filter>
     </ClCompile>
+    <ClCompile Include="SuppliersListPage.cpp">
+      <Filter>Views\Suppliers\List</Filter>
+    </ClCompile>
+    <ClCompile Include="SuppliersController.cpp">
+      <Filter>Controllers\Supp,iers</Filter>
+    </ClCompile>
+    <ClCompile Include="AddSupplierPage.cpp">
+      <Filter>Views\Suppliers\Add</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -265,7 +277,7 @@
       <Filter>Models\Category</Filter>
     </ClInclude>
     <ClInclude Include="DatabaseConnection.h">
-      <Filter>Models\Connection</Filter>
+      <Filter>Models\_Connection</Filter>
     </ClInclude>
     <ClInclude Include="User.h">
       <Filter>Models\User</Filter>
@@ -332,6 +344,15 @@
     </ClInclude>
     <ClInclude Include="Suppliers.h">
       <Filter>Models\Supplier</Filter>
+    </ClInclude>
+    <ClInclude Include="SuppliersListPage.h">
+      <Filter>Views\Suppliers\List</Filter>
+    </ClInclude>
+    <ClInclude Include="SuppliersController.h">
+      <Filter>Controllers\Supp,iers</Filter>
+    </ClInclude>
+    <ClInclude Include="AddSupplierPage.h">
+      <Filter>Views\Suppliers\Add</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

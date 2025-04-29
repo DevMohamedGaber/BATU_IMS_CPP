@@ -24,14 +24,14 @@ namespace Models
 		}
 		return Supplier::Map(rows[0]);
 	}
-	bool Suppliers::Insert(String^ Name)
+	bool Suppliers::Insert(String^ Name, String^ ContractAt)
 	{
-		string sql = "INSERT INTO Suppliers (Name) VALUES ('" + Utilities::GetNativeString(Name) + "')";
+		string sql = "INSERT INTO Suppliers (Name, ContractAt) VALUES ('" + Utilities::GetNativeString(Name) + "', '" + Utilities::GetNativeString(ContractAt) + "')";
 		return DatabaseConnection::Instance->Execute(sql);
 	}
 	bool Suppliers::Update(Supplier^ item)
 	{
-		string sql = "UPDATE Suppliers SET Name = '" + Utilities::GetNativeString(item->Name) + "' WHERE Id = " + to_string(item->Id);
+		string sql = "UPDATE Suppliers SET Name = '" + Utilities::GetNativeString(item->Name) + "', ContractAt = '" + Utilities::GetNativeString(item->ContractedAt->ToString()) + "' WHERE Id = " + to_string(item->Id);
 		return DatabaseConnection::Instance->Execute(sql);
 	}
 	void Suppliers::Delete(int id)

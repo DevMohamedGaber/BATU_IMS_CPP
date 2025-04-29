@@ -1,6 +1,7 @@
   BATUIMSCPP.AddCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddCustomerPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddItemPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.AddSupplierPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CustomerEditPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CustomersListPage.resources - Embedded, ContainedInManifestFile, 
@@ -11,6 +12,7 @@
   BATUIMSCPP.HomePage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ItemListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.LoginForm.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.SuppliersListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewItemPage.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -109,6 +111,9 @@ Class Controllers.InventoryController: AutoLayout, AnsiClass, Class, Public, Sea
 Class Views.AddItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.AddSupplierPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.DatabaseConnection: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
   Interfaces:
     System.IDisposable
@@ -174,6 +179,9 @@ Class Views.ItemListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Views.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.SuppliersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.EditCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Category): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -237,7 +245,15 @@ Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
   Methods:
     GetAll(): PrivateScope, Public, Static, HideBySig
     GetById(Int32): PrivateScope, Public, Static, HideBySig
-    Insert(String): PrivateScope, Public, Static, HideBySig
+    Insert(String, String): PrivateScope, Public, Static, HideBySig
     Update(Supplier): PrivateScope, Public, Static, HideBySig
     Delete(Int32): PrivateScope, Public, Static, HideBySig
     Exists(String): PrivateScope, Public, Static, HideBySig
+Class Controllers.SuppliersController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetSuppliersList(): PrivateScope, Public, Static, HideBySig
+    AddNewSupplier(String, ValueType DateTime IsBoxed): PrivateScope, Public, Static, HideBySig
+    GetSupplierById(Int32): PrivateScope, Public, Static, HideBySig
+    DeleteSupplier(Int32): PrivateScope, Public, Static, HideBySig
+    EditSupplier(Supplier): PrivateScope, Public, Static, HideBySig
