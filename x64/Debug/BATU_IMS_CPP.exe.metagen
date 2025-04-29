@@ -13,6 +13,7 @@
   BATUIMSCPP.ItemListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.LoginForm.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SuppliersListPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.SupplierViewPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewItemPage.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -257,3 +258,7 @@ Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     Update(Supplier): PrivateScope, Public, Static, HideBySig
     Delete(Int32): PrivateScope, Public, Static, HideBySig
     Exists(String): PrivateScope, Public, Static, HideBySig
+Class Views.SupplierViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

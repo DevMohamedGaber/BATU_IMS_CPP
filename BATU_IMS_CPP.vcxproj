@@ -142,6 +142,7 @@
     <ClCompile Include="suppliers.cpp" />
     <ClCompile Include="SuppliersController.cpp" />
     <ClCompile Include="SuppliersListPage.cpp" />
+    <ClCompile Include="SupplierViewPage.cpp" />
     <ClCompile Include="UserRole.h" />
     <ClCompile Include="sqlite\sqlite3.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -222,6 +223,9 @@
     <ClInclude Include="SuppliersListPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="SupplierViewPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="User.h" />
     <ClInclude Include="Users.h" />
     <ClInclude Include="Utilities.h" />
@@ -277,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuppliersListPage.resx">
       <DependentUpon>SuppliersListPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierViewPage.resx">
+      <DependentUpon>SupplierViewPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCategoryPage.resx">
       <DependentUpon>ViewCategoryPage.h</DependentUpon>

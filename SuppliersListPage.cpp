@@ -1,6 +1,6 @@
 #include "SuppliersController.h"
 #include "SuppliersListPage.h"
-//#include "SupplierViewPage.h"
+#include "SupplierViewPage.h"
 #include "AddSupplierPage.h"
 #include "DashboardForm.h"
 using namespace Controllers;
@@ -36,6 +36,6 @@ namespace Views {
 	Void SuppliersListPage::dataTable_CellClick(Object^ sender, DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex < 0) return;
 		int id = Convert::ToInt32(dataTable->Rows[e->RowIndex]->Cells["Id"]->Value);
-		//DashboardForm::SwitchView(gcnew SupplierViewPage(id));
+		DashboardForm::SwitchView(gcnew SupplierViewPage(id));
 	}
 }

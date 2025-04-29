@@ -17,3 +17,4 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCP
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.CustomerViewPage.resources
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddSupplierPage.resources
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.SuppliersListPage.resources
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.SupplierViewPage.resources

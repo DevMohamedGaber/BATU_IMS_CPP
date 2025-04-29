@@ -244,6 +244,9 @@
     <ClCompile Include="AddSupplierPage.cpp">
       <Filter>Views\Suppliers\Add</Filter>
     </ClCompile>
+    <ClCompile Include="SupplierViewPage.cpp">
+      <Filter>Views\Suppliers\View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -353,6 +356,9 @@
     </ClInclude>
     <ClInclude Include="AddSupplierPage.h">
       <Filter>Views\Suppliers\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="SupplierViewPage.h">
+      <Filter>Views\Suppliers\View</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
