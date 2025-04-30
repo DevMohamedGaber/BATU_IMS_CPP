@@ -58,4 +58,32 @@ namespace Controllers
 	{
 		Users::Delete(id);
 	}
+	String^ UsersController::EditUserInfo(User^ user)
+	{
+		if (String::IsNullOrEmpty(user->FirstName))
+		{
+			return "First name is required";
+		}
+		if (String::IsNullOrEmpty(user->LastName))
+		{
+			return "Last name is required";
+		}
+		if (String::IsNullOrEmpty(user->Username))
+		{
+			return "Username is required";
+		}
+		if (String::IsNullOrEmpty(user->Email))
+		{
+			return "Email is required";
+		}
+		if (!System::Text::RegularExpressions::Regex::IsMatch(user->Email, "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"))
+		{
+			return "Invalid email format";
+		}
+		if (!Users::Update(user)) {
+			return "Failed to update user info";
+		}
+
+		return nullptr;
+	}
 }

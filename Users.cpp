@@ -56,7 +56,6 @@ namespace Models
 		string sql = "UPDATE Users SET FirstName = '" + Utilities::GetNativeString(user->FirstName) +
 			"', LastName = '" + Utilities::GetNativeString(user->LastName) +
 			"', Username = '" + Utilities::GetNativeString(user->Username) +
-			"', Password = '" + Utilities::GetNativeString(user->Password) +
 			"', Email = '" + Utilities::GetNativeString(user->Email) +
 			"', Role = " + to_string(roleValue) +
 			" WHERE Id = " + to_string(user->Id);

@@ -165,6 +165,7 @@ Class Controllers.UsersController: AutoLayout, AnsiClass, Class, Public, BeforeF
     RegisterNewUser(String, String, String, String, String, Int32): PrivateScope, Public, Static, HideBySig
     GetUserById(Int32): PrivateScope, Public, Static, HideBySig
     DeleteUser(Int32): PrivateScope, Public, Static, HideBySig
+    EditUserInfo(User): PrivateScope, Public, Static, HideBySig
 Class Views.AddUserPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
