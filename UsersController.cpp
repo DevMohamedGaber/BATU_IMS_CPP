@@ -50,4 +50,12 @@ namespace Controllers
 		}
 		return nullptr;
 	}  
+	User^ UsersController::GetUserById(int id)
+	{
+		return Models::Users::GetById(id);
+	}
+	void UsersController::DeleteUser(int id)
+	{
+		Users::Delete(id);
+	}
 }

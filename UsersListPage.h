@@ -113,6 +113,7 @@ namespace Views {
 			this->dataTable->Size = System::Drawing::Size(1002, 662);
 			this->dataTable->TabIndex = 10;
 			this->dataTable->Visible = false;
+			this->dataTable->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UsersListPage::dataTable_CellClick);
 			// 
 			// noDataLabel
 			// 
@@ -150,5 +151,6 @@ namespace Views {
 #pragma endregion
 		System::Void addNewBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void UsersListPage_Load(System::Object^ sender, System::EventArgs^ e);
+		System::Void dataTable_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 	};
 }

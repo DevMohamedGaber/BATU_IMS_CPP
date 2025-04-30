@@ -145,6 +145,7 @@
     <ClCompile Include="SuppliersController.cpp" />
     <ClCompile Include="SuppliersListPage.cpp" />
     <ClCompile Include="SupplierViewPage.cpp" />
+    <ClCompile Include="UserEditPage.cpp" />
     <ClCompile Include="UserRole.h" />
     <ClCompile Include="sqlite\sqlite3.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -154,6 +155,7 @@
     <ClCompile Include="Users.cpp" />
     <ClCompile Include="UsersController.cpp" />
     <ClCompile Include="UsersListPage.cpp" />
+    <ClCompile Include="UserViewPage.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="ViewCategoryPage.cpp" />
     <ClCompile Include="ViewItemPage.cpp" />
@@ -238,9 +240,15 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User.h" />
+    <ClInclude Include="UserEditPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Users.h" />
     <ClInclude Include="UsersController.h" />
     <ClInclude Include="UsersListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserViewPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Utilities.h" />
@@ -306,8 +314,14 @@
     <EmbeddedResource Include="SupplierViewPage.resx">
       <DependentUpon>SupplierViewPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserEditPage.resx">
+      <DependentUpon>UserEditPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersListPage.resx">
       <DependentUpon>UsersListPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserViewPage.resx">
+      <DependentUpon>UserViewPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCategoryPage.resx">
       <DependentUpon>ViewCategoryPage.h</DependentUpon>

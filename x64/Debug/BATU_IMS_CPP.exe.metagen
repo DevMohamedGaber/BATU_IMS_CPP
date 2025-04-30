@@ -16,7 +16,9 @@
   BATUIMSCPP.SupplierEditPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SuppliersListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SupplierViewPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.UserEditPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.UsersListPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.UserViewPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewItemPage.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -161,6 +163,8 @@ Class Controllers.UsersController: AutoLayout, AnsiClass, Class, Public, BeforeF
   Methods:
     GetAllUsers(): PrivateScope, Public, Static, HideBySig
     RegisterNewUser(String, String, String, String, String, Int32): PrivateScope, Public, Static, HideBySig
+    GetUserById(Int32): PrivateScope, Public, Static, HideBySig
+    DeleteUser(Int32): PrivateScope, Public, Static, HideBySig
 Class Views.AddUserPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -290,3 +294,10 @@ Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     Update(Supplier): PrivateScope, Public, Static, HideBySig
     Delete(Int32): PrivateScope, Public, Static, HideBySig
     Exists(String): PrivateScope, Public, Static, HideBySig
+Class Views.UserEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.UserViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

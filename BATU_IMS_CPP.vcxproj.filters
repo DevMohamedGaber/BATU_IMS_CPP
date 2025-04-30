@@ -262,6 +262,12 @@
     <ClCompile Include="AddUserPage.cpp">
       <Filter>Views\Users\Add</Filter>
     </ClCompile>
+    <ClCompile Include="UserViewPage.cpp">
+      <Filter>Views\Users\View</Filter>
+    </ClCompile>
+    <ClCompile Include="UserEditPage.cpp">
+      <Filter>Views\Users\Edit</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -389,6 +395,12 @@
     </ClInclude>
     <ClInclude Include="RoleItem.h">
       <Filter>Core\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UserViewPage.h">
+      <Filter>Views\Users\View</Filter>
+    </ClInclude>
+    <ClInclude Include="UserEditPage.h">
+      <Filter>Views\Users\Edit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

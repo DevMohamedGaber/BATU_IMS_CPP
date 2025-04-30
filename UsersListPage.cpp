@@ -2,6 +2,8 @@
 #include "UsersListPage.h"
 #include "DashboardForm.h"
 #include "AddUserPage.h"
+#include "UserViewPage.h"
+
 using namespace Controllers;
 
 namespace Views
@@ -37,5 +39,11 @@ namespace Views
 
 		dataTable->DataSource = table;
 		dataTable->Visible = true;
+	}
+	Void UsersListPage::dataTable_CellClick(Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex >= 0) {
+			int id = Convert::ToInt32(dataTable->Rows[e->RowIndex]->Cells[0]->Value);
+			DashboardForm::SwitchView(gcnew UserViewPage(id));
+		}
 	}
 }
