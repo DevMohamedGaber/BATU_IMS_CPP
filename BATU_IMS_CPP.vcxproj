@@ -119,6 +119,7 @@
     <ClCompile Include="AddCustomerPage.cpp" />
     <ClCompile Include="AddItemPage.cpp" />
     <ClCompile Include="AddSupplierPage.cpp" />
+    <ClCompile Include="AddUserPage.cpp" />
     <ClCompile Include="Categories.cpp" />
     <ClCompile Include="CategoriesController.cpp" />
     <ClCompile Include="CategoriesListPage.cpp" />
@@ -136,7 +137,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InventoryController.cpp" />
     <ClCompile Include="ItemListPage.cpp" />
-    <ClCompile Include="LoginController.cpp" />
+    <ClCompile Include="AuthenticationController.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PasswordHasher.cpp" />
     <ClCompile Include="SupplierEditPage.cpp" />
@@ -151,6 +152,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Users.cpp" />
+    <ClCompile Include="UsersController.cpp" />
+    <ClCompile Include="UsersListPage.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="ViewCategoryPage.cpp" />
     <ClCompile Include="ViewItemPage.cpp" />
@@ -173,6 +176,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="AddSupplierPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AddUserPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Categories.h" />
@@ -212,11 +218,12 @@
     <ClInclude Include="ItemListPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
-    <ClInclude Include="LoginController.h" />
+    <ClInclude Include="AuthenticationController.h" />
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PasswordHasher.h" />
+    <ClInclude Include="RoleItem.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
     <ClInclude Include="Supplier.h" />
     <ClInclude Include="SupplierEditPage.h">
@@ -232,6 +239,10 @@
     </ClInclude>
     <ClInclude Include="User.h" />
     <ClInclude Include="Users.h" />
+    <ClInclude Include="UsersController.h" />
+    <ClInclude Include="UsersListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="ViewCategoryPage.h">
       <FileType>CppControl</FileType>
@@ -252,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSupplierPage.resx">
       <DependentUpon>AddSupplierPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUserPage.resx">
+      <DependentUpon>AddUserPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriesListPage.resx">
       <DependentUpon>CategoriesListPage.h</DependentUpon>
@@ -291,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierViewPage.resx">
       <DependentUpon>SupplierViewPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersListPage.resx">
+      <DependentUpon>UsersListPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCategoryPage.resx">
       <DependentUpon>ViewCategoryPage.h</DependentUpon>

@@ -1,9 +1,9 @@
-﻿  SupplierEditPage.cpp
+﻿  UsersController.cpp
   AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-Users.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
+Users.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run
 suppliers.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run
 Inventory.obj : warning LNK4248: unresolved typeref token (01000014) for 'sqlite3'; image may not run
-EntryPoint.obj : warning LNK4248: unresolved typeref token (0100001C) for 'sqlite3'; image may not run
+EntryPoint.obj : warning LNK4248: unresolved typeref token (01000018) for 'sqlite3'; image may not run
 DatabaseConnection.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 Customers.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run
 Categories.obj : warning LNK4248: unresolved typeref token (01000010) for 'sqlite3'; image may not run

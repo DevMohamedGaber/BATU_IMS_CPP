@@ -2,6 +2,7 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddCategoryPage.cpp;C:\Users\Moh
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddCustomerPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddCustomerPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddItemPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddItemPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddSupplierPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddSupplierPage.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AddUserPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AddUserPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Categories.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Categories.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CategoriesController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\CategoriesController.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\CategoriesListPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\CategoriesListPage.obj
@@ -19,7 +20,7 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\HomePage.cpp;C:\Users\MohamedGab
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Inventory.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Inventory.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\InventoryController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\InventoryController.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\ItemListPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\ItemListPage.obj
-C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\LoginController.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\AuthenticationController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\AuthenticationController.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\LoginForm.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\LoginForm.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\PasswordHasher.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\PasswordHasher.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\SupplierEditPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\SupplierEditPage.obj
@@ -30,6 +31,8 @@ C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\SupplierViewPage.cpp;C:\Users\Mo
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\UserRole.h;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\UserRole.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\sqlite\sqlite3.c;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\sqlite3.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Users.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Users.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\UsersController.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\UsersController.obj
+C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\UsersListPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\UsersListPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\Utilities.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\Utilities.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\ViewCategoryPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\ViewCategoryPage.obj
 C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\ViewItemPage.cpp;C:\Users\MohamedGaber\source\repos\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\ViewItemPage.obj

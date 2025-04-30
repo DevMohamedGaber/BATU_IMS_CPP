@@ -1,12 +1,33 @@
 #include "CategoriesListPage.h"
-#include "DashboardForm.h"
-#include "ItemListPage.h"
-#include "HomePage.h"
 #include "CustomersListPage.h"
 #include "SuppliersListPage.h"
+#include "DashboardForm.h"
+#include "UsersListPage.h"
+#include "ItemListPage.h"
+#include "HomePage.h"
 
 namespace Views
 {
+	// Event handlers for buttons
+	Void DashboardForm::homeBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew HomePage());
+	}
+	Void DashboardForm::inventoryBtn_Click(Object^ sender, EventArgs^ e)
+	{
+		DashboardForm::SwitchView(gcnew ItemListPage());
+	}
+	Void DashboardForm::categoriesBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew CategoriesListPage());
+	}
+	Void DashboardForm::customersBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew CustomersListPage());
+	}
+	Void DashboardForm::suppliersBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew SuppliersListPage());
+	}
+	Void DashboardForm::usersBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew UsersListPage());
+	}
 	void DashboardForm::Start() {
 		if (Instance != nullptr) {
 			return;
@@ -15,7 +36,6 @@ namespace Views
 		SwitchView(gcnew HomePage());
 		Instance->ShowDialog();
 	}
-
 	void DashboardForm::SwitchView(UserControl^ newView)
 	{
 		// Clear previous view
@@ -37,22 +57,5 @@ namespace Views
 
 		// Optional: Update window title
 		Instance->Text = "BATU - Inventory Management System - " + newView->Name;
-	}
-	// Event handlers for buttons
-	Void DashboardForm::homeBtn_Click(Object^ sender, EventArgs^ e) {
-		DashboardForm::SwitchView(gcnew HomePage());
-	}
-	Void DashboardForm::inventoryBtn_Click(Object^ sender, EventArgs^ e)
-	{
-		DashboardForm::SwitchView(gcnew ItemListPage());
-	}
-	Void DashboardForm::categoriesBtn_Click(Object^ sender, EventArgs^ e) {
-		DashboardForm::SwitchView(gcnew CategoriesListPage());
-	}
-	Void DashboardForm::customersBtn_Click(Object^ sender, EventArgs^ e) {
-		DashboardForm::SwitchView(gcnew CustomersListPage());
-	}
-	Void DashboardForm::suppliersBtn_Click(Object^ sender, EventArgs^ e) {
-		DashboardForm::SwitchView(gcnew SuppliersListPage());
 	}
 }

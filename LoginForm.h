@@ -1,15 +1,10 @@
 #pragma once
-#include "LoginController.h"
-#include "DashboardForm.h"
-#include "Utilities.h"
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
-using namespace Controllers;
-using namespace Core;
 
 namespace Views {
 	/// <summary>
@@ -37,8 +32,6 @@ namespace Views {
 				delete components;
 			}
 		}
-
-	protected:
 	private: 
 		System::Windows::Forms::TextBox^ usernameInput;
 		System::Windows::Forms::TextBox^ passwordInput;
@@ -173,7 +166,7 @@ namespace Views {
 			this->usernameInput->MaximumSize = System::Drawing::Size(438, 50);
 			this->usernameInput->MinimumSize = System::Drawing::Size(438, 50);
 			this->usernameInput->Name = L"usernameInput";
-			this->usernameInput->Size = System::Drawing::Size(438, 50);
+			this->usernameInput->Size = System::Drawing::Size(438, 27);
 			this->usernameInput->TabIndex = 2;
 			this->usernameInput->Text = L"admin";
 			this->usernameInput->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -189,9 +182,8 @@ namespace Views {
 			this->errorBox->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->errorBox->MaximumSize = System::Drawing::Size(688, 0);
 			this->errorBox->Name = L"errorBox";
-			this->errorBox->Size = System::Drawing::Size(180, 20);
+			this->errorBox->Size = System::Drawing::Size(0, 20);
 			this->errorBox->TabIndex = 5;
-			this->errorBox->Text = L"Error Message Here";
 			// 
 			// passwordInput
 			// 
@@ -206,7 +198,7 @@ namespace Views {
 			this->passwordInput->MinimumSize = System::Drawing::Size(438, 50);
 			this->passwordInput->Name = L"passwordInput";
 			this->passwordInput->PasswordChar = '*';
-			this->passwordInput->Size = System::Drawing::Size(438, 50);
+			this->passwordInput->Size = System::Drawing::Size(438, 27);
 			this->passwordInput->TabIndex = 10;
 			this->passwordInput->Text = L"admin";
 			this->passwordInput->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -235,35 +227,12 @@ namespace Views {
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BATU - Inventory Management System";
-			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ username = usernameInput->Text;
-		String^ password = passwordInput->Text;
-
-		String^ result = LoginController::Login(username, password);
-
-		if (result != nullptr)
-		{
-			errorBox->ForeColor = System::Drawing::Color::IndianRed;
-			errorBox->Text = result;
-		}
-
-		// close this form and show DashboardForm
-		this->Hide();
-		DashboardForm::Start();
-		this->Close();
-	}
-	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		errorBox->Text = "";
-
-	}
-	private: System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		Application::Exit();
-	}
+		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

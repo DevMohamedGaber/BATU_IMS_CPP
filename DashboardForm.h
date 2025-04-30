@@ -55,20 +55,20 @@ namespace Views
 		void InitializeComponent(void)
 		{
 			System::Windows::Forms::Panel^ sideNavBarPanel;
+			System::Windows::Forms::Button^ suppliersBtn;
 			System::Windows::Forms::Button^ customersBtn;
 			System::Windows::Forms::Button^ inventoryBtn;
 			System::Windows::Forms::Button^ categoriesBtn;
 			System::Windows::Forms::Button^ usersBtn;
 			System::Windows::Forms::Button^ homeBtn;
-			System::Windows::Forms::Button^ suppliersBtn;
 			this->_panelContainer = (gcnew System::Windows::Forms::Panel());
 			sideNavBarPanel = (gcnew System::Windows::Forms::Panel());
+			suppliersBtn = (gcnew System::Windows::Forms::Button());
 			customersBtn = (gcnew System::Windows::Forms::Button());
 			inventoryBtn = (gcnew System::Windows::Forms::Button());
 			categoriesBtn = (gcnew System::Windows::Forms::Button());
 			usersBtn = (gcnew System::Windows::Forms::Button());
 			homeBtn = (gcnew System::Windows::Forms::Button());
-			suppliersBtn = (gcnew System::Windows::Forms::Button());
 			sideNavBarPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -90,6 +90,21 @@ namespace Views
 			sideNavBarPanel->Name = L"sideNavBarPanel";
 			sideNavBarPanel->Size = System::Drawing::Size(400, 829);
 			sideNavBarPanel->TabIndex = 0;
+			// 
+			// suppliersBtn
+			// 
+			suppliersBtn->BackColor = System::Drawing::Color::DodgerBlue;
+			suppliersBtn->FlatAppearance->BorderSize = 0;
+			suppliersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			suppliersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			suppliersBtn->Location = System::Drawing::Point(-1, 384);
+			suppliersBtn->Name = L"suppliersBtn";
+			suppliersBtn->Size = System::Drawing::Size(402, 60);
+			suppliersBtn->TabIndex = 5;
+			suppliersBtn->Text = L"Suppliers";
+			suppliersBtn->UseVisualStyleBackColor = false;
+			suppliersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::suppliersBtn_Click);
 			// 
 			// customersBtn
 			// 
@@ -149,6 +164,7 @@ namespace Views
 			usersBtn->TabIndex = 1;
 			usersBtn->Text = L"Users";
 			usersBtn->UseVisualStyleBackColor = false;
+			usersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::usersBtn_Click);
 			// 
 			// homeBtn
 			// 
@@ -173,21 +189,6 @@ namespace Views
 			this->_panelContainer->Size = System::Drawing::Size(1010, 829);
 			this->_panelContainer->TabIndex = 1;
 			// 
-			// suppliersBtn
-			// 
-			suppliersBtn->BackColor = System::Drawing::Color::DodgerBlue;
-			suppliersBtn->FlatAppearance->BorderSize = 0;
-			suppliersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			suppliersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			suppliersBtn->Location = System::Drawing::Point(-1, 384);
-			suppliersBtn->Name = L"suppliersBtn";
-			suppliersBtn->Size = System::Drawing::Size(402, 60);
-			suppliersBtn->TabIndex = 5;
-			suppliersBtn->Text = L"Suppliers";
-			suppliersBtn->UseVisualStyleBackColor = false;
-			suppliersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::suppliersBtn_Click);
-			// 
 			// DashboardForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -205,15 +206,16 @@ namespace Views
 
 		}
 
-	public:
-		static void Start();
-		static void SwitchView(UserControl^ newView);
 #pragma endregion
-	private: 
 		System::Void homeBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void inventoryBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void categoriesBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void customersBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void suppliersBtn_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void usersBtn_Click(System::Object^ sender, System::EventArgs^ e);
+
+	public:
+		static void Start();
+		static void SwitchView(UserControl^ newView);
 	};
 }

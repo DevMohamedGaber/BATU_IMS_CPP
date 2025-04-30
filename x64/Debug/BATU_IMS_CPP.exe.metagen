@@ -2,6 +2,7 @@
   BATUIMSCPP.AddCustomerPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddItemPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddSupplierPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.AddUserPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CustomerEditPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CustomersListPage.resources - Embedded, ContainedInManifestFile, 
@@ -15,6 +16,7 @@
   BATUIMSCPP.SupplierEditPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SuppliersListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SupplierViewPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.UsersListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewItemPage.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -132,6 +134,48 @@ Class Controllers.SuppliersController: AutoLayout, AnsiClass, Class, Public, Sea
     GetSupplierById(Int32): PrivateScope, Public, Static, HideBySig
     DeleteSupplier(Int32): PrivateScope, Public, Static, HideBySig
     EditSupplier(Supplier): PrivateScope, Public, Static, HideBySig
+Class Models.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 Id IsLong : Public
+    System.String FirstName : Public
+    System.String LastName : Public
+    System.String Username : Public
+    System.String Password : Public
+    System.String Email : Public
+    System.Enum Role UserRole IsBoxed : Public
+  Methods:
+    Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
+Class Models.Users: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetAll(): PrivateScope, Public, Static, HideBySig
+    GetByUsername(String): PrivateScope, Public, Static, HideBySig
+    GetById(Int32): PrivateScope, Public, Static, HideBySig
+    Insert(String, String, String, String, String, Int32): PrivateScope, Public, Static, HideBySig
+    Update(User): PrivateScope, Public, Static, HideBySig
+    Delete(Int32): PrivateScope, Public, Static, HideBySig
+    Exists(String): PrivateScope, Public, Static, HideBySig
+Class Controllers.UsersController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetAllUsers(): PrivateScope, Public, Static, HideBySig
+    RegisterNewUser(String, String, String, String, String, Int32): PrivateScope, Public, Static, HideBySig
+Class Views.AddUserPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Core.RoleItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 Id : Public
+    System.String Name : Public
+Struct Core.UserRole: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Core.UserRole Admin = 0 : Public, Static, Literal, HasDefault
+    Core.UserRole Staff = 1 : Public, Static, Literal, HasDefault
+    Core.UserRole Retailer = 2 : Public, Static, Literal, HasDefault
 Class Models.DatabaseConnection: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
   Interfaces:
     System.IDisposable
@@ -191,13 +235,16 @@ Class Models.Customers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
 Class Views.CustomersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.SuppliersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.UsersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.ItemListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.UserControl
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Views.SuppliersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Views.EditCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
@@ -210,10 +257,6 @@ Class Views.ViewItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Item): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Controllers.LoginController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Methods:
-    Login(String, String): PrivateScope, Public, Static, HideBySig
 Class Views.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -225,31 +268,12 @@ Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     GetAllItems(): PrivateScope, Public, Static, HideBySig
     UpdateItem(Item): PrivateScope, Public, Static, HideBySig
     DeleteItem(Int32): PrivateScope, Public, Static, HideBySig
-Class Models.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Int32 Id IsLong : Public
-    System.String FirstName : Public
-    System.String LastName : Public
-    System.String Username : Public
-    System.String Password : Public
-    System.String Email : Public
-    System.Enum Role UserRole IsBoxed : Public
-  Methods:
-    Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
-Class Models.Users: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+Class Controllers.AuthenticationController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Models.User CurrentUser : Public, Static
   Methods:
-    GetUserByUsername(String): PrivateScope, Public, Static, HideBySig
-Struct Core.UserRole: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    Core.UserRole Admin = 0 : Public, Static, Literal, HasDefault
-    Core.UserRole Staff = 1 : Public, Static, Literal, HasDefault
-    Core.UserRole Retailer = 2 : Public, Static, Literal, HasDefault
+    Login(String, String): PrivateScope, Public, Static, HideBySig
 Class Views.SupplierEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

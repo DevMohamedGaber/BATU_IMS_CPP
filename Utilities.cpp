@@ -1,9 +1,13 @@
+//#include "Utilities.h"
 #include <string>
 #include <msclr/marshal_cppstd.h>
+#include <cctype>
 using namespace System;
 using namespace std;
+
 namespace Core
 {
+	
 	public ref class Utilities sealed
 	{
 	public:
@@ -12,7 +16,7 @@ namespace Core
 			return msclr::interop::marshal_as<string>(managedString);
 		}
 
-		static bool IsNullOrWhiteSpace(const string& str) {
+		static bool Utilities::IsNullOrWhiteSpace(const string& str) {
 			if (str.empty()) return true;
 
 			for (char c : str) {
