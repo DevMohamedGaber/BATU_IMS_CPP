@@ -119,6 +119,7 @@
     <ClCompile Include="AddCustomerPage.cpp" />
     <ClCompile Include="AddImportPage.cpp" />
     <ClCompile Include="AddItemPage.cpp" />
+    <ClCompile Include="AddOrderItem.cpp" />
     <ClCompile Include="AddSupplierPage.cpp" />
     <ClCompile Include="AddUserPage.cpp" />
     <ClCompile Include="Categories.cpp" />
@@ -182,6 +183,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="AddItemPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AddOrderItem.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="AddSupplierPage.h">
@@ -286,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddItemPage.resx">
       <DependentUpon>AddItemPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrderItem.resx">
+      <DependentUpon>AddOrderItem.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddSupplierPage.resx">
       <DependentUpon>AddSupplierPage.h</DependentUpon>

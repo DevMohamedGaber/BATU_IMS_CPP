@@ -28,6 +28,7 @@ D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddCa
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddCustomerPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddImportPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddItemPage.resources
+D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddOrderItem.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddSupplierPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.AddUserPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.CategoriesListPage.resources

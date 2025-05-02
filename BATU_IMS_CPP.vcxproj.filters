@@ -161,6 +161,12 @@
     <Filter Include="Controllers\Imports">
       <UniqueIdentifier>{d7c97145-d4b2-4e7c-8e41-eba42a70c829}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\_Common">
+      <UniqueIdentifier>{f043c821-dcf8-4a80-88ae-c64937b9f0e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\_Common\AddOrderItem">
+      <UniqueIdentifier>{1c00b8d7-0efc-43f8-836b-f1a41ae6b615}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -294,6 +300,9 @@
     </ClCompile>
     <ClCompile Include="AddImportPage.cpp">
       <Filter>Views\Imports\Add</Filter>
+    </ClCompile>
+    <ClCompile Include="AddOrderItem.cpp">
+      <Filter>Views\_Common\AddOrderItem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,6 +458,9 @@
     </ClInclude>
     <ClInclude Include="AddImportPage.h">
       <Filter>Views\Imports\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="AddOrderItem.h">
+      <Filter>Views\_Common\AddOrderItem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

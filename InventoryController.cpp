@@ -50,4 +50,7 @@ namespace Controllers
 		}
 		return nullptr;
 	}
+	List<Item^>^ InventoryController::GetItemsByName(String^ name) {
+		return Inventory::GetLikeName(name);
+	}
 }

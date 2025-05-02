@@ -1,4 +1,5 @@
 #pragma once
+#include "AddOrderItem.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -6,7 +7,7 @@ using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
-
+using namespace System::Collections::Generic;
 
 namespace Views {
 
@@ -38,20 +39,11 @@ namespace Views {
 
 	private: 
 		System::Windows::Forms::ComboBox^ supplierInput;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-
-
-	private: System::Windows::Forms::Label^ errorMsg;
-
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel2;
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel3;
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel4;
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel5;
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel6;
-
-
-
+		System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+		System::Windows::Forms::Label^ errorMsg;
+		System::Windows::Forms::FlowLayoutPanel^ itemsPanel;
+		List<AddOrderItem^>^ itemsList;
+	private: System::Windows::Forms::Label^ noItemsMsg;
 
 		/// <summary>
 		/// Required designer variable.
@@ -75,12 +67,8 @@ namespace Views {
 			this->supplierInput = (gcnew System::Windows::Forms::ComboBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->errorMsg = (gcnew System::Windows::Forms::Label());
-			this->flowLayoutPanel2 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->flowLayoutPanel3 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->flowLayoutPanel4 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->flowLayoutPanel5 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->flowLayoutPanel6 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->itemsPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->noItemsMsg = (gcnew System::Windows::Forms::Label());
 			label1 = (gcnew System::Windows::Forms::Label());
 			label2 = (gcnew System::Windows::Forms::Label());
 			label3 = (gcnew System::Windows::Forms::Label());
@@ -89,7 +77,7 @@ namespace Views {
 			label4 = (gcnew System::Windows::Forms::Label());
 			addBtn = (gcnew System::Windows::Forms::Button());
 			panel1->SuspendLayout();
-			this->flowLayoutPanel2->SuspendLayout();
+			this->itemsPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -153,6 +141,7 @@ namespace Views {
 			addItemBtn->TabIndex = 0;
 			addItemBtn->Text = L"+ Add Item";
 			addItemBtn->UseVisualStyleBackColor = false;
+			addItemBtn->Click += gcnew System::EventHandler(this, &AddImportPage::addItemBtn_Click);
 			// 
 			// label4
 			// 
@@ -212,61 +201,36 @@ namespace Views {
 			this->errorMsg->TabIndex = 7;
 			this->errorMsg->Text = L"Error Message Here";
 			// 
-			// flowLayoutPanel2
+			// itemsPanel
 			// 
-			this->flowLayoutPanel2->AutoScroll = true;
-			this->flowLayoutPanel2->Controls->Add(this->flowLayoutPanel1);
-			this->flowLayoutPanel2->Controls->Add(this->flowLayoutPanel3);
-			this->flowLayoutPanel2->Controls->Add(this->flowLayoutPanel4);
-			this->flowLayoutPanel2->Controls->Add(this->flowLayoutPanel5);
-			this->flowLayoutPanel2->Controls->Add(this->flowLayoutPanel6);
-			this->flowLayoutPanel2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->flowLayoutPanel2->Location = System::Drawing::Point(30, 320);
-			this->flowLayoutPanel2->Name = L"flowLayoutPanel2";
-			this->flowLayoutPanel2->Padding = System::Windows::Forms::Padding(30, 10, 30, 10);
-			this->flowLayoutPanel2->Size = System::Drawing::Size(1068, 409);
-			this->flowLayoutPanel2->TabIndex = 9;
+			this->itemsPanel->AutoScroll = true;
+			this->itemsPanel->Controls->Add(this->noItemsMsg);
+			this->itemsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->itemsPanel->Location = System::Drawing::Point(30, 320);
+			this->itemsPanel->Name = L"itemsPanel";
+			this->itemsPanel->Padding = System::Windows::Forms::Padding(30, 10, 30, 10);
+			this->itemsPanel->Size = System::Drawing::Size(1068, 409);
+			this->itemsPanel->TabIndex = 9;
 			// 
-			// flowLayoutPanel1
+			// noItemsMsg
 			// 
-			this->flowLayoutPanel1->Location = System::Drawing::Point(33, 13);
-			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(997, 100);
-			this->flowLayoutPanel1->TabIndex = 0;
-			// 
-			// flowLayoutPanel3
-			// 
-			this->flowLayoutPanel3->Location = System::Drawing::Point(33, 119);
-			this->flowLayoutPanel3->Name = L"flowLayoutPanel3";
-			this->flowLayoutPanel3->Size = System::Drawing::Size(997, 100);
-			this->flowLayoutPanel3->TabIndex = 1;
-			// 
-			// flowLayoutPanel4
-			// 
-			this->flowLayoutPanel4->Location = System::Drawing::Point(33, 225);
-			this->flowLayoutPanel4->Name = L"flowLayoutPanel4";
-			this->flowLayoutPanel4->Size = System::Drawing::Size(997, 100);
-			this->flowLayoutPanel4->TabIndex = 1;
-			// 
-			// flowLayoutPanel5
-			// 
-			this->flowLayoutPanel5->Location = System::Drawing::Point(33, 331);
-			this->flowLayoutPanel5->Name = L"flowLayoutPanel5";
-			this->flowLayoutPanel5->Size = System::Drawing::Size(997, 100);
-			this->flowLayoutPanel5->TabIndex = 2;
-			// 
-			// flowLayoutPanel6
-			// 
-			this->flowLayoutPanel6->Location = System::Drawing::Point(33, 437);
-			this->flowLayoutPanel6->Name = L"flowLayoutPanel6";
-			this->flowLayoutPanel6->Size = System::Drawing::Size(997, 100);
-			this->flowLayoutPanel6->TabIndex = 3;
+			this->noItemsMsg->AutoSize = true;
+			this->noItemsMsg->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->noItemsMsg->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->noItemsMsg->ForeColor = System::Drawing::SystemColors::GrayText;
+			this->noItemsMsg->Location = System::Drawing::Point(33, 10);
+			this->noItemsMsg->Name = L"noItemsMsg";
+			this->noItemsMsg->Size = System::Drawing::Size(356, 29);
+			this->noItemsMsg->TabIndex = 0;
+			this->noItemsMsg->Text = L"No Items added to this Import";
+			this->noItemsMsg->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// AddImportPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->flowLayoutPanel2);
+			this->Controls->Add(this->itemsPanel);
 			this->Controls->Add(this->errorMsg);
 			this->Controls->Add(addBtn);
 			this->Controls->Add(panel1);
@@ -276,7 +240,8 @@ namespace Views {
 			this->Load += gcnew System::EventHandler(this, &AddImportPage::AddImportPage_Load);
 			panel1->ResumeLayout(false);
 			panel1->PerformLayout();
-			this->flowLayoutPanel2->ResumeLayout(false);
+			this->itemsPanel->ResumeLayout(false);
+			this->itemsPanel->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -284,5 +249,7 @@ namespace Views {
 #pragma endregion
 		System::Void AddImportPage_Load(System::Object^ sender, System::EventArgs^ e);
 		Void supplierInput_KeyUp(Object^ sender, KeyEventArgs^ e);
+		System::Void addItemBtn_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void deleteItemBtn_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

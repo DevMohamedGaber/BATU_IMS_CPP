@@ -49,4 +49,18 @@ namespace Models
 		string sql = "DELETE FROM Inventory WHERE Id = " + std::to_string(id);
 		DatabaseConnection::Instance->Execute(sql);
 	}
+	List<Item^>^ Inventory::GetLikeName(String^ name)
+	{
+		string sql = "SELECT Id, Name, Stock FROM Inventory WHERE Name LIKE '%" + Utilities::GetNativeString(name) + "%'";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		auto items = gcnew List<Item^>();
+		for (const auto& row : rows) {
+			Item^ item = gcnew Item();
+			item->Id = row[0].empty() ? 0 : stol(row[0]);
+			item->Name = gcnew System::String(row[1].c_str());
+			item->Stock = stoi(row[2]);
+			items->Add(item);
+		}
+		return items;
+	}
 }

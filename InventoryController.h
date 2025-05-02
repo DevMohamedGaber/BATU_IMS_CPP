@@ -14,5 +14,6 @@ namespace Controllers
 		static String^ AddNewItem(String^ name, String^ price, int categoryId);
 		static void DeleteItem(int id);
 		static String^ EditItem(Item^ item);
+		static List<Item^>^ GetItemsByName(String^ name);
 	};
 }

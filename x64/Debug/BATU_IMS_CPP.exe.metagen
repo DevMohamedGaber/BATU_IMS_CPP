@@ -2,6 +2,7 @@
   BATUIMSCPP.AddCustomerPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddImportPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddItemPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.AddOrderItem.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddSupplierPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.AddUserPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.CategoriesListPage.resources - Embedded, ContainedInManifestFile, 
@@ -88,15 +89,22 @@ Class Controllers.CustomersController: AutoLayout, AnsiClass, Class, Public, Sea
     GetCustomerById(Int32): PrivateScope, Public, Static, HideBySig
     DeleteCustomer(Int32): PrivateScope, Public, Static, HideBySig
     EditCustomer(Customer): PrivateScope, Public, Static, HideBySig
-Class Views.AddImportPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.UserControl
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Core.OrderItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Int32 Id : Public
     System.String Name : Public
     Int32 Count : Public
+Class Views.AddOrderItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Button deleteBtn : Public
+  Methods:
+    GetItem(): PrivateScope, Public, HideBySig
+Class Views.AddImportPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Supplier: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -188,6 +196,7 @@ Class Controllers.InventoryController: AutoLayout, AnsiClass, Class, Public, Sea
     AddNewItem(String, String, Int32): PrivateScope, Public, Static, HideBySig
     DeleteItem(Int32): PrivateScope, Public, Static, HideBySig
     EditItem(Item): PrivateScope, Public, Static, HideBySig
+    GetItemsByName(String): PrivateScope, Public, Static, HideBySig
 Class Views.AddItemPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -327,6 +336,7 @@ Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     GetAllItems(): PrivateScope, Public, Static, HideBySig
     UpdateItem(Item): PrivateScope, Public, Static, HideBySig
     DeleteItem(Int32): PrivateScope, Public, Static, HideBySig
+    GetLikeName(String): PrivateScope, Public, Static, HideBySig
 Class Views.SupplierEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

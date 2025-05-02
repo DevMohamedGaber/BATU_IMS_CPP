@@ -1,6 +1,7 @@
 #include "AddImportPage.h"
 #include "ImportsController.h"
 #include "SuppliersController.h"
+#include "AddOrderItem.h"
 
 using namespace Controllers;
 
@@ -11,6 +12,7 @@ namespace Views
 {
 	Void AddImportPage::AddImportPage_Load(Object^ sender, EventArgs^ e) {
 		supplierInput->KeyUp += gcnew KeyEventHandler(this, &AddImportPage::supplierInput_KeyUp);
+		itemsList = gcnew List<AddOrderItem^>();
 	}
     Void AddImportPage::supplierInput_KeyUp(Object^ sender, KeyEventArgs^ e) {
         // Skip navigation keys
@@ -51,6 +53,25 @@ namespace Views
         // Restore text and cursor position only if there are results
         supplierInput->Text = currentText;
         supplierInput->SelectionStart = cursorPosition;
-
     }
+	Void AddImportPage::addItemBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Create a new AddOrderItem instance
+		auto item = gcnew AddOrderItem();
+		item->Dock = DockStyle::Top;
+		item->Parent = itemsPanel;
+		item->deleteBtn->Click += gcnew EventHandler(this, &AddImportPage::deleteItemBtn_Click);
+		itemsPanel->Controls->Add(item);
+		itemsList->Add(item);
+		noItemsMsg->Visible = false;
+	}
+	Void AddImportPage::deleteItemBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+        auto item = dynamic_cast<AddOrderItem^>(((Control^)sender)->Parent);  
+        if (item == nullptr) {  
+           throw gcnew InvalidCastException("Failed to cast to AddOrderItem.");  
+        }  
+        itemsPanel->Controls->Remove(item);  
+        itemsList->Remove(item);  
+        delete item;  
+        noItemsMsg->Visible = itemsList->Count == 0;
+	}
 }
