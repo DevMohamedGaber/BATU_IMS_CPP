@@ -40,6 +40,7 @@ D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.EditC
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.EditItemPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.HomePage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.ImportsListPage.resources
+D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.ImportViewPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.ItemListPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.LoginForm.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.SupplierEditPage.resources

@@ -1,4 +1,59 @@
-﻿  Inventory.cpp
+﻿  AddCategoryPage.cpp
+  AddCustomerPage.cpp
+  AddImportPage.cpp
+  AddItemPage.cpp
+  AddOrderItem.cpp
+  AddSupplierPage.cpp
+  AddUserPage.cpp
+  Categories.cpp
+  CategoriesController.cpp
+  CategoriesListPage.cpp
+  CustomerEditPage.cpp
+  Customers.cpp
+  CustomersController.cpp
+D:\College\3rd\Projects\cpp\BATU_IMS_CPP\CustomersController.cpp(26,64): warning C4129: 's': unrecognized character escape sequence
+D:\College\3rd\Projects\cpp\BATU_IMS_CPP\CustomersController.cpp(26,64): warning C4129: '.': unrecognized character escape sequence
+D:\College\3rd\Projects\cpp\BATU_IMS_CPP\CustomersController.cpp(67,74): warning C4129: 's': unrecognized character escape sequence
+D:\College\3rd\Projects\cpp\BATU_IMS_CPP\CustomersController.cpp(67,74): warning C4129: '.': unrecognized character escape sequence
+  CustomersListPage.cpp
+  CustomerViewPage.cpp
+  DashboardForm.cpp
+  DatabaseConnection.cpp
+  EditCategoryPage.cpp
+  EditItemPage.cpp
+  EntryPoint.cpp
+  Generating Code...
+  Compiling...
+  HomePage.cpp
+  Imports.cpp
+  ImportsController.cpp
+  ImportsListPage.cpp
+  ImportViewPage.cpp
+  Inventory.cpp
+  InventoryController.cpp
+  ItemListPage.cpp
+  AuthenticationController.cpp
+  LoginForm.cpp
+  PasswordHasher.cpp
+  SupplierEditPage.cpp
+  suppliers.cpp
+  SuppliersController.cpp
+  SuppliersListPage.cpp
+  SupplierViewPage.cpp
+  UserEditPage.cpp
+  UserRole.h
+  Users.cpp
+  UsersController.cpp
+  Generating Code...
+  Compiling...
+  UsersListPage.cpp
+  UserViewPage.cpp
+  Utilities.cpp
+  ViewCategoryPage.cpp
+  ViewItemPage.cpp
+  .NETFramework,Version=v4.8.AssemblyAttributes.cpp
+  Generating Code...
+  sqlite3.c
   AddCategoryPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
 Users.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run
 suppliers.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run

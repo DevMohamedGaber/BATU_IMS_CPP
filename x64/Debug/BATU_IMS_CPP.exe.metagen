@@ -14,6 +14,7 @@
   BATUIMSCPP.EditItemPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.HomePage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ImportsListPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.ImportViewPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ItemListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.LoginForm.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.SupplierEditPage.resources - Embedded, ContainedInManifestFile, 
@@ -330,6 +331,9 @@ Class Controllers.AuthenticationController: AutoLayout, AnsiClass, Class, Public
     Models.User CurrentUser : Public, Static
   Methods:
     Login(String, String): PrivateScope, Public, Static, HideBySig
+Class BATUIMSCPP.ImportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:

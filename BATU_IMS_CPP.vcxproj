@@ -139,6 +139,7 @@
     <ClCompile Include="Imports.cpp" />
     <ClCompile Include="ImportsController.cpp" />
     <ClCompile Include="ImportsListPage.cpp" />
+    <ClCompile Include="ImportViewPage.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InventoryController.cpp" />
     <ClCompile Include="ItemListPage.cpp" />
@@ -229,6 +230,9 @@
     <ClInclude Include="Imports.h" />
     <ClInclude Include="ImportsController.h" />
     <ClInclude Include="ImportsListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ImportViewPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Inventory.h" />
@@ -326,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImportsListPage.resx">
       <DependentUpon>ImportsListPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportViewPage.resx">
+      <DependentUpon>ImportViewPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemListPage.resx">
       <DependentUpon>ItemListPage.h</DependentUpon>

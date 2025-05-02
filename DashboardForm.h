@@ -18,6 +18,7 @@ namespace Views
 
 	private: System::Windows::Forms::Panel^ _panelContainer;
 
+
 		   static DashboardForm^ Instance;
 
 	public:
@@ -54,45 +55,42 @@ namespace Views
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::Panel^ sideNavBarPanel;
+			System::Windows::Forms::Button^ importsBtn;
 			System::Windows::Forms::Button^ suppliersBtn;
 			System::Windows::Forms::Button^ customersBtn;
 			System::Windows::Forms::Button^ inventoryBtn;
 			System::Windows::Forms::Button^ categoriesBtn;
 			System::Windows::Forms::Button^ usersBtn;
 			System::Windows::Forms::Button^ homeBtn;
-			System::Windows::Forms::Button^ importsBtn;
+			System::Windows::Forms::FlowLayoutPanel^ sideMenuPanel;
 			this->_panelContainer = (gcnew System::Windows::Forms::Panel());
-			sideNavBarPanel = (gcnew System::Windows::Forms::Panel());
+			importsBtn = (gcnew System::Windows::Forms::Button());
 			suppliersBtn = (gcnew System::Windows::Forms::Button());
 			customersBtn = (gcnew System::Windows::Forms::Button());
 			inventoryBtn = (gcnew System::Windows::Forms::Button());
 			categoriesBtn = (gcnew System::Windows::Forms::Button());
 			usersBtn = (gcnew System::Windows::Forms::Button());
 			homeBtn = (gcnew System::Windows::Forms::Button());
-			importsBtn = (gcnew System::Windows::Forms::Button());
-			sideNavBarPanel->SuspendLayout();
+			sideMenuPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			sideMenuPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// sideNavBarPanel
+			// importsBtn
 			// 
-			sideNavBarPanel->AutoSize = true;
-			sideNavBarPanel->BackColor = System::Drawing::Color::SteelBlue;
-			sideNavBarPanel->Controls->Add(importsBtn);
-			sideNavBarPanel->Controls->Add(suppliersBtn);
-			sideNavBarPanel->Controls->Add(customersBtn);
-			sideNavBarPanel->Controls->Add(inventoryBtn);
-			sideNavBarPanel->Controls->Add(categoriesBtn);
-			sideNavBarPanel->Controls->Add(usersBtn);
-			sideNavBarPanel->Controls->Add(homeBtn);
-			sideNavBarPanel->Dock = System::Windows::Forms::DockStyle::Left;
-			sideNavBarPanel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			sideNavBarPanel->Location = System::Drawing::Point(0, 0);
-			sideNavBarPanel->MaximumSize = System::Drawing::Size(400, 0);
-			sideNavBarPanel->MinimumSize = System::Drawing::Size(400, 0);
-			sideNavBarPanel->Name = L"sideNavBarPanel";
-			sideNavBarPanel->Size = System::Drawing::Size(400, 829);
-			sideNavBarPanel->TabIndex = 0;
+			importsBtn->BackColor = System::Drawing::Color::DodgerBlue;
+			importsBtn->FlatAppearance->BorderSize = 0;
+			importsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			importsBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			importsBtn->ForeColor = System::Drawing::SystemColors::Control;
+			importsBtn->Location = System::Drawing::Point(3, 521);
+			importsBtn->Margin = System::Windows::Forms::Padding(3, 3, 3, 15);
+			importsBtn->Name = L"importsBtn";
+			importsBtn->Size = System::Drawing::Size(402, 60);
+			importsBtn->TabIndex = 6;
+			importsBtn->Text = L"Imports";
+			importsBtn->UseVisualStyleBackColor = false;
+			importsBtn->Click += gcnew System::EventHandler(this, &DashboardForm::importsBtn_Click);
 			// 
 			// suppliersBtn
 			// 
@@ -101,7 +99,9 @@ namespace Views
 			suppliersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			suppliersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			suppliersBtn->Location = System::Drawing::Point(-1, 384);
+			suppliersBtn->ForeColor = System::Drawing::SystemColors::Control;
+			suppliersBtn->Location = System::Drawing::Point(3, 287);
+			suppliersBtn->Margin = System::Windows::Forms::Padding(3, 3, 3, 15);
 			suppliersBtn->Name = L"suppliersBtn";
 			suppliersBtn->Size = System::Drawing::Size(402, 60);
 			suppliersBtn->TabIndex = 5;
@@ -116,7 +116,9 @@ namespace Views
 			customersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			customersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			customersBtn->Location = System::Drawing::Point(-2, 293);
+			customersBtn->ForeColor = System::Drawing::SystemColors::Control;
+			customersBtn->Location = System::Drawing::Point(3, 443);
+			customersBtn->Margin = System::Windows::Forms::Padding(3, 3, 3, 15);
 			customersBtn->Name = L"customersBtn";
 			customersBtn->Size = System::Drawing::Size(402, 60);
 			customersBtn->TabIndex = 4;
@@ -131,7 +133,9 @@ namespace Views
 			inventoryBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			inventoryBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			inventoryBtn->Location = System::Drawing::Point(0, 127);
+			inventoryBtn->ForeColor = System::Drawing::SystemColors::Control;
+			inventoryBtn->Location = System::Drawing::Point(3, 131);
+			inventoryBtn->Margin = System::Windows::Forms::Padding(3, 3, 3, 15);
 			inventoryBtn->Name = L"inventoryBtn";
 			inventoryBtn->Size = System::Drawing::Size(402, 60);
 			inventoryBtn->TabIndex = 3;
@@ -146,7 +150,9 @@ namespace Views
 			categoriesBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			categoriesBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			categoriesBtn->Location = System::Drawing::Point(-2, 209);
+			categoriesBtn->ForeColor = System::Drawing::SystemColors::Control;
+			categoriesBtn->Location = System::Drawing::Point(3, 365);
+			categoriesBtn->Margin = System::Windows::Forms::Padding(3, 3, 3, 15);
 			categoriesBtn->Name = L"categoriesBtn";
 			categoriesBtn->Size = System::Drawing::Size(402, 60);
 			categoriesBtn->TabIndex = 2;
@@ -161,7 +167,9 @@ namespace Views
 			usersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			usersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			usersBtn->Location = System::Drawing::Point(-1, 566);
+			usersBtn->ForeColor = System::Drawing::SystemColors::Control;
+			usersBtn->Location = System::Drawing::Point(3, 209);
+			usersBtn->Margin = System::Windows::Forms::Padding(3, 3, 3, 15);
 			usersBtn->Name = L"usersBtn";
 			usersBtn->Size = System::Drawing::Size(402, 60);
 			usersBtn->TabIndex = 1;
@@ -176,7 +184,9 @@ namespace Views
 			homeBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			homeBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			homeBtn->Location = System::Drawing::Point(0, 46);
+			homeBtn->ForeColor = System::Drawing::SystemColors::Control;
+			homeBtn->Location = System::Drawing::Point(3, 53);
+			homeBtn->Margin = System::Windows::Forms::Padding(3, 3, 3, 15);
 			homeBtn->Name = L"homeBtn";
 			homeBtn->Size = System::Drawing::Size(402, 60);
 			homeBtn->TabIndex = 0;
@@ -187,25 +197,29 @@ namespace Views
 			// _panelContainer
 			// 
 			this->_panelContainer->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->_panelContainer->Location = System::Drawing::Point(400, 0);
+			this->_panelContainer->Location = System::Drawing::Point(394, 0);
+			this->_panelContainer->Margin = System::Windows::Forms::Padding(20, 3, 3, 3);
 			this->_panelContainer->Name = L"_panelContainer";
-			this->_panelContainer->Size = System::Drawing::Size(1010, 829);
+			this->_panelContainer->Size = System::Drawing::Size(1016, 829);
 			this->_panelContainer->TabIndex = 1;
 			// 
-			// importsBtn
+			// sideMenuPanel
 			// 
-			importsBtn->BackColor = System::Drawing::Color::DodgerBlue;
-			importsBtn->FlatAppearance->BorderSize = 0;
-			importsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			importsBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			importsBtn->Location = System::Drawing::Point(-1, 474);
-			importsBtn->Name = L"importsBtn";
-			importsBtn->Size = System::Drawing::Size(402, 60);
-			importsBtn->TabIndex = 6;
-			importsBtn->Text = L"Imports";
-			importsBtn->UseVisualStyleBackColor = false;
-			importsBtn->Click += gcnew System::EventHandler(this, &DashboardForm::importsBtn_Click);
+			sideMenuPanel->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			sideMenuPanel->Controls->Add(homeBtn);
+			sideMenuPanel->Controls->Add(inventoryBtn);
+			sideMenuPanel->Controls->Add(usersBtn);
+			sideMenuPanel->Controls->Add(suppliersBtn);
+			sideMenuPanel->Controls->Add(categoriesBtn);
+			sideMenuPanel->Controls->Add(customersBtn);
+			sideMenuPanel->Controls->Add(importsBtn);
+			sideMenuPanel->Dock = System::Windows::Forms::DockStyle::Left;
+			sideMenuPanel->Location = System::Drawing::Point(0, 0);
+			sideMenuPanel->Margin = System::Windows::Forms::Padding(3, 3, 20, 3);
+			sideMenuPanel->Name = L"sideMenuPanel";
+			sideMenuPanel->Padding = System::Windows::Forms::Padding(0, 50, 0, 50);
+			sideMenuPanel->Size = System::Drawing::Size(394, 829);
+			sideMenuPanel->TabIndex = 7;
 			// 
 			// DashboardForm
 			// 
@@ -213,14 +227,13 @@ namespace Views
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1410, 829);
 			this->Controls->Add(this->_panelContainer);
-			this->Controls->Add(sideNavBarPanel);
+			this->Controls->Add(sideMenuPanel);
 			this->Name = L"DashboardForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"DashboardForm";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
-			sideNavBarPanel->ResumeLayout(false);
+			sideMenuPanel->ResumeLayout(false);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 

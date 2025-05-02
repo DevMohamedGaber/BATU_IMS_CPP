@@ -307,6 +307,9 @@
     <ClCompile Include="AddOrderItem.cpp">
       <Filter>Views\_Common\AddOrderItem</Filter>
     </ClCompile>
+    <ClCompile Include="ImportViewPage.cpp">
+      <Filter>Views\Imports\View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -464,6 +467,9 @@
     </ClInclude>
     <ClInclude Include="AddOrderItem.h">
       <Filter>Views\_Common\AddOrderItem</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportViewPage.h">
+      <Filter>Views\Imports\View</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

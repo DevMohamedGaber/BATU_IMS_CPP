@@ -76,7 +76,7 @@ namespace Models
 		int importId = Convert::ToInt32(db->LastInsertId());
 		// Insert items into Import_Items table  
 		for each (OrderItem ^ item in Items) {
-			query = "INSERT INTO Import_Items (ImportId, InventoryId, Count) VALUES (" + to_string(importId) + ", " + to_string(item->Id) + ", " + to_string(item->Count) + ");";
+			query = "INSERT INTO Import_Items VALUES (" + to_string(importId) + ", " + to_string(item->Id) + ", " + to_string(item->Count) + ");";
 			db->Execute(query);
 		}
 		return true;

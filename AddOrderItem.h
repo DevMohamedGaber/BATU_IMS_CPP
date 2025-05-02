@@ -68,38 +68,38 @@ namespace Views {
 			label1->AutoSize = true;
 			label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label1->Location = System::Drawing::Point(31, 31);
+			label1->Location = System::Drawing::Point(23, 21);
 			label1->Name = L"label1";
 			label1->Size = System::Drawing::Size(53, 25);
 			label1->TabIndex = 0;
 			label1->Text = L"Item";
-			// 
-			// itemInput
-			// 
-			this->itemInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->itemInput->FormattingEnabled = true;
-			this->itemInput->Location = System::Drawing::Point(101, 28);
-			this->itemInput->Name = L"itemInput";
-			this->itemInput->Size = System::Drawing::Size(333, 33);
-			this->itemInput->TabIndex = 1;
 			// 
 			// label2
 			// 
 			label2->AutoSize = true;
 			label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label2->Location = System::Drawing::Point(488, 31);
+			label2->Location = System::Drawing::Point(480, 21);
 			label2->Name = L"label2";
 			label2->Size = System::Drawing::Size(86, 25);
 			label2->TabIndex = 2;
 			label2->Text = L"Amount";
 			// 
+			// itemInput
+			// 
+			this->itemInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->itemInput->FormattingEnabled = true;
+			this->itemInput->Location = System::Drawing::Point(93, 18);
+			this->itemInput->Name = L"itemInput";
+			this->itemInput->Size = System::Drawing::Size(333, 33);
+			this->itemInput->TabIndex = 1;
+			// 
 			// amountInput
 			// 
 			this->amountInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->amountInput->Location = System::Drawing::Point(604, 31);
+			this->amountInput->Location = System::Drawing::Point(596, 21);
 			this->amountInput->Name = L"amountInput";
 			this->amountInput->Size = System::Drawing::Size(187, 30);
 			this->amountInput->TabIndex = 3;
@@ -110,7 +110,7 @@ namespace Views {
 			this->deleteBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->deleteBtn->ForeColor = System::Drawing::SystemColors::Control;
-			this->deleteBtn->Location = System::Drawing::Point(836, 28);
+			this->deleteBtn->Location = System::Drawing::Point(828, 18);
 			this->deleteBtn->Name = L"deleteBtn";
 			this->deleteBtn->Size = System::Drawing::Size(104, 37);
 			this->deleteBtn->TabIndex = 4;
@@ -127,7 +127,7 @@ namespace Views {
 			this->Controls->Add(this->itemInput);
 			this->Controls->Add(label1);
 			this->Name = L"AddOrderItem";
-			this->Size = System::Drawing::Size(957, 93);
+			this->Size = System::Drawing::Size(957, 68);
 			this->Load += gcnew System::EventHandler(this, &AddOrderItem::AddOrderItem_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
