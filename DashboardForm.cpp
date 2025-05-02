@@ -1,6 +1,7 @@
 #include "CategoriesListPage.h"
 #include "CustomersListPage.h"
 #include "SuppliersListPage.h"
+#include "ImportsListPage.h"
 #include "DashboardForm.h"
 #include "UsersListPage.h"
 #include "ItemListPage.h"
@@ -28,6 +29,11 @@ namespace Views
 	Void DashboardForm::usersBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew UsersListPage());
 	}
+	Void DashboardForm::importsBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew ImportsListPage());
+	}
+
+	// Static instance of DashboardForm
 	void DashboardForm::Start() {
 		if (Instance != nullptr) {
 			return;

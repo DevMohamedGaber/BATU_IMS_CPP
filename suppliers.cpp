@@ -45,4 +45,14 @@ namespace Models
 		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
 		return !rows.empty() && !rows[0].empty() && stoi(rows[0][0]) > 0;
 	}
+	List<Supplier^>^ Suppliers::GetLikeName(String^ name)
+	{
+		string sql = "SELECT * FROM Suppliers WHERE Name LIKE '%" + Utilities::GetNativeString(name) + "%'";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		auto items = gcnew List<Supplier^>();
+		for (const auto& row : rows) {
+			items->Add(Supplier::Map(row));
+		}
+		return items;
+	}
 }

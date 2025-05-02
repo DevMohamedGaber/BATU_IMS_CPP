@@ -146,6 +146,21 @@
     <Filter Include="Controllers\Authentication">
       <UniqueIdentifier>{87e63193-fb42-4c5c-9fd0-f7dfa331b190}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Imports">
+      <UniqueIdentifier>{590c8eac-12f8-4176-95da-5a5e8870daa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Imports\List">
+      <UniqueIdentifier>{ef3b6019-6240-4030-bc81-b1b8eae7a359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Imports\Add">
+      <UniqueIdentifier>{7287aa79-6260-49b8-8efe-69098b9f6f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Import">
+      <UniqueIdentifier>{1d267447-69e2-4af7-aa30-ace5ba0b94d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Imports">
+      <UniqueIdentifier>{d7c97145-d4b2-4e7c-8e41-eba42a70c829}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -267,6 +282,18 @@
     </ClCompile>
     <ClCompile Include="UserEditPage.cpp">
       <Filter>Views\Users\Edit</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportsListPage.cpp">
+      <Filter>Views\Imports\List</Filter>
+    </ClCompile>
+    <ClCompile Include="Imports.cpp">
+      <Filter>Models\Import</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportsController.cpp">
+      <Filter>Controllers\Imports</Filter>
+    </ClCompile>
+    <ClCompile Include="AddImportPage.cpp">
+      <Filter>Views\Imports\Add</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -401,6 +428,27 @@
     </ClInclude>
     <ClInclude Include="UserEditPage.h">
       <Filter>Views\Users\Edit</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportsListPage.h">
+      <Filter>Views\Imports\List</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderStatus.h">
+      <Filter>Core\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Import.h">
+      <Filter>Models\Import</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderItem.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportsController.h">
+      <Filter>Controllers\Imports</Filter>
+    </ClInclude>
+    <ClInclude Include="Imports.h">
+      <Filter>Models\Import</Filter>
+    </ClInclude>
+    <ClInclude Include="AddImportPage.h">
+      <Filter>Views\Imports\Add</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

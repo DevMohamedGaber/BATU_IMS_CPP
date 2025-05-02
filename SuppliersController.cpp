@@ -61,4 +61,7 @@ namespace Controllers
 		}
 		return nullptr;
 	}
+	List<Supplier^>^ SuppliersController::GetSuppliersByName(String^ name) {
+		return Suppliers::GetLikeName(name);
+	}
 }

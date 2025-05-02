@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="AddCategoryPage.cpp" />
     <ClCompile Include="AddCustomerPage.cpp" />
+    <ClCompile Include="AddImportPage.cpp" />
     <ClCompile Include="AddItemPage.cpp" />
     <ClCompile Include="AddSupplierPage.cpp" />
     <ClCompile Include="AddUserPage.cpp" />
@@ -134,6 +135,9 @@
     <ClCompile Include="EditItemPage.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
     <ClCompile Include="HomePage.cpp" />
+    <ClCompile Include="Imports.cpp" />
+    <ClCompile Include="ImportsController.cpp" />
+    <ClCompile Include="ImportsListPage.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InventoryController.cpp" />
     <ClCompile Include="ItemListPage.cpp" />
@@ -172,6 +176,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="AddCustomerPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AddImportPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="AddItemPage.h">
@@ -214,6 +221,12 @@
     <ClInclude Include="HomePage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="Import.h" />
+    <ClInclude Include="Imports.h" />
+    <ClInclude Include="ImportsController.h" />
+    <ClInclude Include="ImportsListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="InventoryController.h" />
     <ClInclude Include="Item.h" />
@@ -224,6 +237,8 @@
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="OrderItem.h" />
+    <ClInclude Include="OrderStatus.h" />
     <ClInclude Include="PasswordHasher.h" />
     <ClInclude Include="RoleItem.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
@@ -266,6 +281,9 @@
     <EmbeddedResource Include="AddCustomerPage.resx">
       <DependentUpon>AddCustomerPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddImportPage.resx">
+      <DependentUpon>AddImportPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddItemPage.resx">
       <DependentUpon>AddItemPage.h</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportsListPage.resx">
+      <DependentUpon>ImportsListPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemListPage.resx">
       <DependentUpon>ItemListPage.h</DependentUpon>

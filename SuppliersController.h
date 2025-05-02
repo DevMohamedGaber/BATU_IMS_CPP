@@ -14,5 +14,6 @@ namespace Controllers
 		static Supplier^ GetSupplierById(int id);
 		static void DeleteSupplier(int id);
 		static String^ EditSupplier(Supplier^ supplier);
+		static List<Supplier^>^ GetSuppliersByName(String^ name);
 	};
 }

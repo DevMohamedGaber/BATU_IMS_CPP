@@ -61,6 +61,7 @@ namespace Views
 			System::Windows::Forms::Button^ categoriesBtn;
 			System::Windows::Forms::Button^ usersBtn;
 			System::Windows::Forms::Button^ homeBtn;
+			System::Windows::Forms::Button^ importsBtn;
 			this->_panelContainer = (gcnew System::Windows::Forms::Panel());
 			sideNavBarPanel = (gcnew System::Windows::Forms::Panel());
 			suppliersBtn = (gcnew System::Windows::Forms::Button());
@@ -69,6 +70,7 @@ namespace Views
 			categoriesBtn = (gcnew System::Windows::Forms::Button());
 			usersBtn = (gcnew System::Windows::Forms::Button());
 			homeBtn = (gcnew System::Windows::Forms::Button());
+			importsBtn = (gcnew System::Windows::Forms::Button());
 			sideNavBarPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -76,6 +78,7 @@ namespace Views
 			// 
 			sideNavBarPanel->AutoSize = true;
 			sideNavBarPanel->BackColor = System::Drawing::Color::SteelBlue;
+			sideNavBarPanel->Controls->Add(importsBtn);
 			sideNavBarPanel->Controls->Add(suppliersBtn);
 			sideNavBarPanel->Controls->Add(customersBtn);
 			sideNavBarPanel->Controls->Add(inventoryBtn);
@@ -158,7 +161,7 @@ namespace Views
 			usersBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			usersBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			usersBtn->Location = System::Drawing::Point(0, 641);
+			usersBtn->Location = System::Drawing::Point(-1, 566);
 			usersBtn->Name = L"usersBtn";
 			usersBtn->Size = System::Drawing::Size(402, 60);
 			usersBtn->TabIndex = 1;
@@ -189,6 +192,21 @@ namespace Views
 			this->_panelContainer->Size = System::Drawing::Size(1010, 829);
 			this->_panelContainer->TabIndex = 1;
 			// 
+			// importsBtn
+			// 
+			importsBtn->BackColor = System::Drawing::Color::DodgerBlue;
+			importsBtn->FlatAppearance->BorderSize = 0;
+			importsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			importsBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			importsBtn->Location = System::Drawing::Point(-1, 474);
+			importsBtn->Name = L"importsBtn";
+			importsBtn->Size = System::Drawing::Size(402, 60);
+			importsBtn->TabIndex = 6;
+			importsBtn->Text = L"Imports";
+			importsBtn->UseVisualStyleBackColor = false;
+			importsBtn->Click += gcnew System::EventHandler(this, &DashboardForm::importsBtn_Click);
+			// 
 			// DashboardForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -213,6 +231,7 @@ namespace Views
 		System::Void customersBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void suppliersBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void usersBtn_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void importsBtn_Click(System::Object^ sender, System::EventArgs^ e);
 
 	public:
 		static void Start();
