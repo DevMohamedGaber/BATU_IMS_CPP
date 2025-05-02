@@ -65,7 +65,7 @@ namespace Models
         }
 
         if (!Instance->TableExists("Imports")) {
-            Instance->Execute("CREATE TABLE Imports (Id INTEGER PRIMARY KEY AUTOINCREMENT, ArrivalDate TEXT NOT NULL UNIQUE, Status INTEGER NOT NULL, SupplierId INTEGER NOT NULL, AdderUserId INTEGER NOT NULL, ReviewerUserId INTEGER, AccepterUserId INTEGER)");
+            Instance->Execute("CREATE TABLE Imports (Id INTEGER PRIMARY KEY AUTOINCREMENT, ArrivalDate TEXT NOT NULL UNIQUE, Status INTEGER NOT NULL, ItemCount INTEGER, SupplierId INTEGER NOT NULL, AdderUserId INTEGER NOT NULL, ReviewerUserId INTEGER, AccepterUserId INTEGER)");
             Instance->Execute("CREATE TABLE Import_Items (ImportId INTEGER NOT NULL, ItemId INTEGER NOT NULL, Count INTEGER NOT NULL)");
         }
     }

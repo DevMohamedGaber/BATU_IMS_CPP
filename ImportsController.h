@@ -10,5 +10,6 @@ namespace Controllers
 	public:
 		static List<Import^>^ GetImportsList();
 		static Import^ GetImportById(int id);
+		static String^ AddImport(int SupplierId, String^ ArrivalDate, List<OrderItem^>^ Items);
 	};
 }

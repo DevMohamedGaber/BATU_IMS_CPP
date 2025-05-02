@@ -35,15 +35,22 @@ namespace Views {
 			{
 				delete components;
 			}
+			// clean up any resources being used
+			for each (auto item in itemsList)
+			{
+				delete item;
+			}
+			itemsList->Clear();
+			itemsList = nullptr;
 		}
 
 	private: 
-		System::Windows::Forms::ComboBox^ supplierInput;
-		System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-		System::Windows::Forms::Label^ errorMsg;
+		System::Windows::Forms::DateTimePicker^ arrivalTimeInput;
 		System::Windows::Forms::FlowLayoutPanel^ itemsPanel;
+		System::Windows::Forms::ComboBox^ supplierInput;
+		System::Windows::Forms::Label^ noItemsMsg;
+		System::Windows::Forms::Label^ errorMsg;
 		List<AddOrderItem^>^ itemsList;
-	private: System::Windows::Forms::Label^ noItemsMsg;
 
 		/// <summary>
 		/// Required designer variable.
@@ -65,7 +72,7 @@ namespace Views {
 			System::Windows::Forms::Label^ label4;
 			System::Windows::Forms::Button^ addBtn;
 			this->supplierInput = (gcnew System::Windows::Forms::ComboBox());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->arrivalTimeInput = (gcnew System::Windows::Forms::DateTimePicker());
 			this->errorMsg = (gcnew System::Windows::Forms::Label());
 			this->itemsPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->noItemsMsg = (gcnew System::Windows::Forms::Label());
@@ -118,7 +125,7 @@ namespace Views {
 			panel1->Controls->Add(addItemBtn);
 			panel1->Controls->Add(label4);
 			panel1->Controls->Add(this->supplierInput);
-			panel1->Controls->Add(this->dateTimePicker1);
+			panel1->Controls->Add(this->arrivalTimeInput);
 			panel1->Controls->Add(label1);
 			panel1->Controls->Add(label3);
 			panel1->Controls->Add(label2);
@@ -166,14 +173,14 @@ namespace Views {
 			this->supplierInput->TabIndex = 2;
 			this->supplierInput->ValueMember = L"Id";
 			// 
-			// dateTimePicker1
+			// arrivalTimeInput
 			// 
-			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->arrivalTimeInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Location = System::Drawing::Point(260, 169);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(573, 30);
-			this->dateTimePicker1->TabIndex = 4;
+			this->arrivalTimeInput->Location = System::Drawing::Point(260, 169);
+			this->arrivalTimeInput->Name = L"arrivalTimeInput";
+			this->arrivalTimeInput->Size = System::Drawing::Size(573, 30);
+			this->arrivalTimeInput->TabIndex = 4;
 			// 
 			// addBtn
 			// 
@@ -188,6 +195,7 @@ namespace Views {
 			addBtn->TabIndex = 1;
 			addBtn->Text = L"Confirm Import";
 			addBtn->UseVisualStyleBackColor = false;
+			addBtn->Click += gcnew System::EventHandler(this, &AddImportPage::addBtn_Click);
 			// 
 			// errorMsg
 			// 
@@ -248,8 +256,9 @@ namespace Views {
 		}
 #pragma endregion
 		System::Void AddImportPage_Load(System::Object^ sender, System::EventArgs^ e);
-		Void supplierInput_KeyUp(Object^ sender, KeyEventArgs^ e);
+		System::Void supplierInput_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 		System::Void addItemBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void deleteItemBtn_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void addBtn_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

@@ -12,7 +12,7 @@ namespace Models
 {
 	bool Inventory::AddItem(String^ Name, double Price, int categoryId)
 	{
-		string sql = "INSERT INTO Inventory (Name, Price, CategoryId) VALUES ('" + Utilities::GetNativeString(Name) + "', " + std::to_string(Price) + ", " + std::to_string(categoryId) + ")";
+		string sql = "INSERT INTO Inventory VALUES (NULL, '" + Utilities::GetNativeString(Name) + "', 0, " + std::to_string(Price) + ", " + std::to_string(categoryId) + ")";
 		return DatabaseConnection::Instance->Execute(sql);
 	}
 

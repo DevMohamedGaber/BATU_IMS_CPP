@@ -11,23 +11,21 @@ namespace Models
 		if (db == nullptr) return imports;  
 
 		// Query all imports  
-		auto rows = db->Query("SELECT * FROM Imports;");  
+        auto rows = db->Query("SELECT i.Id, i.ArrivalDate, i.Status, i.ItemCount, s.Id AS SupplierId, s.Name AS SupplierName FROM Imports i LEFT JOIN Suppliers s ON i.SupplierId = s.Id;");  
 		for (auto& row : rows) {  
 			Import^ import = gcnew Import();  
 			import->Id = stoi(row[0]);  
 			import->ArrivalDate = DateTime::Parse(gcnew String(row[1].c_str()));  
 			import->Status = static_cast<OrderStatus>(stoi(row[2]));  
-			FetchImportData(import);
-			// count how many items belong to this import and add them to the import variable items list as just the list count
-			auto itemRows = db->Query("SELECT COUNT(*) FROM Import_Items WHERE ImportId = " + row[0] + ";");
-			// set the items list length to the items count
-			if (!itemRows.empty()) {
-				auto itemCount = stoi(itemRows[0][0]);
-				import->Items = gcnew List<OrderItem^>(itemCount);
-			}
-			else {
-				import->Items = gcnew List<OrderItem^>();
-			}
+			import->ItemCount = stoi(row[3]);  
+
+			if (!row[4].empty() && !row[5].empty()) {  
+				Supplier^ supplier = gcnew Supplier();  
+				supplier->Id = stoi(row[4]);  
+				supplier->Name = gcnew String(row[5].c_str());  
+				import->Supplier = supplier;  
+			}  
+
 			imports->Add(import);  
 		}
 		return imports;  
@@ -62,11 +60,17 @@ namespace Models
 
 		return import;
 	}
-	bool Imports::Add(int SupplierId, int Status, String^ ArrivalDate, List<OrderItem^>^ Items) {
+	bool Imports::Insert(int SupplierId, String^ ArrivalDate, List<OrderItem^>^ Items) {
 		auto db = DatabaseConnection::Instance;
 		if (db == nullptr) return false;
 		// Insert into Imports table  
-		string query = "INSERT INTO Imports VALUES (NULL, '" + Utilities::GetNativeString(ArrivalDate) + "', " + to_string(Status) + ", " + to_string(SupplierId) + ", " + to_string(Controllers::AuthenticationController::CurrentUser->Id) + ", NULL, NULL);";
+		string query = "INSERT INTO Imports VALUES (NULL, '" // ID
+			+ Utilities::GetNativeString(ArrivalDate) // ArrivalDate
+			+ "', 0," // Status (default: InProgress)
+			+ to_string(Items->Count) + ", " // Item Count
+			+ to_string(SupplierId) + ", " // Supplier
+			+ to_string(Controllers::AuthenticationController::CurrentUser->Id) // Adder
+			+ ", NULL, NULL);"; // Reviewer and Accepter
 		db->Execute(query);
 		// Get the last inserted Import ID  
 		int importId = Convert::ToInt32(db->LastInsertId());
@@ -89,7 +93,6 @@ namespace Models
 			import->Supplier = supplier;
 		}
 		// Fetch Adder
-		
 		auto adderRows = DatabaseConnection::Instance->Query("SELECT Id, FirstName, LastName FROM Users WHERE Id = " + to_string(import->Adder->Id) + ";");
 		if (!adderRows.empty()) {
 			import->Adder = User::MapForOrder(adderRows[0]);

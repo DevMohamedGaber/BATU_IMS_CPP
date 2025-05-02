@@ -26,7 +26,7 @@ namespace Views
 			row["Supplier"] = item->Supplier->Name;
 			row["Status"] = item->Status.ToString();
 			row["Arrival Date"] = item->ArrivalDate.ToString();
-			row["Items Count"] = item->Items->Count;
+			row["Items Count"] = item->ItemCount;
 			table->Rows->Add(row);
 		}
 		dataTable->DataSource = table;

@@ -44,6 +44,7 @@ namespace Views
                     supplierInput->Items->Add(supplier->Name);
                 }
             }
+			supplierInput->Tag = suppliers;
         }
         finally {
             // Always show dropdown when we have results
@@ -73,5 +74,49 @@ namespace Views
         itemsList->Remove(item);  
         delete item;  
         noItemsMsg->Visible = itemsList->Count == 0;
+	}
+	Void AddImportPage::addBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+        // get supplier info
+		auto suppliers = dynamic_cast<List<Supplier^>^>(supplierInput->Tag);
+		if (suppliers == nullptr || suppliers->Count == 0) {
+            errorMsg->Text = "Please select a valid supplier.";
+			return;
+		}
+        auto supplier = suppliers[supplierInput->SelectedIndex];
+
+		if (itemsList->Count == 0) {
+            errorMsg->Text = "Please add at least one item to submit an import.";
+			return;
+		}
+		auto items = gcnew List<OrderItem^>();
+		for each (auto item in itemsList) {
+			auto orderItem = item->GetItem();
+			if (orderItem == nullptr) {
+				errorMsg->Text = "Please select a valid item.";
+				return;
+			}
+			items->Add(orderItem);
+		}
+
+		// Create the import
+		String^ result = ImportsController::AddImport(supplier->Id, arrivalTimeInput->Value.ToString(), items);
+
+		if (result != nullptr) {
+			errorMsg->ForeColor = System::Drawing::Color::Red;
+			errorMsg->Text = result;
+			return;
+		}
+		// Clear the form
+		supplierInput->Text = "";
+		arrivalTimeInput->Value = DateTime::Now;
+		for each (auto item in itemsList) {
+			itemsPanel->Controls->Remove(item);
+			delete item;
+		}
+		itemsList->Clear();
+		noItemsMsg->Visible = true;
+		errorMsg->ForeColor = System::Drawing::Color::Green;
+		errorMsg->Text = "Import added successfully!";
+
 	}
 }

@@ -167,6 +167,9 @@
     <Filter Include="Views\_Common\AddOrderItem">
       <UniqueIdentifier>{1c00b8d7-0efc-43f8-836b-f1a41ae6b615}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\Imports\View">
+      <UniqueIdentifier>{e58f553a-3d5a-4a3f-b4d0-b74a21b5e469}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">

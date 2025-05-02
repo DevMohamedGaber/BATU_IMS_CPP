@@ -20,6 +20,8 @@ namespace Models {
 		User^ Adder;
 		User^ Reviewer;
 		User^ Accepter;
+
+		int ItemCount;
 		List<OrderItem^>^ Items;
 	};
 }

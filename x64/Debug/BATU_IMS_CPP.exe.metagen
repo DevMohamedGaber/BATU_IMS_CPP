@@ -137,12 +137,14 @@ Class Models.Import: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Models.User Adder : Public
     Models.User Reviewer : Public
     Models.User Accepter : Public
+    Int32 ItemCount : Public
     System.Collections.Generic.List`1[Core.OrderItem] Items : Public
 Class Controllers.ImportsController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     GetImportsList(): PrivateScope, Public, Static, HideBySig
     GetImportById(Int32): PrivateScope, Public, Static, HideBySig
+    AddImport(Int32, String, List`1): PrivateScope, Public, Static, HideBySig
 Class Controllers.SuppliersController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -321,7 +323,7 @@ Class Models.Imports: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldI
   Methods:
     GetAll(): PrivateScope, Public, Static, HideBySig
     GetById(Int32): PrivateScope, Public, Static, HideBySig
-    Add(Int32, Int32, String, List`1): PrivateScope, Public, Static, HideBySig
+    Insert(Int32, String, List`1): PrivateScope, Public, Static, HideBySig
 Class Controllers.AuthenticationController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
