@@ -52,3 +52,4 @@ D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.UserV
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.ViewCategoryPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.ViewItemPage.resources
 D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATU_IMS_CPP.vcxproj.GenerateResource.cache
+D:\College\3rd\Projects\cpp\BATU_IMS_CPP\BATU_IMS_CPP\x64\Debug\BATUIMSCPP.ViewOrderItem.resources

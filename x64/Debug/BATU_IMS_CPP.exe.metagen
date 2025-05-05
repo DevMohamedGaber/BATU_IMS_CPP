@@ -25,6 +25,7 @@
   BATUIMSCPP.UserViewPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ViewItemPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.ViewOrderItem.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly BATU_IMS_CPP, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -125,6 +126,7 @@ Class Models.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String Email : Public
     System.Enum Role UserRole IsBoxed : Public
   Methods:
+    GetFullName(): PrivateScope, Public, HideBySig
     Map(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
     MapWithoutPassword(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
     MapForOrder(vector<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> >\,std::allocator<std::basic_string<char\,std::char_traits<char>\,std::allocator<char> > > >* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
@@ -146,6 +148,9 @@ Class Controllers.ImportsController: AutoLayout, AnsiClass, Class, Public, Seale
     GetImportsList(): PrivateScope, Public, Static, HideBySig
     GetImportById(Int32): PrivateScope, Public, Static, HideBySig
     AddImport(Int32, String, List`1): PrivateScope, Public, Static, HideBySig
+    ReviewImport(Int32): PrivateScope, Public, Static, HideBySig
+    AcceptImport(Int32): PrivateScope, Public, Static, HideBySig
+    DeleteImport(Int32): PrivateScope, Public, Static, HideBySig
 Class Controllers.SuppliersController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -325,15 +330,32 @@ Class Models.Imports: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldI
     GetAll(): PrivateScope, Public, Static, HideBySig
     GetById(Int32): PrivateScope, Public, Static, HideBySig
     Insert(Int32, String, List`1): PrivateScope, Public, Static, HideBySig
+    IsReviewed(Int32): PrivateScope, Public, Static, HideBySig
+    IsAccepted(Int32): PrivateScope, Public, Static, HideBySig
+    Review(Int32, Int32): PrivateScope, Public, Static, HideBySig
+    Accept(Int32, Int32): PrivateScope, Public, Static, HideBySig
+    Delete(Int32): PrivateScope, Public, Static, HideBySig
 Class Controllers.AuthenticationController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Models.User CurrentUser : Public, Static
   Methods:
     Login(String, String): PrivateScope, Public, Static, HideBySig
-Class BATUIMSCPP.ImportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class Views.ImportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Models.Import): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.ViewOrderItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Core.OrderItem): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.SupplierViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.UserViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -346,10 +368,6 @@ Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
 Class Views.SupplierEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Views.SupplierViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.UserControl
-    Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -363,7 +381,3 @@ Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
 Class Views.UserEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Views.UserViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.UserControl
-    Void .ctor(Models.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

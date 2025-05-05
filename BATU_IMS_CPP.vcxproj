@@ -165,6 +165,7 @@
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="ViewCategoryPage.cpp" />
     <ClCompile Include="ViewItemPage.cpp" />
+    <ClCompile Include="ViewOrderItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -281,6 +282,9 @@
     <ClInclude Include="ViewItemPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="ViewOrderItem.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddCategoryPage.resx">
@@ -363,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewItemPage.resx">
       <DependentUpon>ViewItemPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewOrderItem.resx">
+      <DependentUpon>ViewOrderItem.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

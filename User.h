@@ -18,13 +18,33 @@ namespace Models
 		String^ Email;
 		UserRole^ Role;
 
+		String^ GetFullName()
+		{
+			String^ result = nullptr;
+			if (FirstName != nullptr)
+			{
+				result = FirstName;
+			}
+			if (LastName != nullptr)
+			{
+				if (!result->IsNullOrEmpty(result))
+				{
+					result += " ";
+				}
+				result += LastName;
+			}
+			if (result == nullptr) {
+				result = Role->ToString() + " #" + Id;
+			}
+			return result;
+		}
+
 		static User^ Map(const vector<string>& row)
 		{
 			User^ user = gcnew User();
 			user->Id = row[0].empty() ? 0 : stol(row[0]);
 			user->Username = gcnew String(row[1].c_str());
-			user->FirstName = gcnew String(row[2].c_str());
-			user->LastName = gcnew String(row[3].c_str());
+			user->SetName(row[2], row[3]);
 			user->Password = gcnew String(row[4].c_str());
 			user->Email = gcnew String(row[5].c_str());
 			user->Role = static_cast<Core::UserRole>(stoi(row[6]));
@@ -35,8 +55,7 @@ namespace Models
 			User^ user = gcnew User();
 			user->Id = row[0].empty() ? 0 : stol(row[0]);
 			user->Username = gcnew String(row[1].c_str());
-			user->FirstName = gcnew String(row[2].c_str());
-			user->LastName = gcnew String(row[3].c_str());
+			user->SetName(row[2], row[3]);
 			user->Email = gcnew String(row[4].c_str());
 			user->Role = static_cast<Core::UserRole>(stoi(row[5]));
 			return user;
@@ -45,9 +64,13 @@ namespace Models
 		{
 			User^ user = gcnew User();
 			user->Id = row[0].empty() ? 0 : stol(row[0]);
-			user->FirstName = gcnew String(row[1].c_str());
-			user->LastName = gcnew String(row[2].c_str());
+			user->SetName(row[1], row[2]);
 			return user;
+		}
+	private:
+		void SetName(string firstname, string lastname) {
+			this->FirstName = firstname == "NULL" ? nullptr : gcnew String(firstname.c_str());
+			this->LastName = lastname == "NULL" ? nullptr : gcnew String(lastname.c_str());
 		}
 	};
 }

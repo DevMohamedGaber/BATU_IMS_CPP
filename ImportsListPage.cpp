@@ -2,6 +2,7 @@
 #include "AddImportPage.h"
 #include "ImportsController.h"
 #include "DashboardForm.h"
+#include "ImportViewPage.h"
 
 using namespace Controllers;
 
@@ -36,6 +37,10 @@ namespace Views
 		DashboardForm::SwitchView(gcnew AddImportPage());
 	}
 	Void ImportsListPage::dataTable_CellClick(Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-
+		if (e->RowIndex < 0) {
+			return;
+		}
+		int id = Convert::ToInt32(dataTable->Rows[e->RowIndex]->Cells["Id"]->Value);
+		DashboardForm::SwitchView(gcnew ImportViewPage(id));
 	}
 }

@@ -170,6 +170,9 @@
     <Filter Include="Views\Imports\View">
       <UniqueIdentifier>{e58f553a-3d5a-4a3f-b4d0-b74a21b5e469}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\_Common\ViewOrderItem">
+      <UniqueIdentifier>{69659d02-b11d-40da-9c65-b8e4629d1566}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -309,6 +312,9 @@
     </ClCompile>
     <ClCompile Include="ImportViewPage.cpp">
       <Filter>Views\Imports\View</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewOrderItem.cpp">
+      <Filter>Views\_Common\ViewOrderItem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -470,6 +476,9 @@
     </ClInclude>
     <ClInclude Include="ImportViewPage.h">
       <Filter>Views\Imports\View</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewOrderItem.h">
+      <Filter>Views\_Common\ViewOrderItem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

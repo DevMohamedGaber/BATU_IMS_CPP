@@ -31,10 +31,8 @@ namespace Models
 		return imports;  
 	}  
 	Import^ Imports::GetById(int id) {
-		auto db = DatabaseConnection::Instance;
+		auto rows = DatabaseConnection::Instance->Query("SELECT * FROM Imports WHERE Id = " + to_string(id) + ";");
 
-		// Query import by ID  
-		auto rows = db->Query("SELECT * FROM Imports WHERE Id = " + to_string(id) + ";");
 		if (rows.empty()) 
 			return nullptr;
 
@@ -43,20 +41,12 @@ namespace Models
 		import->Id = stoi(row[0]);  
 		import->ArrivalDate = DateTime::Parse(gcnew String(row[1].c_str()));  
 		import->Status = static_cast<OrderStatus>(stoi(row[2]));
-		FetchImportData(import);
-
-		// Fetch Items  
-		import->Items = gcnew List<OrderItem^>();
-
-		auto itemRows = db->Query("SELECT ii.InventoryId, ii.Count, i.Name FROM Import_Items ii JOIN Inventory i ON ii.InventoryId = i.Id WHERE ii.ImportId = " + to_string(id) + ";"
-		);
-		for (auto& itemRow : itemRows) {
-			OrderItem^ item = gcnew OrderItem();
-			item->Id = stoi(itemRow[0]);
-			item->Count = stoi(itemRow[1]);
-			item->Name = gcnew String(itemRow[2].c_str());
-			import->Items->Add(item);
-		}
+		import->ItemCount = stoi(row[3]);
+		import->Supplier = row[4].empty() ? nullptr : FetchSupplierData(row[4]);
+		import->Adder = row[5].empty() ? nullptr : FetchUserData(row[5]);
+		import->Reviewer = row[6].empty() ? nullptr : FetchUserData(row[6]);
+		import->Accepter = row[7].empty() ? nullptr : FetchUserData(row[7]);
+		import->Items = FetchItemsData(row[0]);
 
 		return import;
 	}
@@ -81,34 +71,63 @@ namespace Models
 		}
 		return true;
 	}
+	
+    bool Imports::IsReviewed(int ImportId) {  
+       auto rows = DatabaseConnection::Instance->Query("SELECT ReviewerUserId FROM Imports WHERE Id = " + to_string(ImportId) + ";");  
+       if (rows.empty()) 
+		   return false;  
+       return rows[0][0] != "NULL";
+    }
+	bool Imports::IsAccepted(int ImportId) {
+		auto rows = DatabaseConnection::Instance->Query("SELECT AccepterUserId FROM Imports WHERE Id = " + to_string(ImportId) + ";");
+		if (rows.empty())
+			return false;
+		return rows[0][0] != "NULL";
+	}
+	bool Imports::Review(int ImportId, int ReviewerId) {
+		string query = "UPDATE Imports SET ReviewerUserId = " + to_string(ReviewerId) + ", Status = 1 WHERE Id = " + to_string(ImportId) + ";";
+		return DatabaseConnection::Instance->Execute(query);
+	}
+	bool Imports::Accept(int ImportId, int AccepterId) {
+		string query = "UPDATE Imports SET AccepterUserId = " + to_string(AccepterId) + ", Status = 2 WHERE Id = " + to_string(ImportId) + ";";
+		return DatabaseConnection::Instance->Execute(query);
+	}
+	void Imports::Delete(int ImportId) {
+		string query = "DELETE FROM Imports WHERE Id = " + to_string(ImportId) + ";";
+		DatabaseConnection::Instance->Execute(query);
+	}
 
-	void Imports::FetchImportData(Import^ import) {
-		// Fetch Supplier  
-		auto supplierRows = DatabaseConnection::Instance->Query("SELECT Id, Name FROM Suppliers WHERE Id = " + to_string(import->Supplier->Id) + ";");
-		if (!supplierRows.empty()) {
-			auto supplierRow = supplierRows[0];
-			Supplier^ supplier = gcnew Supplier();
-			supplier->Id = stoi(supplierRow[0]);
-			supplier->Name = gcnew String(supplierRow[1].c_str());
-			import->Supplier = supplier;
+	// helpers
+	Supplier^ Imports::FetchSupplierData(string& id) {
+		auto rows = DatabaseConnection::Instance->Query("SELECT Id, Name FROM Suppliers WHERE Id = " + id + ";");
+		if (rows.empty()) return nullptr;
+		auto row = rows[0];
+		Supplier^ supplier = gcnew Supplier();
+		supplier->Id = stoi(row[0]);
+		supplier->Name = gcnew String(row[1].c_str());
+		return supplier;
+	}
+	User^ Imports::FetchUserData(string& id) {
+		auto rows = DatabaseConnection::Instance->Query("SELECT Id, FirstName, LastName FROM Users WHERE Id = " + id + ";");
+		if (rows.empty()) 
+			return nullptr;
+		auto row = rows[0];
+		User^ user = gcnew User();
+		user->Id = stoi(row[0]);
+		user->FirstName = gcnew String(row[1].c_str());
+		user->LastName = gcnew String(row[2].c_str());
+		return user;
+	}
+	List<OrderItem^>^ Imports::FetchItemsData(string& id) {
+		auto rows = DatabaseConnection::Instance->Query("SELECT ii.ItemId, ii.Count, i.Name FROM Import_Items ii JOIN Inventory i ON ii.ItemId = i.Id WHERE ii.ImportId = " + id + ";");
+		List<OrderItem^>^ items = gcnew List<OrderItem^>();
+		for (auto& itemRow : rows) {
+			OrderItem^ item = gcnew OrderItem();
+			item->Id = stoi(itemRow[0]);
+			item->Count = stoi(itemRow[1]);
+			item->Name = gcnew String(itemRow[2].c_str());
+            items->Add(item);
 		}
-		// Fetch Adder
-		auto adderRows = DatabaseConnection::Instance->Query("SELECT Id, FirstName, LastName FROM Users WHERE Id = " + to_string(import->Adder->Id) + ";");
-		if (!adderRows.empty()) {
-			import->Adder = User::MapForOrder(adderRows[0]);
-		}
-
-		// Fetch Reviewer  
-		auto reviewerRows = DatabaseConnection::Instance->Query("SELECT Id, FirstName, LastName FROM Users WHERE Id = " + to_string(import->Reviewer->Id) + ";");
-		if (!reviewerRows.empty()) {
-			import->Reviewer = User::MapForOrder(reviewerRows[0]);
-		}
-		// Fetch Accepter  
-		if (import->Accepter != nullptr) {
-			auto accepterRows = DatabaseConnection::Instance->Query("SELECT Id, FirstName, LastName FROM Users WHERE Id = " + to_string(import->Accepter->Id) + ";");
-			if (!accepterRows.empty()) {
-				import->Accepter = User::MapForOrder(accepterRows[0]);
-			}
-		}
+		return items;
 	}
 }
