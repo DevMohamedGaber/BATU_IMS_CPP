@@ -1,15 +1,31 @@
+#include "AuthenticationController.h"
 #include "CategoriesListPage.h"
 #include "CustomersListPage.h"
 #include "SuppliersListPage.h"
 #include "ImportsListPage.h"
+#include "ExportsListPage.h"
 #include "DashboardForm.h"
 #include "UsersListPage.h"
+#include "UserViewPage.h"
 #include "ItemListPage.h"
+#include "LoginForm.h"
 #include "HomePage.h"
+
+using namespace Controllers;
 
 namespace Views
 {
 	// Event handlers for buttons
+	Void DashboardForm::logoutBtn_Click(Object^ sender, EventArgs^ e) {
+		AuthenticationController::Logout();
+		auto loginForm = gcnew LoginForm();
+		this->Hide();
+		loginForm->ShowDialog();
+		this->Close();
+	}
+	Void DashboardForm::currentUserNameLabel_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew UserViewPage(AuthenticationController::CurrentUser));
+	}
 	Void DashboardForm::homeBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew HomePage());
 	}
@@ -32,6 +48,9 @@ namespace Views
 	Void DashboardForm::importsBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew ImportsListPage());
 	}
+	Void DashboardForm::exportsBtn_Click(Object^ sender, EventArgs^ e) {
+		DashboardForm::SwitchView(gcnew ExportsListPage());
+	}
 
 	// Static instance of DashboardForm
 	void DashboardForm::Start() {
@@ -40,6 +59,8 @@ namespace Views
 		}
 		Instance = gcnew DashboardForm();
 		SwitchView(gcnew HomePage());
+		// Set the current user name
+		Instance->currentUserNameLabel->Text = AuthenticationController::CurrentUser->GetFullName() + "  (" + AuthenticationController::CurrentUser->Role->ToString() + ")";
 		Instance->ShowDialog();
 	}
 	void DashboardForm::SwitchView(UserControl^ newView)

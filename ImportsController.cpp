@@ -1,17 +1,16 @@
+#include "AuthenticationController.h"
 #include "ImportsController.h"
 #include "Imports.h"
-#include "AuthenticationController.h"
+#include "Inventory.h"
 
 namespace Controllers
 {
 	List<Import^>^ ImportsController::GetImportsList() {
 		return Imports::GetAll();
 	}
-
 	Import^ ImportsController::GetImportById(int id) {
 		return Imports::GetById(id);
 	}
-
 	String^ ImportsController::AddImport(int SupplierId, String^ ArrivalDate, List<OrderItem^>^ Items) {
 		// todo: add more checks if needed
 		if (!Imports::Insert(SupplierId, ArrivalDate, Items)) {
@@ -19,7 +18,6 @@ namespace Controllers
 		}
 		return nullptr;
 	}
-
 	String^ ImportsController::ReviewImport(int ImportId) {
 		if (ImportId == 0) {
 			return "Invalid import id.";
@@ -59,6 +57,11 @@ namespace Controllers
 		}
 		if (!Imports::Accept(ImportId, AuthenticationController::CurrentUser->Id)) {
 			return "failed to review the import.";
+		}
+		// add items to inventory
+		auto importItems = Imports::GetItems(ImportId);
+		for each (auto item in importItems) {
+			Inventory::IncreaseStock(item->Id, item->Count);
 		}
 		return nullptr;
 	}

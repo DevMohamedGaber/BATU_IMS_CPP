@@ -44,12 +44,12 @@ namespace Views {
 			itemsList = nullptr;
 		}
 
-	private: 
+	private:
+		System::Windows::Forms::Label^ errorMsg;
 		System::Windows::Forms::DateTimePicker^ arrivalTimeInput;
-		System::Windows::Forms::FlowLayoutPanel^ itemsPanel;
 		System::Windows::Forms::ComboBox^ supplierInput;
 		System::Windows::Forms::Label^ noItemsMsg;
-		System::Windows::Forms::Label^ errorMsg;
+		System::Windows::Forms::FlowLayoutPanel^ itemsPanel;
 		List<AddOrderItem^>^ itemsList;
 
 		/// <summary>
@@ -64,76 +64,54 @@ namespace Views {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::Label^ label1;
-			System::Windows::Forms::Label^ label2;
-			System::Windows::Forms::Label^ label3;
-			System::Windows::Forms::Panel^ panel1;
-			System::Windows::Forms::Button^ addItemBtn;
-			System::Windows::Forms::Label^ label4;
 			System::Windows::Forms::Button^ addBtn;
+			System::Windows::Forms::Label^ label4;
+			System::Windows::Forms::Button^ addItemBtn;
+			System::Windows::Forms::Panel^ panel1;
+			System::Windows::Forms::Label^ label1;
+			System::Windows::Forms::Label^ label3;
+			System::Windows::Forms::Label^ label2;
 			this->supplierInput = (gcnew System::Windows::Forms::ComboBox());
 			this->arrivalTimeInput = (gcnew System::Windows::Forms::DateTimePicker());
 			this->errorMsg = (gcnew System::Windows::Forms::Label());
-			this->itemsPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->noItemsMsg = (gcnew System::Windows::Forms::Label());
-			label1 = (gcnew System::Windows::Forms::Label());
-			label2 = (gcnew System::Windows::Forms::Label());
-			label3 = (gcnew System::Windows::Forms::Label());
-			panel1 = (gcnew System::Windows::Forms::Panel());
-			addItemBtn = (gcnew System::Windows::Forms::Button());
-			label4 = (gcnew System::Windows::Forms::Label());
+			this->itemsPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			addBtn = (gcnew System::Windows::Forms::Button());
+			label4 = (gcnew System::Windows::Forms::Label());
+			addItemBtn = (gcnew System::Windows::Forms::Button());
+			panel1 = (gcnew System::Windows::Forms::Panel());
+			label1 = (gcnew System::Windows::Forms::Label());
+			label3 = (gcnew System::Windows::Forms::Label());
+			label2 = (gcnew System::Windows::Forms::Label());
 			panel1->SuspendLayout();
 			this->itemsPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// label1
+			// addBtn
 			// 
-			label1->AutoSize = true;
-			label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			addBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			addBtn->BackColor = System::Drawing::Color::OrangeRed;
+			addBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label1->Location = System::Drawing::Point(23, 16);
-			label1->Name = L"label1";
-			label1->Size = System::Drawing::Size(314, 39);
-			label1->TabIndex = 0;
-			label1->Text = L"Register an Import";
+			addBtn->ForeColor = System::Drawing::SystemColors::Control;
+			addBtn->Location = System::Drawing::Point(852, 755);
+			addBtn->Name = L"addBtn";
+			addBtn->Size = System::Drawing::Size(246, 52);
+			addBtn->TabIndex = 1;
+			addBtn->Text = L"Confirm Import";
+			addBtn->UseVisualStyleBackColor = false;
+			addBtn->Click += gcnew System::EventHandler(this, &AddImportPage::addBtn_Click);
 			// 
-			// label2
+			// label4
 			// 
-			label2->AutoSize = true;
-			label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			label4->AutoSize = true;
+			label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label2->Location = System::Drawing::Point(30, 106);
-			label2->Name = L"label2";
-			label2->Size = System::Drawing::Size(119, 29);
-			label2->TabIndex = 1;
-			label2->Text = L"Supplier:";
-			// 
-			// label3
-			// 
-			label3->AutoSize = true;
-			label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			label3->Location = System::Drawing::Point(30, 170);
-			label3->Name = L"label3";
-			label3->Size = System::Drawing::Size(161, 29);
-			label3->TabIndex = 3;
-			label3->Text = L"Arrival Time:";
-			// 
-			// panel1
-			// 
-			panel1->Controls->Add(addItemBtn);
-			panel1->Controls->Add(label4);
-			panel1->Controls->Add(this->supplierInput);
-			panel1->Controls->Add(this->arrivalTimeInput);
-			panel1->Controls->Add(label1);
-			panel1->Controls->Add(label3);
-			panel1->Controls->Add(label2);
-			panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			panel1->Location = System::Drawing::Point(30, 30);
-			panel1->Name = L"panel1";
-			panel1->Size = System::Drawing::Size(1068, 290);
-			panel1->TabIndex = 5;
+			label4->Location = System::Drawing::Point(16, 234);
+			label4->Name = L"label4";
+			label4->Size = System::Drawing::Size(197, 29);
+			label4->TabIndex = 5;
+			label4->Text = L"Import Contents";
 			// 
 			// addItemBtn
 			// 
@@ -150,16 +128,20 @@ namespace Views {
 			addItemBtn->UseVisualStyleBackColor = false;
 			addItemBtn->Click += gcnew System::EventHandler(this, &AddImportPage::addItemBtn_Click);
 			// 
-			// label4
+			// panel1
 			// 
-			label4->AutoSize = true;
-			label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			label4->Location = System::Drawing::Point(16, 234);
-			label4->Name = L"label4";
-			label4->Size = System::Drawing::Size(197, 29);
-			label4->TabIndex = 5;
-			label4->Text = L"Import Contents";
+			panel1->Controls->Add(addItemBtn);
+			panel1->Controls->Add(label4);
+			panel1->Controls->Add(this->supplierInput);
+			panel1->Controls->Add(this->arrivalTimeInput);
+			panel1->Controls->Add(label1);
+			panel1->Controls->Add(label3);
+			panel1->Controls->Add(label2);
+			panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			panel1->Location = System::Drawing::Point(30, 30);
+			panel1->Name = L"panel1";
+			panel1->Size = System::Drawing::Size(1068, 290);
+			panel1->TabIndex = 5;
 			// 
 			// supplierInput
 			// 
@@ -182,20 +164,38 @@ namespace Views {
 			this->arrivalTimeInput->Size = System::Drawing::Size(573, 30);
 			this->arrivalTimeInput->TabIndex = 4;
 			// 
-			// addBtn
+			// label1
 			// 
-			addBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			addBtn->BackColor = System::Drawing::Color::OrangeRed;
-			addBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			label1->AutoSize = true;
+			label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			addBtn->ForeColor = System::Drawing::SystemColors::Control;
-			addBtn->Location = System::Drawing::Point(852, 755);
-			addBtn->Name = L"addBtn";
-			addBtn->Size = System::Drawing::Size(246, 52);
-			addBtn->TabIndex = 1;
-			addBtn->Text = L"Confirm Import";
-			addBtn->UseVisualStyleBackColor = false;
-			addBtn->Click += gcnew System::EventHandler(this, &AddImportPage::addBtn_Click);
+			label1->Location = System::Drawing::Point(23, 16);
+			label1->Name = L"label1";
+			label1->Size = System::Drawing::Size(314, 39);
+			label1->TabIndex = 0;
+			label1->Text = L"Register an Import";
+			// 
+			// label3
+			// 
+			label3->AutoSize = true;
+			label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			label3->Location = System::Drawing::Point(30, 170);
+			label3->Name = L"label3";
+			label3->Size = System::Drawing::Size(161, 29);
+			label3->TabIndex = 3;
+			label3->Text = L"Arrival Time:";
+			// 
+			// label2
+			// 
+			label2->AutoSize = true;
+			label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			label2->Location = System::Drawing::Point(30, 106);
+			label2->Name = L"label2";
+			label2->Size = System::Drawing::Size(119, 29);
+			label2->TabIndex = 1;
+			label2->Text = L"Supplier:";
 			// 
 			// errorMsg
 			// 
@@ -205,20 +205,8 @@ namespace Views {
 			this->errorMsg->ForeColor = System::Drawing::Color::DarkRed;
 			this->errorMsg->Location = System::Drawing::Point(25, 770);
 			this->errorMsg->Name = L"errorMsg";
-			this->errorMsg->Size = System::Drawing::Size(205, 25);
+			this->errorMsg->Size = System::Drawing::Size(0, 25);
 			this->errorMsg->TabIndex = 7;
-			this->errorMsg->Text = L"Error Message Here";
-			// 
-			// itemsPanel
-			// 
-			this->itemsPanel->AutoScroll = true;
-			this->itemsPanel->Controls->Add(this->noItemsMsg);
-			this->itemsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->itemsPanel->Location = System::Drawing::Point(30, 320);
-			this->itemsPanel->Name = L"itemsPanel";
-			this->itemsPanel->Padding = System::Windows::Forms::Padding(30, 10, 30, 10);
-			this->itemsPanel->Size = System::Drawing::Size(1068, 409);
-			this->itemsPanel->TabIndex = 9;
 			// 
 			// noItemsMsg
 			// 
@@ -233,6 +221,17 @@ namespace Views {
 			this->noItemsMsg->TabIndex = 0;
 			this->noItemsMsg->Text = L"No Items added to this Import";
 			this->noItemsMsg->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// itemsPanel
+			// 
+			this->itemsPanel->AutoScroll = true;
+			this->itemsPanel->Controls->Add(this->noItemsMsg);
+			this->itemsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->itemsPanel->Location = System::Drawing::Point(30, 320);
+			this->itemsPanel->Name = L"itemsPanel";
+			this->itemsPanel->Padding = System::Windows::Forms::Padding(30, 10, 30, 10);
+			this->itemsPanel->Size = System::Drawing::Size(1068, 409);
+			this->itemsPanel->TabIndex = 9;
 			// 
 			// AddImportPage
 			// 

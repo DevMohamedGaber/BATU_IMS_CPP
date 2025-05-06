@@ -96,6 +96,18 @@ namespace Models
 		string query = "DELETE FROM Imports WHERE Id = " + to_string(ImportId) + ";";
 		DatabaseConnection::Instance->Execute(query);
 	}
+	List<OrderItem^>^ Imports::GetItems(int ImportId) {
+		auto rows = DatabaseConnection::Instance->Query("SELECT ii.ItemId, ii.Count, i.Name FROM Import_Items ii JOIN Inventory i ON ii.ItemId = i.Id WHERE ii.ImportId = " + to_string(ImportId) + ";");
+		List<OrderItem^>^ items = gcnew List<OrderItem^>();
+		for (auto& itemRow : rows) {
+			OrderItem^ item = gcnew OrderItem();
+			item->Id = stoi(itemRow[0]);
+			item->Count = stoi(itemRow[1]);
+			item->Name = gcnew String(itemRow[2].c_str());
+			items->Add(item);
+		}
+		return items;
+	}
 
 	// helpers
 	Supplier^ Imports::FetchSupplierData(string& id) {

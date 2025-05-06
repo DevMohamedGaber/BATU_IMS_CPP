@@ -15,7 +15,6 @@ namespace Views
 		Application::SetCompatibleTextRenderingDefault(false);
 		LoginForm form;
 		Application::Run(% form);
-
 	}
 }
 

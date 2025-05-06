@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="AddCategoryPage.cpp" />
     <ClCompile Include="AddCustomerPage.cpp" />
+    <ClCompile Include="AddExportPage.cpp" />
     <ClCompile Include="AddImportPage.cpp" />
     <ClCompile Include="AddItemPage.cpp" />
     <ClCompile Include="AddOrderItem.cpp" />
@@ -135,6 +136,9 @@
     <ClCompile Include="EditCategoryPage.cpp" />
     <ClCompile Include="EditItemPage.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
+    <ClCompile Include="Exports.cpp" />
+    <ClCompile Include="ExportsController.cpp" />
+    <ClCompile Include="ExportsListPage.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="Imports.cpp" />
     <ClCompile Include="ImportsController.cpp" />
@@ -181,6 +185,9 @@
     <ClInclude Include="AddCustomerPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="AddExportPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="AddImportPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -224,6 +231,12 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="CustomersController.h" />
+    <ClInclude Include="Export.h" />
+    <ClInclude Include="Exports.h" />
+    <ClInclude Include="ExportsController.h" />
+    <ClInclude Include="ExportsListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="HomePage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -293,6 +306,9 @@
     <EmbeddedResource Include="AddCustomerPage.resx">
       <DependentUpon>AddCustomerPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddExportPage.resx">
+      <DependentUpon>AddExportPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddImportPage.resx">
       <DependentUpon>AddImportPage.h</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditItemPage.resx">
       <DependentUpon>EditItemPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportsListPage.resx">
+      <DependentUpon>ExportsListPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.h</DependentUpon>

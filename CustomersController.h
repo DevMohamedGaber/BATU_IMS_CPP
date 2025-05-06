@@ -15,5 +15,6 @@ namespace Controllers
 		static Customer^ GetCustomerById(int id);  
 		static void DeleteCustomer(int id);  
 		static String^ EditCustomer(Customer^ customer);
+		static List<Customer^>^ GetCustomersByName(String^ name);
     };
 }

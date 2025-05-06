@@ -173,6 +173,21 @@
     <Filter Include="Views\_Common\ViewOrderItem">
       <UniqueIdentifier>{69659d02-b11d-40da-9c65-b8e4629d1566}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\Exports">
+      <UniqueIdentifier>{d6c54bdc-1712-4af9-a446-ded91134a42c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Exports">
+      <UniqueIdentifier>{4f9d453e-b076-4f94-ac12-15833a7ced23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Exports">
+      <UniqueIdentifier>{3fa8a579-8362-4a9c-86fb-ad088bfb2297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Exports\List">
+      <UniqueIdentifier>{d134524d-b0b6-4041-9c7d-fa04da239f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Exports\Add">
+      <UniqueIdentifier>{1c2e2051-19d5-4706-810c-8887dd0918f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -315,6 +330,18 @@
     </ClCompile>
     <ClCompile Include="ViewOrderItem.cpp">
       <Filter>Views\_Common\ViewOrderItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Exports.cpp">
+      <Filter>Models\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportsController.cpp">
+      <Filter>Controllers\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportsListPage.cpp">
+      <Filter>Views\Exports\List</Filter>
+    </ClCompile>
+    <ClCompile Include="AddExportPage.cpp">
+      <Filter>Views\Exports\Add</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -479,6 +506,21 @@
     </ClInclude>
     <ClInclude Include="ViewOrderItem.h">
       <Filter>Views\_Common\ViewOrderItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Export.h">
+      <Filter>Models\Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports.h">
+      <Filter>Models\Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportsController.h">
+      <Filter>Controllers\Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportsListPage.h">
+      <Filter>Views\Exports\List</Filter>
+    </ClInclude>
+    <ClInclude Include="AddExportPage.h">
+      <Filter>Views\Exports\Add</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

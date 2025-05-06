@@ -18,10 +18,35 @@ namespace Models
 		{
 			Customer^ item = gcnew Customer();
 			item->Id = row[0].empty() ? 0 : stol(row[0]);
-			item->FirstName = gcnew String(row[1].c_str());
-			item->LastName = gcnew String(row[2].c_str());
+			item->SetName(row[1], row[2]);
 			item->Email = gcnew String(row[3].c_str());
 			return item;
+		}
+		String^ GetFullName()
+		{
+			String^ result = nullptr;
+			if (FirstName != nullptr)
+			{
+				result = FirstName;
+			}
+			if (LastName != nullptr)
+			{
+				if (!result->IsNullOrEmpty(result))
+				{
+					result += " ";
+				}
+				result += LastName;
+			}
+			if (result == nullptr) {
+				result = "Customer #" + Id;
+			}
+			return result;
+		}
+
+	private:
+		void SetName(string firstname, string lastname) {
+			this->FirstName = firstname == "NULL" ? nullptr : gcnew String(firstname.c_str());
+			this->LastName = lastname == "NULL" ? nullptr : gcnew String(lastname.c_str());
 		}
 	};
 }

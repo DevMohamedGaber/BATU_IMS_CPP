@@ -63,4 +63,14 @@ namespace Models
 		}
 		return items;
 	}
+	void Inventory::IncreaseStock(int id, int quantity)
+	{
+		string sql = "UPDATE Inventory SET Stock = Stock + " + std::to_string(quantity) + " WHERE Id = " + std::to_string(id);
+		DatabaseConnection::Instance->Execute(sql);
+	}
+	void Inventory::DecreaseStock(int id, int quantity)
+	{
+		string sql = "UPDATE Inventory SET Stock = Stock - " + std::to_string(quantity) + " WHERE Id = " + std::to_string(id);
+		DatabaseConnection::Instance->Execute(sql);
+	}
 }

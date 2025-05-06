@@ -10,5 +10,6 @@ namespace Controllers
 	public:
 		static User^ CurrentUser = nullptr;
 		static String^ Login(String^ username, String^ password);
+		static void Logout();
 	};
 }

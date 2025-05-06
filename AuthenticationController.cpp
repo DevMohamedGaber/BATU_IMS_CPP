@@ -3,6 +3,7 @@
 #include "User.h"
 #include "Users.h"
 #include "Utilities.h"
+
 using namespace System;
 using namespace Models;
 using namespace Core;
@@ -30,5 +31,9 @@ namespace Controllers
 		}
 		CurrentUser = user;
 		return nullptr;
+	}
+	void AuthenticationController::Logout()
+	{
+		CurrentUser = nullptr;
 	}
 }

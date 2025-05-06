@@ -1,5 +1,6 @@
 #pragma once
 #include "Import.h"
+#include "OrderItem.h"
 
 namespace Models
 {
@@ -13,6 +14,7 @@ namespace Models
 		static bool Review(int ImportId, int ReviewerId);
 		static bool Accept(int ImportId, int AccepterId);
 		static void Delete(int ImportId);
+		static List<OrderItem^>^ GetItems(int ImportId);
 
 	private:
 		static Supplier^ FetchSupplierData(string& id);

@@ -24,7 +24,6 @@ namespace Models
 		}
 		return Customer::Map(rows[0]);
 	}
-
 	bool Customers::Insert(String^ FirstName, String^ LastName, String^ Email)
 	{
 		string sql = "INSERT INTO Customers (FirstName, LastName, Email) VALUES ('" + Utilities::GetNativeString(FirstName) + "', '" + Utilities::GetNativeString(LastName) + "', '" + Utilities::GetNativeString(Email) + "')";
@@ -51,5 +50,15 @@ namespace Models
 		string sql = "SELECT COUNT(*) FROM Customers WHERE Email = '" + Utilities::GetNativeString(email) + "'";
 		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
 		return !rows.empty() && !rows[0].empty() && stoi(rows[0][0]) > 0;
+	}
+	List<Customer^>^ Customers::GetLikeName(String^ name)
+	{
+		string sql = "SELECT * FROM Customers WHERE FirstName LIKE '%" + Utilities::GetNativeString(name) + "%' OR LastName LIKE '%" + Utilities::GetNativeString(name) + "%'";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		auto items = gcnew List<Customer^>();
+		for (const auto& row : rows) {
+			items->Add(Customer::Map(row));
+		}
+		return items;
 	}
 }

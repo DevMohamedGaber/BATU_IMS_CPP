@@ -47,27 +47,26 @@ namespace Models
             Instance->Execute("INSERT INTO Users VALUES (null, 'staff', 'Staff', null, 'staff', 'staff@system.com', 1)");
             Instance->Execute("INSERT INTO Users VALUES (null, 'retailer', 'Retailer', null, 'retailer', 'retailer@system.com', 2)");
         }
-
         if (!Instance->TableExists("Inventory")) {
             Instance->Execute("CREATE TABLE Inventory (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE, Stock INTEGER, Price REAL, CategoryId INTEGER)");
         }
-
         if (!Instance->TableExists("Categories")) {
             Instance->Execute("CREATE TABLE Categories (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE)");
         }
-
 		if (!Instance->TableExists("Customers")) {
 			Instance->Execute("CREATE TABLE Customers (Id INTEGER PRIMARY KEY AUTOINCREMENT, FirstName TEXT NOT NULL, LastName TEXT NOT NULL, Email TEXT NOT NULL UNIQUE)");
-		}
-            
+		}   
         if (!Instance->TableExists("Suppliers")) {
 			Instance->Execute("CREATE TABLE Suppliers (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE, ContractAt TEXT NOT NULL)");
         }
-
         if (!Instance->TableExists("Imports")) {
             Instance->Execute("CREATE TABLE Imports (Id INTEGER PRIMARY KEY AUTOINCREMENT, ArrivalDate TEXT NOT NULL UNIQUE, Status INTEGER NOT NULL, ItemCount INTEGER, SupplierId INTEGER NOT NULL, AdderUserId INTEGER NOT NULL, ReviewerUserId INTEGER, AccepterUserId INTEGER)");
             Instance->Execute("CREATE TABLE Import_Items (ImportId INTEGER NOT NULL, ItemId INTEGER NOT NULL, Count INTEGER NOT NULL)");
         }
+		if (!Instance->TableExists("Exports")) {
+			Instance->Execute("CREATE TABLE Exports (Id INTEGER PRIMARY KEY AUTOINCREMENT, Date TEXT NOT NULL UNIQUE, Status INTEGER NOT NULL, ItemCount INTEGER, CustomerId INTEGER NOT NULL, RetailerUserId INTEGER NOT NULL)");
+			Instance->Execute("CREATE TABLE Export_Items (ExportId INTEGER NOT NULL, ItemId INTEGER NOT NULL, Count INTEGER NOT NULL)");
+		}
     }
 
     // no return queries

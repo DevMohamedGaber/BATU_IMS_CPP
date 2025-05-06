@@ -23,10 +23,10 @@ namespace Controllers
 		{
 			return "Email is required.";
 		}
-		if (!System::Text::RegularExpressions::Regex::IsMatch(email, "^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+		/*if (!System::Text::RegularExpressions::Regex::IsMatch(email, "^[^@\s]+@[^@\s]+\.[^@\s]+$"))
 		{
 			return "Invalid email format.";
-		}
+		}*/
 
 		if (!Customers::Insert(firstName, lastName, email))
 		{
@@ -82,5 +82,9 @@ namespace Controllers
 			return "Failed to update customer.";
 		}
 		return nullptr;
+	}
+	List<Customer^>^ CustomersController::GetCustomersByName(String^ name)
+	{
+		return Customers::GetLikeName(name);
 	}
 }

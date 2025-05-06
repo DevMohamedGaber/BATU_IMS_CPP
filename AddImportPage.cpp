@@ -1,13 +1,9 @@
 #include "AddImportPage.h"
 #include "ImportsController.h"
 #include "SuppliersController.h"
-#include "AddOrderItem.h"
 
 using namespace Controllers;
 
-/*
-	BUG: when a valid suplier name is typed, and then an invalid one is typed, that results in an error
-*/
 namespace Views
 {
 	Void AddImportPage::AddImportPage_Load(Object^ sender, EventArgs^ e) {

@@ -16,5 +16,6 @@ namespace Models
 		static void Delete(int id);
 		static bool ExistsByName(String^ firstName, String^ lastName);
 		static bool ExistsByEmail(String^ email);
+		static List<Customer^>^ GetLikeName(String^ name);
 	};
 }
