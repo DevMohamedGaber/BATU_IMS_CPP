@@ -3,12 +3,14 @@
 #include "DatabaseConnection.h"  
 #include "Utilities.h"
 
+using namespace Controllers;
+
 namespace Models
 {
 	List<Export^>^ Exports::GetAll() {
 		List<Export^>^ exports = gcnew List<Export^>();
 		// Query all exports
-        auto rows = DatabaseConnection::Instance->Query("SELECT e.Id, e.ExportDate, e.Status, e.ItemCount, c.Id AS CustomerId, c.FirstName AS CustomerFirstName, c.LastName AS CustomerLastName FROM Exports e LEFT JOIN Customers c ON e.CustomerId = c.Id;");  
+        auto rows = DatabaseConnection::Instance->Query("SELECT e.Id, e.Date, e.Status, e.ItemCount, c.Id AS CustomerId, c.FirstName AS CustomerFirstName, c.LastName AS CustomerLastName FROM Exports e LEFT JOIN Customers c ON e.CustomerId = c.Id;");  
 		for (auto& row : rows) {  
 			Export^ exportObj = gcnew Export();
 			exportObj->Id = stoi(row[0]);
@@ -47,7 +49,8 @@ namespace Models
 			+ Utilities::GetNativeString(Date)
 			+ "', 0,"
 			+ to_string(Items->Count) + ", "
-			+ to_string(CustomerId) + ", NULL);";
+			+ to_string(CustomerId) + ", "
+			+ to_string(AuthenticationController::CurrentUser->Id) + ");";
 		if (!DatabaseConnection::Instance->Execute(query)) {
 			return false;
 		}
