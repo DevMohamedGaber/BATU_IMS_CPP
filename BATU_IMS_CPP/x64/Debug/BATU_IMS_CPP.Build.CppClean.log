@@ -19,7 +19,6 @@ d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\addimportpage.ob
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\addexportpage.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\addcustomerpage.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\addcategorypage.obj
-d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\supplierviewpage.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\supplierslistpage.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\supplierscontroller.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\suppliers.obj
@@ -35,7 +34,7 @@ d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\importslistpage.
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\importscontroller.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\imports.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\homepage.obj
-d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\exportslistpage.obj
+d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\exportviewpage.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\exportscontroller.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\exports.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\entrypoint.obj
@@ -50,6 +49,8 @@ d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\userscontroller.
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\users.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\userrole.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\usereditpage.obj
+d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\supplierviewpage.obj
+d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\exportslistpage.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\batu_ims_cpp\x64\debug\sqlite3.obj
 d:\college\3rd\projects\cpp\batu_ims_cpp\x64\debug\batu_ims_cpp.exe
 d:\college\3rd\projects\cpp\batu_ims_cpp\x64\debug\batu_ims_cpp.pdb

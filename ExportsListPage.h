@@ -123,13 +123,13 @@ namespace Views {
 			this->dataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataTable->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataTable->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
-			this->dataTable->Location = System::Drawing::Point(30, 30);
+			this->dataTable->Location = System::Drawing::Point(30, 119);
 			this->dataTable->Name = L"dataTable";
 			this->dataTable->RowHeadersVisible = false;
 			this->dataTable->RowHeadersWidth = 51;
 			this->dataTable->RowTemplate->Height = 24;
 			this->dataTable->ShowEditingIcon = false;
-			this->dataTable->Size = System::Drawing::Size(943, 725);
+			this->dataTable->Size = System::Drawing::Size(943, 636);
 			this->dataTable->TabIndex = 15;
 			this->dataTable->Visible = false;
 			this->dataTable->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ExportsListPage::dataTable_CellContentClick);
@@ -138,9 +138,9 @@ namespace Views {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->dataTable);
 			this->Controls->Add(panel1);
 			this->Controls->Add(this->noDataLabel);
-			this->Controls->Add(this->dataTable);
 			this->Name = L"ExportsListPage";
 			this->Padding = System::Windows::Forms::Padding(30);
 			this->Size = System::Drawing::Size(1003, 785);

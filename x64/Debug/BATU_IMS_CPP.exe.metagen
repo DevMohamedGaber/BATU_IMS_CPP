@@ -14,6 +14,7 @@
   BATUIMSCPP.EditCategoryPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.EditItemPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ExportsListPage.resources - Embedded, ContainedInManifestFile, 
+  BATUIMSCPP.ExportViewPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.HomePage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ImportsListPage.resources - Embedded, ContainedInManifestFile, 
   BATUIMSCPP.ImportViewPage.resources - Embedded, ContainedInManifestFile, 
@@ -373,6 +374,10 @@ Class Models.Exports: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldI
     Delete(Int32): PrivateScope, Public, Static, HideBySig
     ChangeStatus(Int32, Int32): PrivateScope, Public, Static, HideBySig
     GetItems(Int32): PrivateScope, Public, Static, HideBySig
+Class Views.ExportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Models.Export): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Models.Imports: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:

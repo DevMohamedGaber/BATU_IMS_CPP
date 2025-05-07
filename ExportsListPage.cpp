@@ -2,6 +2,7 @@
 #include "ExportsController.h"
 #include "AddExportPage.h"
 #include "DashboardForm.h"
+#include "ExportViewPage.h"
 
 using namespace Controllers;
 
@@ -36,6 +37,8 @@ namespace Views
 		DashboardForm::SwitchView(gcnew AddExportPage());
 	}
 	Void ExportsListPage::dataTable_CellContentClick(Object^ sender, DataGridViewCellEventArgs^ e) {
-		
+		if (e->RowIndex < 0) return;
+		auto id = Convert::ToInt32(dataTable->Rows[e->RowIndex]->Cells["Id"]->Value);
+		DashboardForm::SwitchView(gcnew ExportViewPage(id));
 	}
 }

@@ -139,6 +139,7 @@
     <ClCompile Include="Exports.cpp" />
     <ClCompile Include="ExportsController.cpp" />
     <ClCompile Include="ExportsListPage.cpp" />
+    <ClCompile Include="ExportViewPage.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="Imports.cpp" />
     <ClCompile Include="ImportsController.cpp" />
@@ -235,6 +236,9 @@
     <ClInclude Include="Exports.h" />
     <ClInclude Include="ExportsController.h" />
     <ClInclude Include="ExportsListPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ExportViewPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="HomePage.h">
@@ -347,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExportsListPage.resx">
       <DependentUpon>ExportsListPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportViewPage.resx">
+      <DependentUpon>ExportViewPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.h</DependentUpon>
