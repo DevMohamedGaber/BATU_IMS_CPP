@@ -18,6 +18,7 @@ namespace Views
 	// Event handlers for buttons
 	Void DashboardForm::logoutBtn_Click(Object^ sender, EventArgs^ e) {
 		AuthenticationController::Logout();
+		Instance = nullptr;
 		auto loginForm = gcnew LoginForm();
 		this->Hide();
 		loginForm->ShowDialog();
@@ -59,7 +60,6 @@ namespace Views
 		}
 		Instance = gcnew DashboardForm();
 		SwitchView(gcnew HomePage());
-		// Set the current user name
 		Instance->currentUserNameLabel->Text = AuthenticationController::CurrentUser->GetFullName() + "  (" + AuthenticationController::CurrentUser->Role->ToString() + ")";
 		Instance->ShowDialog();
 	}
