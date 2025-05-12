@@ -47,7 +47,7 @@ namespace Models
 		
 		string query = "INSERT INTO Exports VALUES (NULL, '"
 			+ Utilities::GetNativeString(Date)
-			+ "', 0,"
+			+ "', 2,"
 			+ to_string(Items->Count) + ", "
 			+ to_string(CustomerId) + ", "
 			+ to_string(AuthenticationController::CurrentUser->Id) + ");";
@@ -74,7 +74,7 @@ namespace Models
 	}
 	List<OrderItem^>^ Exports::GetItems(int ExportId) {
 		List<OrderItem^>^ items = gcnew List<OrderItem^>();
-		auto rows = DatabaseConnection::Instance->Query("SELECT oi.Id, oi.Name, ei.Count FROM Order_Items oi JOIN Export_Items ei ON oi.Id = ei.ItemId WHERE ei.ExportId = " + to_string(ExportId) + ";");
+		auto rows = DatabaseConnection::Instance->Query("SELECT i.Id, i.Name, ei.Count FROM Inventory i JOIN Export_Items ei ON i.Id = ei.ItemId WHERE ei.ExportId = " + to_string(ExportId) + ";");
 		for (auto& row : rows) {
 			OrderItem^ item = gcnew OrderItem();
 			item->Id = stoi(row[0]);
@@ -83,6 +83,10 @@ namespace Models
 			items->Add(item);
 		}
 		return items;
+	}
+	List<OrderItem^>^ Exports::GetLastAddedItems() {
+		auto id = DatabaseConnection::Instance->LastInsertId();
+		return GetItems(id);
 	}
 	Customer^ Exports::FetchCustomerData(string& id) {
 		auto rows = DatabaseConnection::Instance->Query("SELECT * FROM Customers WHERE Id = " + id + ";");
@@ -108,12 +112,12 @@ namespace Models
 	}
 	List<OrderItem^>^ Exports::FetchItemsData(string& id) {
 		List<OrderItem^>^ items = gcnew List<OrderItem^>();
-		auto rows = DatabaseConnection::Instance->Query("SELECT oi.Id, oi.Name, ei.Count FROM Order_Items oi JOIN Export_Items ei ON oi.Id = ei.ItemId WHERE ei.ExportId = " + id + ";");
+		auto rows = DatabaseConnection::Instance->Query("SELECT ii.ItemId, ii.Count, i.Name FROM Export_Items ii JOIN Inventory i ON ii.ItemId = i.Id WHERE ii.ExportId = " + id + ";");
 		for (auto& row : rows) {
 			OrderItem^ item = gcnew OrderItem();
 			item->Id = stoi(row[0]);
-			item->Name = gcnew String(row[1].c_str());
-			item->Count = stoi(row[2]);
+			item->Count = stoi(row[1]);
+			item->Name = gcnew String(row[2].c_str());
 			items->Add(item);
 		}
 		return items;

@@ -12,6 +12,7 @@ namespace Models
 		static void Delete(int ImportId);
 		static bool ChangeStatus(int ImportId, int Status);
 		static List<OrderItem^>^ GetItems(int ImportId);
+		static List<OrderItem^>^ GetLastAddedItems();
 
 	private:
 		static Customer^ FetchCustomerData(string& id);

@@ -1,4 +1,5 @@
 #include "ExportsController.h"
+#include "Inventory.h"
 #include "Exports.h"
 
 namespace Controllers
@@ -13,6 +14,9 @@ namespace Controllers
 		if (!Exports::Insert(CustomerId, Date, Items)) {
 			return "failed to insert the export.";
 		}
+		for each (auto item in Items) {
+			Inventory::DecreaseStock(item->Id, item->Count);
+		}
 		return nullptr;
 	}
 	String^ ExportsController::ChangeExportStatus(int ExportId, int Status) {
@@ -21,6 +25,15 @@ namespace Controllers
 		}
 		if (!Exports::ChangeStatus(ExportId, Status)) {
 			return "failed to change the export status.";
+		}
+		auto items = Exports::GetItems(ExportId);
+		for each (auto item in items) {
+			if (Status == 2) {
+				Inventory::DecreaseStock(item->Id, item->Count);
+			}
+			else if (Status == 3) {
+				Inventory::IncreaseStock(item->Id, item->Count);
+			}
 		}
 		return nullptr;
 	}

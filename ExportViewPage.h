@@ -34,19 +34,19 @@ namespace Views {
 
 	private:
 		Export^ exportData;
-	private: System::Windows::Forms::FlowLayoutPanel^ itemsPanel;
-	private: System::Windows::Forms::Label^ statusLabel;
-	private: System::Windows::Forms::Label^ itemCountLabel;
+		System::Windows::Forms::FlowLayoutPanel^ itemsPanel;
+		System::Windows::Forms::Label^ statusLabel;
+		System::Windows::Forms::Label^ itemCountLabel;
+	private: System::Windows::Forms::Label^ customerLabel;
 
+		System::Windows::Forms::Button^ cancelBtn;
+		System::Windows::Forms::Button^ deleteBtn;
+	private: System::Windows::Forms::Label^ retailerLabel;
 
-	private: System::Windows::Forms::Label^ supplierLabel;
-	private: System::Windows::Forms::Button^ cancelBtn;
+		System::Windows::Forms::Label^ idLabel;
+	private: System::Windows::Forms::Label^ dateLabel;
+	private: System::Windows::Forms::Button^ confirmBtn;
 
-
-	private: System::Windows::Forms::Button^ deleteBtn;
-	private: System::Windows::Forms::Label^ adderLabel;
-	private: System::Windows::Forms::Label^ idLabel;
-	private: System::Windows::Forms::Label^ arrivalTimeLabel;
 		   /// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -70,11 +70,12 @@ namespace Views {
 			this->deleteBtn = (gcnew System::Windows::Forms::Button());
 			this->statusLabel = (gcnew System::Windows::Forms::Label());
 			this->itemCountLabel = (gcnew System::Windows::Forms::Label());
-			this->adderLabel = (gcnew System::Windows::Forms::Label());
+			this->retailerLabel = (gcnew System::Windows::Forms::Label());
 			this->idLabel = (gcnew System::Windows::Forms::Label());
-			this->arrivalTimeLabel = (gcnew System::Windows::Forms::Label());
-			this->supplierLabel = (gcnew System::Windows::Forms::Label());
+			this->dateLabel = (gcnew System::Windows::Forms::Label());
+			this->customerLabel = (gcnew System::Windows::Forms::Label());
 			this->itemsPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->confirmBtn = (gcnew System::Windows::Forms::Button());
 			label3 = (gcnew System::Windows::Forms::Label());
 			label5 = (gcnew System::Windows::Forms::Label());
 			label4 = (gcnew System::Windows::Forms::Label());
@@ -122,6 +123,7 @@ namespace Views {
 			// btnsPanel
 			// 
 			btnsPanel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			btnsPanel->Controls->Add(this->confirmBtn);
 			btnsPanel->Controls->Add(this->cancelBtn);
 			btnsPanel->Controls->Add(this->deleteBtn);
 			btnsPanel->Location = System::Drawing::Point(786, 3);
@@ -135,12 +137,13 @@ namespace Views {
 			this->cancelBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cancelBtn->ForeColor = System::Drawing::SystemColors::Control;
-			this->cancelBtn->Location = System::Drawing::Point(3, 3);
+			this->cancelBtn->Location = System::Drawing::Point(3, 56);
 			this->cancelBtn->Name = L"cancelBtn";
 			this->cancelBtn->Size = System::Drawing::Size(221, 47);
 			this->cancelBtn->TabIndex = 0;
 			this->cancelBtn->Text = L"Cancel Export";
 			this->cancelBtn->UseVisualStyleBackColor = false;
+			this->cancelBtn->Click += gcnew System::EventHandler(this, &ExportViewPage::cancelBtn_Click);
 			// 
 			// deleteBtn
 			// 
@@ -148,12 +151,13 @@ namespace Views {
 			this->deleteBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->deleteBtn->ForeColor = System::Drawing::SystemColors::Control;
-			this->deleteBtn->Location = System::Drawing::Point(3, 56);
+			this->deleteBtn->Location = System::Drawing::Point(3, 109);
 			this->deleteBtn->Name = L"deleteBtn";
 			this->deleteBtn->Size = System::Drawing::Size(221, 47);
 			this->deleteBtn->TabIndex = 2;
 			this->deleteBtn->Text = L"Delete";
 			this->deleteBtn->UseVisualStyleBackColor = false;
+			this->deleteBtn->Click += gcnew System::EventHandler(this, &ExportViewPage::deleteBtn_Click);
 			// 
 			// label1
 			// 
@@ -184,12 +188,12 @@ namespace Views {
 			panel1->Controls->Add(this->itemCountLabel);
 			panel1->Controls->Add(btnsPanel);
 			panel1->Controls->Add(label1);
-			panel1->Controls->Add(this->adderLabel);
+			panel1->Controls->Add(this->retailerLabel);
 			panel1->Controls->Add(this->idLabel);
 			panel1->Controls->Add(label5);
 			panel1->Controls->Add(label2);
-			panel1->Controls->Add(this->arrivalTimeLabel);
-			panel1->Controls->Add(this->supplierLabel);
+			panel1->Controls->Add(this->dateLabel);
+			panel1->Controls->Add(this->customerLabel);
 			panel1->Controls->Add(label4);
 			panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			panel1->Location = System::Drawing::Point(30, 30);
@@ -220,17 +224,18 @@ namespace Views {
 			this->itemCountLabel->TabIndex = 13;
 			this->itemCountLabel->Text = L"This Export incluldes 99 items listed below";
 			// 
-			// adderLabel
+			// retailerLabel
 			// 
-			this->adderLabel->AutoSize = true;
-			this->adderLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->retailerLabel->AutoSize = true;
+			this->retailerLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->adderLabel->ForeColor = System::Drawing::Color::Peru;
-			this->adderLabel->Location = System::Drawing::Point(168, 157);
-			this->adderLabel->Name = L"adderLabel";
-			this->adderLabel->Size = System::Drawing::Size(184, 25);
-			this->adderLabel->TabIndex = 8;
-			this->adderLabel->Text = L"Adder Name Here";
+			this->retailerLabel->ForeColor = System::Drawing::Color::Peru;
+			this->retailerLabel->Location = System::Drawing::Point(168, 157);
+			this->retailerLabel->Name = L"retailerLabel";
+			this->retailerLabel->Size = System::Drawing::Size(184, 25);
+			this->retailerLabel->TabIndex = 8;
+			this->retailerLabel->Text = L"Adder Name Here";
+			this->retailerLabel->Click += gcnew System::EventHandler(this, &ExportViewPage::retailerLabel_Click);
 			// 
 			// idLabel
 			// 
@@ -244,29 +249,30 @@ namespace Views {
 			this->idLabel->TabIndex = 1;
 			this->idLabel->Text = L"ID: 9999999";
 			// 
-			// arrivalTimeLabel
+			// dateLabel
 			// 
-			this->arrivalTimeLabel->AutoSize = true;
-			this->arrivalTimeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->dateLabel->AutoSize = true;
+			this->dateLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->arrivalTimeLabel->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->arrivalTimeLabel->Location = System::Drawing::Point(168, 118);
-			this->arrivalTimeLabel->Name = L"arrivalTimeLabel";
-			this->arrivalTimeLabel->Size = System::Drawing::Size(53, 25);
-			this->arrivalTimeLabel->TabIndex = 6;
-			this->arrivalTimeLabel->Text = L"Date";
+			this->dateLabel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->dateLabel->Location = System::Drawing::Point(168, 118);
+			this->dateLabel->Name = L"dateLabel";
+			this->dateLabel->Size = System::Drawing::Size(53, 25);
+			this->dateLabel->TabIndex = 6;
+			this->dateLabel->Text = L"Date";
 			// 
-			// supplierLabel
+			// customerLabel
 			// 
-			this->supplierLabel->AutoSize = true;
-			this->supplierLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->customerLabel->AutoSize = true;
+			this->customerLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->supplierLabel->ForeColor = System::Drawing::Color::RoyalBlue;
-			this->supplierLabel->Location = System::Drawing::Point(139, 75);
-			this->supplierLabel->Name = L"supplierLabel";
-			this->supplierLabel->Size = System::Drawing::Size(219, 25);
-			this->supplierLabel->TabIndex = 4;
-			this->supplierLabel->Text = L"Customer Name Here";
+			this->customerLabel->ForeColor = System::Drawing::Color::RoyalBlue;
+			this->customerLabel->Location = System::Drawing::Point(139, 75);
+			this->customerLabel->Name = L"customerLabel";
+			this->customerLabel->Size = System::Drawing::Size(219, 25);
+			this->customerLabel->TabIndex = 4;
+			this->customerLabel->Text = L"Customer Name Here";
+			this->customerLabel->Click += gcnew System::EventHandler(this, &ExportViewPage::customerLabel_Click);
 			// 
 			// itemsPanel
 			// 
@@ -275,6 +281,20 @@ namespace Views {
 			this->itemsPanel->Name = L"itemsPanel";
 			this->itemsPanel->Size = System::Drawing::Size(1013, 479);
 			this->itemsPanel->TabIndex = 12;
+			// 
+			// confirmBtn
+			// 
+			this->confirmBtn->BackColor = System::Drawing::Color::ForestGreen;
+			this->confirmBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->confirmBtn->ForeColor = System::Drawing::SystemColors::Control;
+			this->confirmBtn->Location = System::Drawing::Point(3, 3);
+			this->confirmBtn->Name = L"confirmBtn";
+			this->confirmBtn->Size = System::Drawing::Size(221, 47);
+			this->confirmBtn->TabIndex = 3;
+			this->confirmBtn->Text = L"Confirm Export";
+			this->confirmBtn->UseVisualStyleBackColor = false;
+			this->confirmBtn->Click += gcnew System::EventHandler(this, &ExportViewPage::confirmBtn_Click);
 			// 
 			// ExportViewPage
 			// 
@@ -292,5 +312,12 @@ namespace Views {
 
 		}
 #pragma endregion
+		void SetData(Export^ exportData);
+		void UpdateStatus();
+		System::Void cancelBtn_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void deleteBtn_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void customerLabel_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void retailerLabel_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void confirmBtn_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
