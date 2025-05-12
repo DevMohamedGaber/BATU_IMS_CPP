@@ -191,6 +191,9 @@
     <Filter Include="Views\Exports\View">
       <UniqueIdentifier>{7697fd1a-09f4-4e87-9f12-f9fc69251b33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rersources">
+      <UniqueIdentifier>{4c5cedcf-de31-4bbd-b451-1e665cbc6613}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -531,5 +534,10 @@
     <ClInclude Include="ExportViewPage.h">
       <Filter>Views\Exports\View</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\login_bg.jpg">
+      <Filter>Rersources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

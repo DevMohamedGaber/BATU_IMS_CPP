@@ -54,6 +54,7 @@ namespace Views {
 			System::Windows::Forms::Label^ label3;
 			System::Windows::Forms::Button^ ExitBtn;
 			System::Windows::Forms::Label^ label4;
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
 			this->usernameInput = (gcnew System::Windows::Forms::TextBox());
 			this->errorBox = (gcnew System::Windows::Forms::Label());
 			this->passwordInput = (gcnew System::Windows::Forms::TextBox());
@@ -208,6 +209,7 @@ namespace Views {
 			this->AutoScaleDimensions = System::Drawing::SizeF(10, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Ivory;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(848, 634);
 			this->Controls->Add(ExitBtn);

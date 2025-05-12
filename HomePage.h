@@ -73,7 +73,7 @@ namespace Views
 			this->BackColor = System::Drawing::SystemColors::ButtonShadow;
 			this->Controls->Add(this->label1);
 			this->Name = L"HomePage";
-			this->Size = System::Drawing::Size(971, 610);
+			this->Size = System::Drawing::Size(1206, 781);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

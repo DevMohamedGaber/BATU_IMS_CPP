@@ -23,7 +23,7 @@
     <ProjectGuid>{4B2BD410-2B43-44F6-945D-7B3950F1F06F}</ProjectGuid>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>BATUIMSCPP</RootNamespace>
+    <RootNamespace>Views</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -369,6 +369,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierEditPage.resx">
       <DependentUpon>SupplierEditPage.h</DependentUpon>
@@ -397,6 +398,9 @@
     <EmbeddedResource Include="ViewOrderItem.resx">
       <DependentUpon>ViewOrderItem.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\login_bg.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
