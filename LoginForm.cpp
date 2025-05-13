@@ -14,6 +14,7 @@ namespace Views
 		{
 			errorBox->ForeColor = System::Drawing::Color::IndianRed;
 			errorBox->Text = result;
+			return;
 		}
 
 		this->Hide();

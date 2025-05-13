@@ -60,7 +60,9 @@ namespace Views
 		}
 		Instance = gcnew DashboardForm();
 		SwitchView(gcnew HomePage());
-		Instance->currentUserNameLabel->Text = AuthenticationController::CurrentUser->GetFullName() + "  (" + AuthenticationController::CurrentUser->Role->ToString() + ")";
+		if (AuthenticationController::CurrentUser != nullptr) {
+			Instance->currentUserNameLabel->Text = AuthenticationController::CurrentUser->GetFullName() + "  (" + AuthenticationController::CurrentUser->Role->ToString() + ")";
+		}
 		Instance->ShowDialog();
 	}
 	void DashboardForm::SwitchView(UserControl^ newView)

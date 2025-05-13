@@ -536,7 +536,28 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\login_bg.jpg">
+    <Image Include="assets\customers_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\login_page_bg.jpg">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\brand_logo.jpg">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\brand_logo2.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\password_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\username_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\login_btn.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\exit_btn.png">
       <Filter>Rersources</Filter>
     </Image>
   </ItemGroup>

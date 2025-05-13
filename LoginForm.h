@@ -33,9 +33,14 @@ namespace Views {
 			}
 		}
 	private: 
-		System::Windows::Forms::TextBox^ usernameInput;
-		System::Windows::Forms::TextBox^ passwordInput;
-		System::Windows::Forms::Label^ errorBox;
+
+
+	private: System::Windows::Forms::Label^ errorBox;
+	private: System::Windows::Forms::TextBox^ usernameInput;
+	private: System::Windows::Forms::TextBox^ passwordInput;
+
+
+
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -48,129 +53,176 @@ namespace Views {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::Label^ label2;
-			System::Windows::Forms::Label^ label1;
 			System::Windows::Forms::Button^ LoginBtn;
-			System::Windows::Forms::Label^ label3;
-			System::Windows::Forms::Button^ ExitBtn;
-			System::Windows::Forms::Label^ label4;
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
+			System::Windows::Forms::Button^ ExitBtn;
+			System::Windows::Forms::Panel^ panel2;
+			System::Windows::Forms::Panel^ panel7;
+			System::Windows::Forms::Panel^ panel8;
+			System::Windows::Forms::Panel^ panel5;
+			System::Windows::Forms::Panel^ panel6;
+			System::Windows::Forms::Panel^ panel4;
+			System::Windows::Forms::Panel^ panel1;
+			System::Windows::Forms::Panel^ panel3;
+			this->passwordInput = (gcnew System::Windows::Forms::TextBox());
 			this->usernameInput = (gcnew System::Windows::Forms::TextBox());
 			this->errorBox = (gcnew System::Windows::Forms::Label());
-			this->passwordInput = (gcnew System::Windows::Forms::TextBox());
-			label2 = (gcnew System::Windows::Forms::Label());
-			label1 = (gcnew System::Windows::Forms::Label());
 			LoginBtn = (gcnew System::Windows::Forms::Button());
-			label3 = (gcnew System::Windows::Forms::Label());
 			ExitBtn = (gcnew System::Windows::Forms::Button());
-			label4 = (gcnew System::Windows::Forms::Label());
+			panel2 = (gcnew System::Windows::Forms::Panel());
+			panel7 = (gcnew System::Windows::Forms::Panel());
+			panel8 = (gcnew System::Windows::Forms::Panel());
+			panel5 = (gcnew System::Windows::Forms::Panel());
+			panel6 = (gcnew System::Windows::Forms::Panel());
+			panel4 = (gcnew System::Windows::Forms::Panel());
+			panel1 = (gcnew System::Windows::Forms::Panel());
+			panel3 = (gcnew System::Windows::Forms::Panel());
+			panel2->SuspendLayout();
+			panel7->SuspendLayout();
+			panel5->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// label2
-			// 
-			label2->AutoSize = true;
-			label2->BackColor = System::Drawing::Color::Transparent;
-			label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-			label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			label2->Location = System::Drawing::Point(186, 215);
-			label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			label2->Name = L"label2";
-			label2->Size = System::Drawing::Size(110, 25);
-			label2->TabIndex = 1;
-			label2->Text = L"Username";
-			// 
-			// label1
-			// 
-			label1->AutoSize = true;
-			label1->BackColor = System::Drawing::Color::Transparent;
-			label1->Font = (gcnew System::Drawing::Font(L"Montserrat Subrayada", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			label1->Location = System::Drawing::Point(13, 27);
-			label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			label1->Name = L"label1";
-			label1->Size = System::Drawing::Size(594, 33);
-			label1->TabIndex = 0;
-			label1->Text = L"BATU Inventory Management System";
 			// 
 			// LoginBtn
 			// 
-			LoginBtn->BackColor = System::Drawing::Color::Maroon;
+			LoginBtn->BackColor = System::Drawing::Color::White;
+			LoginBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"LoginBtn.BackgroundImage")));
+			LoginBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			LoginBtn->Cursor = System::Windows::Forms::Cursors::Hand;
 			LoginBtn->FlatAppearance->BorderColor = System::Drawing::Color::Black;
 			LoginBtn->FlatAppearance->BorderSize = 0;
 			LoginBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			LoginBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			LoginBtn->Location = System::Drawing::Point(191, 473);
+			LoginBtn->Location = System::Drawing::Point(180, 426);
 			LoginBtn->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			LoginBtn->Name = L"LoginBtn";
-			LoginBtn->Size = System::Drawing::Size(205, 55);
+			LoginBtn->Size = System::Drawing::Size(140, 40);
 			LoginBtn->TabIndex = 6;
-			LoginBtn->Text = L"Sign In";
 			LoginBtn->UseVisualStyleBackColor = false;
 			LoginBtn->Click += gcnew System::EventHandler(this, &LoginForm::button1_Click);
-			// 
-			// label3
-			// 
-			label3->AutoSize = true;
-			label3->BackColor = System::Drawing::Color::Transparent;
-			label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-			label3->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			label3->Location = System::Drawing::Point(186, 343);
-			label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			label3->Name = L"label3";
-			label3->Size = System::Drawing::Size(106, 25);
-			label3->TabIndex = 9;
-			label3->Text = L"Password";
 			// 
 			// ExitBtn
 			// 
 			ExitBtn->BackColor = System::Drawing::Color::Transparent;
+			ExitBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ExitBtn.BackgroundImage")));
+			ExitBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			ExitBtn->Cursor = System::Windows::Forms::Cursors::Hand;
 			ExitBtn->FlatAppearance->BorderColor = System::Drawing::Color::DarkRed;
-			ExitBtn->FlatAppearance->BorderSize = 2;
+			ExitBtn->FlatAppearance->BorderSize = 0;
 			ExitBtn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
 			ExitBtn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			ExitBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			ExitBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			ExitBtn->ForeColor = System::Drawing::Color::Maroon;
-			ExitBtn->Location = System::Drawing::Point(424, 473);
+			ExitBtn->ForeColor = System::Drawing::Color::White;
+			ExitBtn->Location = System::Drawing::Point(338, 426);
 			ExitBtn->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			ExitBtn->Name = L"ExitBtn";
-			ExitBtn->Size = System::Drawing::Size(205, 55);
+			ExitBtn->Size = System::Drawing::Size(140, 40);
 			ExitBtn->TabIndex = 12;
-			ExitBtn->Text = L"Exit";
 			ExitBtn->UseVisualStyleBackColor = false;
 			ExitBtn->Click += gcnew System::EventHandler(this, &LoginForm::ExitBtn_Click);
 			// 
-			// label4
+			// panel2
 			// 
-			label4->AutoSize = true;
-			label4->BackColor = System::Drawing::Color::Transparent;
-			label4->Font = (gcnew System::Drawing::Font(L"Orbitron", 20, System::Drawing::FontStyle::Bold));
-			label4->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			label4->Location = System::Drawing::Point(179, 147);
-			label4->Name = L"label4";
-			label4->Size = System::Drawing::Size(142, 41);
-			label4->TabIndex = 7;
-			label4->Text = L"Sign In";
+			panel2->BackColor = System::Drawing::Color::White;
+			panel2->Controls->Add(panel7);
+			panel2->Controls->Add(panel5);
+			panel2->Controls->Add(panel4);
+			panel2->Controls->Add(panel1);
+			panel2->Controls->Add(this->errorBox);
+			panel2->Controls->Add(ExitBtn);
+			panel2->Controls->Add(LoginBtn);
+			panel2->Dock = System::Windows::Forms::DockStyle::Fill;
+			panel2->Location = System::Drawing::Point(400, 0);
+			panel2->Name = L"panel2";
+			panel2->Size = System::Drawing::Size(624, 600);
+			panel2->TabIndex = 14;
+			// 
+			// panel7
+			// 
+			panel7->Controls->Add(panel8);
+			panel7->Controls->Add(this->passwordInput);
+			panel7->Location = System::Drawing::Point(99, 339);
+			panel7->Name = L"panel7";
+			panel7->Size = System::Drawing::Size(438, 67);
+			panel7->TabIndex = 16;
+			// 
+			// panel8
+			// 
+			panel8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel8.BackgroundImage")));
+			panel8->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel8->Location = System::Drawing::Point(12, 17);
+			panel8->Name = L"panel8";
+			panel8->Size = System::Drawing::Size(25, 25);
+			panel8->TabIndex = 0;
+			// 
+			// passwordInput
+			// 
+			this->passwordInput->BackColor = System::Drawing::Color::Snow;
+			this->passwordInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->passwordInput->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->passwordInput->Location = System::Drawing::Point(54, 19);
+			this->passwordInput->Margin = System::Windows::Forms::Padding(0);
+			this->passwordInput->Name = L"passwordInput";
+			this->passwordInput->PasswordChar = '*';
+			this->passwordInput->Size = System::Drawing::Size(366, 23);
+			this->passwordInput->TabIndex = 2;
+			this->passwordInput->Text = L"admin";
+			// 
+			// panel5
+			// 
+			panel5->Controls->Add(panel6);
+			panel5->Controls->Add(this->usernameInput);
+			panel5->Location = System::Drawing::Point(99, 254);
+			panel5->Name = L"panel5";
+			panel5->Size = System::Drawing::Size(438, 67);
+			panel5->TabIndex = 15;
+			// 
+			// panel6
+			// 
+			panel6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel6.BackgroundImage")));
+			panel6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel6->Location = System::Drawing::Point(12, 19);
+			panel6->Name = L"panel6";
+			panel6->Size = System::Drawing::Size(25, 25);
+			panel6->TabIndex = 0;
 			// 
 			// usernameInput
 			// 
-			this->usernameInput->BackColor = System::Drawing::Color::SlateGray;
+			this->usernameInput->BackColor = System::Drawing::Color::Snow;
 			this->usernameInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->usernameInput->ForeColor = System::Drawing::Color::White;
-			this->usernameInput->Location = System::Drawing::Point(191, 261);
+			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->usernameInput->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->usernameInput->Location = System::Drawing::Point(54, 19);
 			this->usernameInput->Margin = System::Windows::Forms::Padding(0);
-			this->usernameInput->MaximumSize = System::Drawing::Size(438, 50);
-			this->usernameInput->MinimumSize = System::Drawing::Size(438, 50);
 			this->usernameInput->Name = L"usernameInput";
-			this->usernameInput->Size = System::Drawing::Size(438, 27);
+			this->usernameInput->Size = System::Drawing::Size(366, 23);
 			this->usernameInput->TabIndex = 2;
 			this->usernameInput->Text = L"admin";
-			this->usernameInput->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// panel4
+			// 
+			panel4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel4.BackgroundImage")));
+			panel4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel4->Location = System::Drawing::Point(521, 561);
+			panel4->Name = L"panel4";
+			panel4->Size = System::Drawing::Size(91, 27);
+			panel4->TabIndex = 0;
+			// 
+			// panel1
+			// 
+			panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel1->Location = System::Drawing::Point(141, 43);
+			panel1->Name = L"panel1";
+			panel1->Size = System::Drawing::Size(357, 192);
+			panel1->TabIndex = 14;
 			// 
 			// errorBox
 			// 
@@ -179,48 +231,33 @@ namespace Views {
 			this->errorBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->errorBox->ForeColor = System::Drawing::Color::Maroon;
-			this->errorBox->Location = System::Drawing::Point(187, 552);
+			this->errorBox->Location = System::Drawing::Point(122, 498);
 			this->errorBox->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->errorBox->MaximumSize = System::Drawing::Size(688, 0);
 			this->errorBox->Name = L"errorBox";
 			this->errorBox->Size = System::Drawing::Size(0, 20);
-			this->errorBox->TabIndex = 5;
+			this->errorBox->TabIndex = 13;
 			// 
-			// passwordInput
+			// panel3
 			// 
-			this->passwordInput->BackColor = System::Drawing::Color::SlateGray;
-			this->passwordInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->passwordInput->ForeColor = System::Drawing::Color::White;
-			this->passwordInput->Location = System::Drawing::Point(191, 380);
-			this->passwordInput->Margin = System::Windows::Forms::Padding(0);
-			this->passwordInput->MaximumSize = System::Drawing::Size(438, 50);
-			this->passwordInput->MinimumSize = System::Drawing::Size(438, 50);
-			this->passwordInput->Name = L"passwordInput";
-			this->passwordInput->PasswordChar = '*';
-			this->passwordInput->Size = System::Drawing::Size(438, 27);
-			this->passwordInput->TabIndex = 10;
-			this->passwordInput->Text = L"admin";
-			this->passwordInput->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			panel3->BackColor = System::Drawing::Color::Transparent;
+			panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
+			panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel3->Dock = System::Windows::Forms::DockStyle::Left;
+			panel3->Location = System::Drawing::Point(0, 0);
+			panel3->Name = L"panel3";
+			panel3->Size = System::Drawing::Size(400, 600);
+			panel3->TabIndex = 0;
 			// 
 			// LoginForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(10, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Ivory;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(848, 634);
-			this->Controls->Add(ExitBtn);
-			this->Controls->Add(this->passwordInput);
-			this->Controls->Add(label3);
-			this->Controls->Add(label4);
-			this->Controls->Add(LoginBtn);
-			this->Controls->Add(this->errorBox);
-			this->Controls->Add(this->usernameInput);
-			this->Controls->Add(label2);
-			this->Controls->Add(label1);
+			this->ClientSize = System::Drawing::Size(1024, 600);
+			this->Controls->Add(panel2);
+			this->Controls->Add(panel3);
 			this->Font = (gcnew System::Drawing::Font(L"Orbitron", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::Color::White;
@@ -229,12 +266,17 @@ namespace Views {
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BATU - Inventory Management System";
+			panel2->ResumeLayout(false);
+			panel2->PerformLayout();
+			panel7->ResumeLayout(false);
+			panel7->PerformLayout();
+			panel5->ResumeLayout(false);
+			panel5->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
 		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e);
-};
+	};
 }
