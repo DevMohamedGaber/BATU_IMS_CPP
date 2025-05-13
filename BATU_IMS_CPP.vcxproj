@@ -131,6 +131,7 @@
     <ClCompile Include="CustomersController.cpp" />
     <ClCompile Include="CustomersListPage.cpp" />
     <ClCompile Include="CustomerViewPage.cpp" />
+    <ClCompile Include="CustomTable.cpp" />
     <ClCompile Include="DashboardForm.cpp" />
     <ClCompile Include="DatabaseConnection.cpp" />
     <ClCompile Include="EditCategoryPage.cpp" />
@@ -219,6 +220,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="CustomerViewPage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="CustomTable.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="DashboardForm.h">
@@ -340,6 +344,9 @@
     <EmbeddedResource Include="CustomerViewPage.resx">
       <DependentUpon>CustomerViewPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomTable.resx">
+      <DependentUpon>CustomTable.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.h</DependentUpon>
     </EmbeddedResource>
@@ -403,15 +410,22 @@
     <Image Include="assets\brand_logo.jpg" />
     <Image Include="assets\brand_logo2.png" />
     <Image Include="assets\brand_logo_b&amp;w.jpg" />
+    <Image Include="assets\categories_icon.png" />
     <Image Include="assets\customers_icon.png" />
     <Image Include="assets\dashboard_bg.jpg" />
     <Image Include="assets\dashboard_sidebar_bg.jpg" />
     <Image Include="assets\exit_btn.png" />
+    <Image Include="assets\export_icon.png" />
+    <Image Include="assets\home_icon.png" />
+    <Image Include="assets\import_icon.png" />
+    <Image Include="assets\inventory_icon.png" />
     <Image Include="assets\login_btn.png" />
     <Image Include="assets\login_page_bg.jpg" />
     <Image Include="assets\password_icon.png" />
     <Image Include="assets\products_icon.png" />
+    <Image Include="assets\suppliers_icon.png" />
     <Image Include="assets\username_icon.png" />
+    <Image Include="assets\users_icon.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

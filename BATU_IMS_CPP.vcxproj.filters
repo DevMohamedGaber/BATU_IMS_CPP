@@ -194,6 +194,9 @@
     <Filter Include="Rersources">
       <UniqueIdentifier>{4c5cedcf-de31-4bbd-b451-1e665cbc6613}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\_Common\Table">
+      <UniqueIdentifier>{d2ff4988-f8ad-4d61-86d4-266f6b116951}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -351,6 +354,9 @@
     </ClCompile>
     <ClCompile Include="ExportViewPage.cpp">
       <Filter>Views\Exports\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomTable.cpp">
+      <Filter>Views\_Common\Table</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -534,6 +540,9 @@
     <ClInclude Include="ExportViewPage.h">
       <Filter>Views\Exports\View</Filter>
     </ClInclude>
+    <ClInclude Include="CustomTable.h">
+      <Filter>Views\_Common\Table</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\customers_icon.png">
@@ -570,6 +579,27 @@
       <Filter>Rersources</Filter>
     </Image>
     <Image Include="assets\products_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\import_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\suppliers_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\users_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\export_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\home_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\inventory_icon.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\categories_icon.png">
       <Filter>Rersources</Filter>
     </Image>
   </ItemGroup>
