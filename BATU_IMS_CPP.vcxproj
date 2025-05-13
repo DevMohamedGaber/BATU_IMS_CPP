@@ -402,11 +402,15 @@
   <ItemGroup>
     <Image Include="assets\brand_logo.jpg" />
     <Image Include="assets\brand_logo2.png" />
+    <Image Include="assets\brand_logo_b&amp;w.jpg" />
     <Image Include="assets\customers_icon.png" />
+    <Image Include="assets\dashboard_bg.jpg" />
+    <Image Include="assets\dashboard_sidebar_bg.jpg" />
     <Image Include="assets\exit_btn.png" />
     <Image Include="assets\login_btn.png" />
     <Image Include="assets\login_page_bg.jpg" />
     <Image Include="assets\password_icon.png" />
+    <Image Include="assets\products_icon.png" />
     <Image Include="assets\username_icon.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

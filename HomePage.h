@@ -79,7 +79,6 @@ namespace Views
 			System::Windows::Forms::Label^ label10;
 			System::Windows::Forms::Label^ label7;
 			System::Windows::Forms::Label^ label8;
-			System::Windows::Forms::Label^ label2;
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
@@ -99,7 +98,6 @@ namespace Views
 			label10 = (gcnew System::Windows::Forms::Label());
 			label7 = (gcnew System::Windows::Forms::Label());
 			label8 = (gcnew System::Windows::Forms::Label());
-			label2 = (gcnew System::Windows::Forms::Label());
 			panel1->SuspendLayout();
 			flowLayoutPanel1->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -114,8 +112,9 @@ namespace Views
 			label1->Dock = System::Windows::Forms::DockStyle::Top;
 			label1->Font = (gcnew System::Drawing::Font(L"Roboto", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label1->ForeColor = System::Drawing::Color::White;
-			label1->Location = System::Drawing::Point(30, 94);
+			label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			label1->Location = System::Drawing::Point(30, 30);
 			label1->Name = L"label1";
 			label1->Padding = System::Windows::Forms::Padding(0, 0, 0, 20);
 			label1->Size = System::Drawing::Size(163, 57);
@@ -124,16 +123,14 @@ namespace Views
 			// 
 			// panel1
 			// 
-			panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			panel1->BackColor = System::Drawing::Color::Transparent;
 			panel1->Controls->Add(flowLayoutPanel1);
 			panel1->Controls->Add(label1);
-			panel1->Controls->Add(label2);
 			panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			panel1->Location = System::Drawing::Point(0, 0);
 			panel1->Name = L"panel1";
 			panel1->Padding = System::Windows::Forms::Padding(30);
-			panel1->Size = System::Drawing::Size(1885, 382);
+			panel1->Size = System::Drawing::Size(1885, 330);
 			panel1->TabIndex = 1;
 			// 
 			// flowLayoutPanel1
@@ -143,22 +140,23 @@ namespace Views
 			flowLayoutPanel1->Controls->Add(this->panel8);
 			flowLayoutPanel1->Controls->Add(this->panel6);
 			flowLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
-			flowLayoutPanel1->Location = System::Drawing::Point(30, 151);
+			flowLayoutPanel1->Location = System::Drawing::Point(30, 87);
 			flowLayoutPanel1->Name = L"flowLayoutPanel1";
 			flowLayoutPanel1->Padding = System::Windows::Forms::Padding(20);
-			flowLayoutPanel1->Size = System::Drawing::Size(1825, 201);
+			flowLayoutPanel1->Size = System::Drawing::Size(1825, 213);
 			flowLayoutPanel1->TabIndex = 1;
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(243)));
 			this->panel2->Controls->Add(this->panel3);
 			this->panel2->Controls->Add(label4);
 			this->panel2->Controls->Add(label3);
 			this->panel2->Location = System::Drawing::Point(23, 23);
 			this->panel2->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(310, 150);
+			this->panel2->Size = System::Drawing::Size(330, 150);
 			this->panel2->TabIndex = 0;
 			// 
 			// panel3
@@ -173,9 +171,10 @@ namespace Views
 			// label4
 			// 
 			label4->AutoSize = true;
+			label4->BackColor = System::Drawing::Color::Transparent;
 			label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label4->ForeColor = System::Drawing::Color::Black;
+			label4->ForeColor = System::Drawing::Color::White;
 			label4->Location = System::Drawing::Point(90, 83);
 			label4->Name = L"label4";
 			label4->Size = System::Drawing::Size(94, 31);
@@ -185,10 +184,10 @@ namespace Views
 			// label3
 			// 
 			label3->AutoSize = true;
+			label3->BackColor = System::Drawing::Color::Transparent;
 			label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
-				static_cast<System::Int32>(static_cast<System::Byte>(32)));
+			label3->ForeColor = System::Drawing::Color::White;
 			label3->Location = System::Drawing::Point(91, 32);
 			label3->Name = L"label3";
 			label3->Size = System::Drawing::Size(183, 29);
@@ -197,14 +196,15 @@ namespace Views
 			// 
 			// panel4
 			// 
-			this->panel4->BackColor = System::Drawing::Color::White;
+			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(243)));
 			this->panel4->Controls->Add(this->panel5);
 			this->panel4->Controls->Add(label5);
 			this->panel4->Controls->Add(label6);
-			this->panel4->Location = System::Drawing::Point(376, 23);
+			this->panel4->Location = System::Drawing::Point(396, 23);
 			this->panel4->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(310, 150);
+			this->panel4->Size = System::Drawing::Size(330, 150);
 			this->panel4->TabIndex = 3;
 			// 
 			// panel5
@@ -219,9 +219,10 @@ namespace Views
 			// label5
 			// 
 			label5->AutoSize = true;
+			label5->BackColor = System::Drawing::Color::Transparent;
 			label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label5->ForeColor = System::Drawing::Color::Black;
+			label5->ForeColor = System::Drawing::Color::White;
 			label5->Location = System::Drawing::Point(90, 83);
 			label5->Name = L"label5";
 			label5->Size = System::Drawing::Size(94, 31);
@@ -231,10 +232,10 @@ namespace Views
 			// label6
 			// 
 			label6->AutoSize = true;
+			label6->BackColor = System::Drawing::Color::Transparent;
 			label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
-				static_cast<System::Int32>(static_cast<System::Byte>(32)));
+			label6->ForeColor = System::Drawing::Color::White;
 			label6->Location = System::Drawing::Point(91, 32);
 			label6->Name = L"label6";
 			label6->Size = System::Drawing::Size(183, 29);
@@ -243,14 +244,15 @@ namespace Views
 			// 
 			// panel8
 			// 
-			this->panel8->BackColor = System::Drawing::Color::White;
+			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(243)));
 			this->panel8->Controls->Add(this->panel9);
 			this->panel8->Controls->Add(label9);
 			this->panel8->Controls->Add(label10);
-			this->panel8->Location = System::Drawing::Point(729, 23);
+			this->panel8->Location = System::Drawing::Point(769, 23);
 			this->panel8->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(310, 150);
+			this->panel8->Size = System::Drawing::Size(330, 150);
 			this->panel8->TabIndex = 5;
 			// 
 			// panel9
@@ -265,9 +267,10 @@ namespace Views
 			// label9
 			// 
 			label9->AutoSize = true;
+			label9->BackColor = System::Drawing::Color::Transparent;
 			label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label9->ForeColor = System::Drawing::Color::Black;
+			label9->ForeColor = System::Drawing::Color::White;
 			label9->Location = System::Drawing::Point(90, 83);
 			label9->Name = L"label9";
 			label9->Size = System::Drawing::Size(94, 31);
@@ -277,10 +280,10 @@ namespace Views
 			// label10
 			// 
 			label10->AutoSize = true;
+			label10->BackColor = System::Drawing::Color::Transparent;
 			label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
-				static_cast<System::Int32>(static_cast<System::Byte>(32)));
+			label10->ForeColor = System::Drawing::Color::White;
 			label10->Location = System::Drawing::Point(91, 32);
 			label10->Name = L"label10";
 			label10->Size = System::Drawing::Size(183, 29);
@@ -289,14 +292,15 @@ namespace Views
 			// 
 			// panel6
 			// 
-			this->panel6->BackColor = System::Drawing::Color::White;
+			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(243)));
 			this->panel6->Controls->Add(this->panel7);
 			this->panel6->Controls->Add(label7);
 			this->panel6->Controls->Add(label8);
-			this->panel6->Location = System::Drawing::Point(1082, 23);
+			this->panel6->Location = System::Drawing::Point(1142, 23);
 			this->panel6->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(310, 150);
+			this->panel6->Size = System::Drawing::Size(330, 150);
 			this->panel6->TabIndex = 4;
 			// 
 			// panel7
@@ -311,9 +315,10 @@ namespace Views
 			// label7
 			// 
 			label7->AutoSize = true;
+			label7->BackColor = System::Drawing::Color::Transparent;
 			label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label7->ForeColor = System::Drawing::Color::Black;
+			label7->ForeColor = System::Drawing::Color::White;
 			label7->Location = System::Drawing::Point(90, 83);
 			label7->Name = L"label7";
 			label7->Size = System::Drawing::Size(94, 31);
@@ -323,36 +328,21 @@ namespace Views
 			// label8
 			// 
 			label8->AutoSize = true;
+			label8->BackColor = System::Drawing::Color::Transparent;
 			label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
-				static_cast<System::Int32>(static_cast<System::Byte>(32)));
+			label8->ForeColor = System::Drawing::Color::White;
 			label8->Location = System::Drawing::Point(91, 32);
 			label8->Name = L"label8";
 			label8->Size = System::Drawing::Size(183, 29);
 			label8->TabIndex = 0;
 			label8->Text = L"Total Products";
 			// 
-			// label2
-			// 
-			label2->AutoSize = true;
-			label2->Dock = System::Windows::Forms::DockStyle::Top;
-			label2->Font = (gcnew System::Drawing::Font(L"Roboto", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			label2->ForeColor = System::Drawing::Color::White;
-			label2->Location = System::Drawing::Point(30, 30);
-			label2->Name = L"label2";
-			label2->Padding = System::Windows::Forms::Padding(0, 0, 0, 20);
-			label2->Size = System::Drawing::Size(406, 64);
-			label2->TabIndex = 2;
-			label2->Text = L"Inventory Management";
-			// 
 			// HomePage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->AutoSize = true;
-			this->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(panel1);
 			this->Name = L"HomePage";
 			this->Size = System::Drawing::Size(1885, 781);

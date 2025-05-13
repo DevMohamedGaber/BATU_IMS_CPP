@@ -548,16 +548,28 @@
     <Image Include="assets\brand_logo2.png">
       <Filter>Rersources</Filter>
     </Image>
+    <Image Include="assets\login_btn.png">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\exit_btn.png">
+      <Filter>Rersources</Filter>
+    </Image>
     <Image Include="assets\password_icon.png">
       <Filter>Rersources</Filter>
     </Image>
     <Image Include="assets\username_icon.png">
       <Filter>Rersources</Filter>
     </Image>
-    <Image Include="assets\login_btn.png">
+    <Image Include="assets\dashboard_bg.jpg">
       <Filter>Rersources</Filter>
     </Image>
-    <Image Include="assets\exit_btn.png">
+    <Image Include="assets\dashboard_sidebar_bg.jpg">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\brand_logo_b&amp;w.jpg">
+      <Filter>Rersources</Filter>
+    </Image>
+    <Image Include="assets\products_icon.png">
       <Filter>Rersources</Filter>
     </Image>
   </ItemGroup>

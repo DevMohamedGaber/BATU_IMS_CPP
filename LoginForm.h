@@ -145,7 +145,7 @@ namespace Views {
 			panel7->Controls->Add(this->passwordInput);
 			panel7->Location = System::Drawing::Point(99, 339);
 			panel7->Name = L"panel7";
-			panel7->Size = System::Drawing::Size(438, 67);
+			panel7->Size = System::Drawing::Size(438, 50);
 			panel7->TabIndex = 16;
 			// 
 			// panel8
@@ -154,14 +154,14 @@ namespace Views {
 			panel8->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			panel8->Location = System::Drawing::Point(12, 17);
 			panel8->Name = L"panel8";
-			panel8->Size = System::Drawing::Size(25, 25);
+			panel8->Size = System::Drawing::Size(20, 20);
 			panel8->TabIndex = 0;
 			// 
 			// passwordInput
 			// 
 			this->passwordInput->BackColor = System::Drawing::Color::Snow;
 			this->passwordInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->passwordInput->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)));
@@ -169,7 +169,7 @@ namespace Views {
 			this->passwordInput->Margin = System::Windows::Forms::Padding(0);
 			this->passwordInput->Name = L"passwordInput";
 			this->passwordInput->PasswordChar = '*';
-			this->passwordInput->Size = System::Drawing::Size(366, 23);
+			this->passwordInput->Size = System::Drawing::Size(366, 19);
 			this->passwordInput->TabIndex = 2;
 			this->passwordInput->Text = L"admin";
 			// 
@@ -177,9 +177,9 @@ namespace Views {
 			// 
 			panel5->Controls->Add(panel6);
 			panel5->Controls->Add(this->usernameInput);
-			panel5->Location = System::Drawing::Point(99, 254);
+			panel5->Location = System::Drawing::Point(99, 283);
 			panel5->Name = L"panel5";
-			panel5->Size = System::Drawing::Size(438, 67);
+			panel5->Size = System::Drawing::Size(438, 50);
 			panel5->TabIndex = 15;
 			// 
 			// panel6
@@ -188,21 +188,21 @@ namespace Views {
 			panel6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			panel6->Location = System::Drawing::Point(12, 19);
 			panel6->Name = L"panel6";
-			panel6->Size = System::Drawing::Size(25, 25);
+			panel6->Size = System::Drawing::Size(20, 20);
 			panel6->TabIndex = 0;
 			// 
 			// usernameInput
 			// 
 			this->usernameInput->BackColor = System::Drawing::Color::Snow;
 			this->usernameInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->usernameInput->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)));
 			this->usernameInput->Location = System::Drawing::Point(54, 19);
 			this->usernameInput->Margin = System::Windows::Forms::Padding(0);
 			this->usernameInput->Name = L"usernameInput";
-			this->usernameInput->Size = System::Drawing::Size(366, 23);
+			this->usernameInput->Size = System::Drawing::Size(366, 19);
 			this->usernameInput->TabIndex = 2;
 			this->usernameInput->Text = L"admin";
 			// 
@@ -219,9 +219,9 @@ namespace Views {
 			// 
 			panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			panel1->Location = System::Drawing::Point(141, 43);
+			panel1->Location = System::Drawing::Point(178, 95);
 			panel1->Name = L"panel1";
-			panel1->Size = System::Drawing::Size(357, 192);
+			panel1->Size = System::Drawing::Size(300, 150);
 			panel1->TabIndex = 14;
 			// 
 			// errorBox

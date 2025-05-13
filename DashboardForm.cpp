@@ -16,6 +16,73 @@ using namespace Controllers;
 namespace Views
 {
 	// Event handlers for buttons
+	Void DashboardForm::DashboardForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		
+		homeBtn->Click += gcnew System::EventHandler(this, &DashboardForm::homeBtn_Click);
+		for each (auto child in homeBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::homeBtn_Click);
+			}
+		}
+		inventoryBtn->Click += gcnew System::EventHandler(this, &DashboardForm::inventoryBtn_Click);
+		for each (auto child in inventoryBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::inventoryBtn_Click);
+			}
+		}
+		categoriesBtn->Click += gcnew System::EventHandler(this, &DashboardForm::categoriesBtn_Click);
+		for each (auto child in categoriesBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::categoriesBtn_Click);
+			}
+		}
+		suppliersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::suppliersBtn_Click);
+		for each (auto child in suppliersBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::suppliersBtn_Click);
+			}
+		}
+		customersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::customersBtn_Click);
+		for each (auto child in customersBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::customersBtn_Click);
+			}
+		}
+		importsBtn->Click += gcnew System::EventHandler(this, &DashboardForm::importsBtn_Click);
+		for each (auto child in importsBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::importsBtn_Click);
+			}
+		}
+		exportsBtn->Click += gcnew System::EventHandler(this, &DashboardForm::exportsBtn_Click);
+		for each (auto child in exportsBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::exportsBtn_Click);
+			}
+		}
+		usersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::usersBtn_Click);
+		for each (auto child in usersBtn->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::usersBtn_Click);
+			}
+		}
+	}
 	Void DashboardForm::logoutBtn_Click(Object^ sender, EventArgs^ e) {
 		AuthenticationController::Logout();
 		Instance = nullptr;
@@ -24,7 +91,7 @@ namespace Views
 		loginForm->ShowDialog();
 		this->Close();
 	}
-	Void DashboardForm::currentUserNameLabel_Click(Object^ sender, EventArgs^ e) {
+	Void DashboardForm::usernameLabel_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew UserViewPage(AuthenticationController::CurrentUser));
 	}
 	Void DashboardForm::homeBtn_Click(Object^ sender, EventArgs^ e) {
@@ -61,7 +128,8 @@ namespace Views
 		Instance = gcnew DashboardForm();
 		SwitchView(gcnew HomePage());
 		if (AuthenticationController::CurrentUser != nullptr) {
-			Instance->currentUserNameLabel->Text = AuthenticationController::CurrentUser->GetFullName() + "  (" + AuthenticationController::CurrentUser->Role->ToString() + ")";
+			Instance->usernameLabel->Text = AuthenticationController::CurrentUser->GetFullName();
+			Instance->roleLabel->Text = AuthenticationController::CurrentUser->Role->ToString();
 		}
 		Instance->ShowDialog();
 	}
