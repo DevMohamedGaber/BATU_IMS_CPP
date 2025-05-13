@@ -6,6 +6,7 @@ using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
+using namespace System::Collections::Generic;
 
 
 namespace Views {
@@ -35,8 +36,12 @@ namespace Views {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::FlowLayoutPanel^ headerPanel;
-	protected:
+	private: 
+		System::Windows::Forms::FlowLayoutPanel^ headerPanel;
+		System::Windows::Forms::FlowLayoutPanel^ bodyPanel;
+		int currentRowIndex = 0;
+		List<int>^ columnWidths = gcnew List<int>();
+		List<String^>^ columnNames = gcnew List<String^>();
 
 	private:
 		/// <summary>
@@ -52,6 +57,7 @@ namespace Views {
 		void InitializeComponent(void)
 		{
 			this->headerPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->bodyPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->SuspendLayout();
 			// 
 			// headerPanel
@@ -59,19 +65,39 @@ namespace Views {
 			this->headerPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->headerPanel->Location = System::Drawing::Point(0, 0);
 			this->headerPanel->Name = L"headerPanel";
-			this->headerPanel->Size = System::Drawing::Size(993, 100);
+			this->headerPanel->Padding = System::Windows::Forms::Padding(30, 15, 30, 15);
+			this->headerPanel->Size = System::Drawing::Size(1049, 82);
 			this->headerPanel->TabIndex = 0;
+			// 
+			// bodyPanel
+			// 
+			this->bodyPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->bodyPanel->Location = System::Drawing::Point(0, 82);
+			this->bodyPanel->Name = L"bodyPanel";
+			this->bodyPanel->Padding = System::Windows::Forms::Padding(30, 15, 30, 15);
+			this->bodyPanel->Size = System::Drawing::Size(1049, 333);
+			this->bodyPanel->TabIndex = 1;
 			// 
 			// CustomTable
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::Transparent;
+			this->Controls->Add(this->bodyPanel);
 			this->Controls->Add(this->headerPanel);
 			this->Name = L"CustomTable";
-			this->Size = System::Drawing::Size(993, 746);
+			this->Size = System::Drawing::Size(1049, 415);
+			this->Load += gcnew System::EventHandler(this, &CustomTable::CustomTable_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	public:
+		System::Void CustomTable_Load(System::Object^ sender, System::EventArgs^ e);
+		void AddColumn(String^ name, int width);
+		void AddRow();
+		void AddCell(String^ name, int rowIndex, int columnIndex);
+		Control^ AddButtonCell(String^ name, int rowIndex, int columnIndex);
+		int GetRowCount();
 	};
 }

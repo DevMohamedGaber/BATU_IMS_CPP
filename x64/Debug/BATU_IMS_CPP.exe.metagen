@@ -10,6 +10,7 @@
   Views.CustomerEditPage.resources - Embedded, ContainedInManifestFile, 
   Views.CustomersListPage.resources - Embedded, ContainedInManifestFile, 
   Views.CustomerViewPage.resources - Embedded, ContainedInManifestFile, 
+  Views.CustomTable.resources - Embedded, ContainedInManifestFile, 
   Views.DashboardForm.resources - Embedded, ContainedInManifestFile, 
   Views.EditCategoryPage.resources - Embedded, ContainedInManifestFile, 
   Views.EditItemPage.resources - Embedded, ContainedInManifestFile, 
@@ -323,6 +324,16 @@ Class Models.Customers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
 Class Views.CustomersListPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Views.CustomTable: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CustomTable_Load(Object, EventArgs): PrivateScope, Public, HideBySig
+    AddColumn(String, Int32): PrivateScope, Public, HideBySig
+    AddRow(): PrivateScope, Public, HideBySig
+    AddCell(String, Int32, Int32): PrivateScope, Public, HideBySig
+    AddButtonCell(String, Int32, Int32): PrivateScope, Public, HideBySig
+    GetRowCount(): PrivateScope, Public, HideBySig
 Class Controllers.AuthenticationController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
