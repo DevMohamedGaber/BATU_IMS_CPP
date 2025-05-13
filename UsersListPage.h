@@ -36,7 +36,7 @@ namespace Views {
 			}
 		}
 	private: 
-		System::Windows::Forms::DataGridView^ dataTable;
+
 		System::Windows::Forms::Label^ noDataLabel;
 		/// Required designer variable.
 		/// </summary>
@@ -52,27 +52,26 @@ namespace Views {
 			System::Windows::Forms::Button^ addNewBtn;
 			System::Windows::Forms::Label^ headerlabel;
 			System::Windows::Forms::Panel^ panel1;
-			this->dataTable = (gcnew System::Windows::Forms::DataGridView());
 			this->noDataLabel = (gcnew System::Windows::Forms::Label());
 			addNewBtn = (gcnew System::Windows::Forms::Button());
 			headerlabel = (gcnew System::Windows::Forms::Label());
 			panel1 = (gcnew System::Windows::Forms::Panel());
 			panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataTable))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// addNewBtn
 			// 
 			addNewBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			addNewBtn->BackColor = System::Drawing::Color::Navy;
+			addNewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+				static_cast<System::Int32>(static_cast<System::Byte>(115)));
 			addNewBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			addNewBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			addNewBtn->Location = System::Drawing::Point(761, 18);
+			addNewBtn->Location = System::Drawing::Point(840, 33);
 			addNewBtn->Name = L"addNewBtn";
-			addNewBtn->Size = System::Drawing::Size(227, 68);
+			addNewBtn->Size = System::Drawing::Size(139, 39);
 			addNewBtn->TabIndex = 1;
-			addNewBtn->Text = L"Add New User";
+			addNewBtn->Text = L"Add New";
 			addNewBtn->UseVisualStyleBackColor = false;
 			addNewBtn->Click += gcnew System::EventHandler(this, &UsersListPage::addNewBtn_Click);
 			// 
@@ -81,6 +80,8 @@ namespace Views {
 			headerlabel->AutoSize = true;
 			headerlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			headerlabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+				static_cast<System::Int32>(static_cast<System::Byte>(115)));
 			headerlabel->Location = System::Drawing::Point(23, 29);
 			headerlabel->Name = L"headerlabel";
 			headerlabel->Size = System::Drawing::Size(178, 39);
@@ -96,24 +97,6 @@ namespace Views {
 			panel1->Name = L"panel1";
 			panel1->Size = System::Drawing::Size(1002, 100);
 			panel1->TabIndex = 9;
-			// 
-			// dataTable
-			// 
-			this->dataTable->AllowUserToAddRows = false;
-			this->dataTable->AllowUserToDeleteRows = false;
-			this->dataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataTable->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->dataTable->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
-			this->dataTable->Location = System::Drawing::Point(30, 130);
-			this->dataTable->Name = L"dataTable";
-			this->dataTable->RowHeadersVisible = false;
-			this->dataTable->RowHeadersWidth = 51;
-			this->dataTable->RowTemplate->Height = 24;
-			this->dataTable->ShowEditingIcon = false;
-			this->dataTable->Size = System::Drawing::Size(1002, 662);
-			this->dataTable->TabIndex = 10;
-			this->dataTable->Visible = false;
-			this->dataTable->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UsersListPage::dataTable_CellClick);
 			// 
 			// noDataLabel
 			// 
@@ -134,7 +117,6 @@ namespace Views {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->dataTable);
 			this->Controls->Add(this->noDataLabel);
 			this->Controls->Add(panel1);
 			this->Name = L"UsersListPage";
@@ -143,7 +125,6 @@ namespace Views {
 			this->Load += gcnew System::EventHandler(this, &UsersListPage::UsersListPage_Load);
 			panel1->ResumeLayout(false);
 			panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataTable))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -151,6 +132,6 @@ namespace Views {
 #pragma endregion
 		System::Void addNewBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void UsersListPage_Load(System::Object^ sender, System::EventArgs^ e);
-		System::Void dataTable_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+		System::Void ViewButton_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

@@ -126,9 +126,9 @@ namespace Views {
 			saveBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			saveBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			saveBtn->Location = System::Drawing::Point(724, 557);
+			saveBtn->Location = System::Drawing::Point(630, 557);
 			saveBtn->Name = L"saveBtn";
-			saveBtn->Size = System::Drawing::Size(201, 54);
+			saveBtn->Size = System::Drawing::Size(295, 54);
 			saveBtn->TabIndex = 23;
 			saveBtn->Text = L"Save Changes";
 			saveBtn->UseVisualStyleBackColor = false;

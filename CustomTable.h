@@ -72,6 +72,7 @@ namespace Views {
 			// bodyPanel
 			// 
 			this->bodyPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->bodyPanel->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->bodyPanel->Location = System::Drawing::Point(0, 82);
 			this->bodyPanel->Name = L"bodyPanel";
 			this->bodyPanel->Padding = System::Windows::Forms::Padding(30, 15, 30, 15);

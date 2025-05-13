@@ -60,13 +60,13 @@ namespace Views {
 			// header
 			// 
 			header->AutoSize = true;
-			header->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			header->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			header->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
 				static_cast<System::Int32>(static_cast<System::Byte>(115)));
 			header->Location = System::Drawing::Point(3, 18);
 			header->Name = L"header";
-			header->Size = System::Drawing::Size(191, 46);
+			header->Size = System::Drawing::Size(166, 39);
 			header->TabIndex = 0;
 			header->Text = L"Inventory";
 			// 

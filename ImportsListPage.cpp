@@ -3,44 +3,71 @@
 #include "ImportsController.h"
 #include "DashboardForm.h"
 #include "ImportViewPage.h"
+#include "CustomTable.h"
 
 using namespace Controllers;
 
 namespace Views
 {
-	Void ImportsListPage::ImportsListPage_Load(Object^ sender, EventArgs^ e) {
-		auto data = ImportsController::GetImportsList();
-		if (data == nullptr || data->Count == 0) {
-			noDataLabel->Visible = true;
-			return;
-		}
-		System::Data::DataTable^ table = gcnew System::Data::DataTable();
-		table->Columns->Add("Id", int::typeid);
-		table->Columns->Add("Supplier", String::typeid);
-		table->Columns->Add("Status", String::typeid);
-		table->Columns->Add("Arrival Date", String::typeid);
-		table->Columns->Add("Items Count", int::typeid);
+    Void ImportsListPage::ImportsListPage_Load(Object^ sender, EventArgs^ e) {
+        auto data = ImportsController::GetImportsList();
+        if (data == nullptr || data->Count == 0) {
+            noDataLabel->Visible = true;
+            return;
+        }
 
-		for each (Import^ item in data) {
-			System::Data::DataRow^ row = table->NewRow();
-			row["Id"] = item->Id;
-			row["Supplier"] = item->Supplier->Name;
-			row["Status"] = item->Status.ToString();
-			row["Arrival Date"] = item->ArrivalDate.ToString();
-			row["Items Count"] = item->ItemCount;
-			table->Rows->Add(row);
-		}
-		dataTable->DataSource = table;
-		dataTable->Visible = true;
-	}
+        // Create and configure the CustomTable
+        CustomTable^ table = gcnew CustomTable();
+        table->Dock = DockStyle::Fill;
+
+        // Add columns with appropriate widths
+        table->AddColumn("#", 30);
+        table->AddColumn("ID", 80);
+        table->AddColumn("Supplier", 200);
+        table->AddColumn("Status", 120);
+        table->AddColumn("Arrival Date", 150);
+        table->AddColumn("Items Count", 100);
+        table->AddColumn("Actions", 200);
+
+        // Add rows and cells
+        for each (Import ^ import in data) {
+            table->AddRow();
+            int rowIndex = table->GetRowCount() - 1;
+
+            // Add data cells with null checks
+            table->AddCell((rowIndex + 1).ToString(), rowIndex, 0);
+            table->AddCell(import->Id.ToString(), rowIndex, 1);
+            table->AddCell(import->Supplier != nullptr ? import->Supplier->Name : "N/A", rowIndex, 2);
+            table->AddCell(import->Status.ToString(), rowIndex, 3);
+
+            // Format arrival date
+            String^ arrivalDate = import->ArrivalDate != DateTime::MinValue
+                ? import->ArrivalDate.ToString("MM/dd/yyyy")
+                : "N/A";
+            table->AddCell(arrivalDate, rowIndex, 4);
+
+            table->AddCell(import->ItemCount.ToString(), rowIndex, 5);
+
+            // Add view button
+            Button^ viewButton = safe_cast<Button^>(table->AddButtonCell("View", rowIndex, 6));
+            if (viewButton != nullptr) {
+                viewButton->Click += gcnew EventHandler(this, &ImportsListPage::ViewButton_Click);
+                viewButton->Tag = import->Id;
+            }
+        }
+
+        // Add table to the page
+        Controls->Add(table);
+        table->BringToFront();
+    }
+
+    // Handle view button clicks
+    Void ImportsListPage::ViewButton_Click(Object^ sender, EventArgs^ e) {
+        Button^ button = safe_cast<Button^>(sender);
+        int importId = safe_cast<int>(button->Tag);
+        DashboardForm::SwitchView(gcnew ImportViewPage(importId));
+    }
 	Void ImportsListPage::addNewBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew AddImportPage());
-	}
-	Void ImportsListPage::dataTable_CellClick(Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		if (e->RowIndex < 0) {
-			return;
-		}
-		int id = Convert::ToInt32(dataTable->Rows[e->RowIndex]->Cells["Id"]->Value);
-		DashboardForm::SwitchView(gcnew ImportViewPage(id));
 	}
 }

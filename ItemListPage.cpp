@@ -31,7 +31,7 @@ namespace Views
 			table->AddRow();
 			int rowIndex = table->GetRowCount() - 1;
 
-			table->AddCell(rowIndex.ToString(), rowIndex, 0);
+			table->AddCell((rowIndex + 1).ToString(), rowIndex, 0);
 			table->AddCell(item->Id.ToString(), rowIndex, 1);
 			table->AddCell(item->Name, rowIndex, 2);
 			table->AddCell(item->Price.ToString("C"), rowIndex, 3);

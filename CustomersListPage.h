@@ -37,7 +37,7 @@ namespace Views {
 		}
 	private: 
 		System::Windows::Forms::Label^ noDataLabel;
-		System::Windows::Forms::DataGridView^ dataTable;
+
 
 		/// <summary>
 		/// Required designer variable.
@@ -55,26 +55,25 @@ namespace Views {
 			System::Windows::Forms::Label^ headerlabel;
 			System::Windows::Forms::Panel^ panel1;
 			this->noDataLabel = (gcnew System::Windows::Forms::Label());
-			this->dataTable = (gcnew System::Windows::Forms::DataGridView());
 			addNewBtn = (gcnew System::Windows::Forms::Button());
 			headerlabel = (gcnew System::Windows::Forms::Label());
 			panel1 = (gcnew System::Windows::Forms::Panel());
 			panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataTable))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// addNewBtn
 			// 
 			addNewBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			addNewBtn->BackColor = System::Drawing::Color::Navy;
-			addNewBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			addNewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+				static_cast<System::Int32>(static_cast<System::Byte>(115)));
+			addNewBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			addNewBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			addNewBtn->Location = System::Drawing::Point(794, 18);
+			addNewBtn->Location = System::Drawing::Point(889, 28);
 			addNewBtn->Name = L"addNewBtn";
-			addNewBtn->Size = System::Drawing::Size(227, 68);
+			addNewBtn->Size = System::Drawing::Size(127, 40);
 			addNewBtn->TabIndex = 1;
-			addNewBtn->Text = L"Add New Customer";
+			addNewBtn->Text = L"Add New";
 			addNewBtn->UseVisualStyleBackColor = false;
 			addNewBtn->Click += gcnew System::EventHandler(this, &CustomersListPage::addNewBtn_Click);
 			// 
@@ -83,11 +82,13 @@ namespace Views {
 			headerlabel->AutoSize = true;
 			headerlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			headerlabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+				static_cast<System::Int32>(static_cast<System::Byte>(115)));
 			headerlabel->Location = System::Drawing::Point(23, 29);
 			headerlabel->Name = L"headerlabel";
-			headerlabel->Size = System::Drawing::Size(172, 39);
+			headerlabel->Size = System::Drawing::Size(190, 39);
 			headerlabel->TabIndex = 0;
-			headerlabel->Text = L"Customer";
+			headerlabel->Text = L"Customers";
 			// 
 			// panel1
 			// 
@@ -114,30 +115,11 @@ namespace Views {
 			this->noDataLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->noDataLabel->Visible = false;
 			// 
-			// dataTable
-			// 
-			this->dataTable->AllowUserToAddRows = false;
-			this->dataTable->AllowUserToDeleteRows = false;
-			this->dataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataTable->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->dataTable->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
-			this->dataTable->Location = System::Drawing::Point(30, 130);
-			this->dataTable->Name = L"dataTable";
-			this->dataTable->RowHeadersVisible = false;
-			this->dataTable->RowHeadersWidth = 51;
-			this->dataTable->RowTemplate->Height = 24;
-			this->dataTable->ShowEditingIcon = false;
-			this->dataTable->Size = System::Drawing::Size(1035, 643);
-			this->dataTable->TabIndex = 4;
-			this->dataTable->Visible = false;
-			this->dataTable->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CustomersListPage::dataTable_CellClick);
-			// 
 			// CustomersListPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->noDataLabel);
-			this->Controls->Add(this->dataTable);
 			this->Controls->Add(panel1);
 			this->Name = L"CustomersListPage";
 			this->Padding = System::Windows::Forms::Padding(30);
@@ -145,7 +127,6 @@ namespace Views {
 			this->Load += gcnew System::EventHandler(this, &CustomersListPage::CustomersListPage_Load);
 			panel1->ResumeLayout(false);
 			panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataTable))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -153,6 +134,6 @@ namespace Views {
 #pragma endregion
 		System::Void addNewBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void CustomersListPage_Load(System::Object^ sender, System::EventArgs^ e);
-		System::Void dataTable_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+		System::Void ViewButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
