@@ -15,5 +15,6 @@ namespace Models {
 		static void Delete(int id);
 		static bool Exists(String^ Name);
 		static List<Supplier^>^ GetLikeName(String^ name);
+		static int Count();
 	};
 }

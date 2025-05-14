@@ -197,6 +197,12 @@
     <Filter Include="Views\_Common\Table">
       <UniqueIdentifier>{d2ff4988-f8ad-4d61-86d4-266f6b116951}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\Home">
+      <UniqueIdentifier>{8d139b4e-0788-42e3-89c7-268919638184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DTOs">
+      <UniqueIdentifier>{fe5dc6a2-e1bb-4660-8251-f1fc8548c9fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
@@ -357,6 +363,9 @@
     </ClCompile>
     <ClCompile Include="CustomTable.cpp">
       <Filter>Views\_Common\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeController.cpp">
+      <Filter>Controllers\Home</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -542,6 +551,12 @@
     </ClInclude>
     <ClInclude Include="CustomTable.h">
       <Filter>Views\_Common\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeController.h">
+      <Filter>Controllers\Home</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeDTO.h">
+      <Filter>Core\DTOs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

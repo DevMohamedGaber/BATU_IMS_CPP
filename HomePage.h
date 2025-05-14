@@ -35,26 +35,11 @@ namespace Views
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::Panel^ panel5;
-	private: System::Windows::Forms::Panel^ panel8;
-	private: System::Windows::Forms::Panel^ panel9;
-	private: System::Windows::Forms::Panel^ panel6;
-	private: System::Windows::Forms::Panel^ panel7;
-	protected:
-
-
-
-
-	protected:
-
-	protected:
-
-	protected:
-
-	private:
+	private: 
+		System::Windows::Forms::Label^ totalProductsCountLabel;
+		System::Windows::Forms::Label^ lowStockCountLabel;
+		System::Windows::Forms::Label^ outOfStockCountLabel;
+		System::Windows::Forms::Label^ suppliersCountLabel;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -70,40 +55,44 @@ namespace Views
 			System::Windows::Forms::Label^ label1;
 			System::Windows::Forms::Panel^ panel1;
 			System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
+			System::Windows::Forms::Panel^ panel2;
+			System::Windows::Forms::Panel^ panel3;
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(HomePage::typeid));
-			System::Windows::Forms::Label^ label4;
 			System::Windows::Forms::Label^ label3;
-			System::Windows::Forms::Label^ label5;
+			System::Windows::Forms::Panel^ panel4;
+			System::Windows::Forms::Panel^ panel5;
 			System::Windows::Forms::Label^ label6;
-			System::Windows::Forms::Label^ label9;
+			System::Windows::Forms::Panel^ panel8;
+			System::Windows::Forms::Panel^ panel9;
 			System::Windows::Forms::Label^ label10;
-			System::Windows::Forms::Label^ label7;
+			System::Windows::Forms::Panel^ panel6;
+			System::Windows::Forms::Panel^ panel7;
 			System::Windows::Forms::Label^ label8;
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->panel8 = (gcnew System::Windows::Forms::Panel());
-			this->panel9 = (gcnew System::Windows::Forms::Panel());
-			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->totalProductsCountLabel = (gcnew System::Windows::Forms::Label());
+			this->lowStockCountLabel = (gcnew System::Windows::Forms::Label());
+			this->outOfStockCountLabel = (gcnew System::Windows::Forms::Label());
+			this->suppliersCountLabel = (gcnew System::Windows::Forms::Label());
 			label1 = (gcnew System::Windows::Forms::Label());
 			panel1 = (gcnew System::Windows::Forms::Panel());
 			flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			label4 = (gcnew System::Windows::Forms::Label());
+			panel2 = (gcnew System::Windows::Forms::Panel());
+			panel3 = (gcnew System::Windows::Forms::Panel());
 			label3 = (gcnew System::Windows::Forms::Label());
-			label5 = (gcnew System::Windows::Forms::Label());
+			panel4 = (gcnew System::Windows::Forms::Panel());
+			panel5 = (gcnew System::Windows::Forms::Panel());
 			label6 = (gcnew System::Windows::Forms::Label());
-			label9 = (gcnew System::Windows::Forms::Label());
+			panel8 = (gcnew System::Windows::Forms::Panel());
+			panel9 = (gcnew System::Windows::Forms::Panel());
 			label10 = (gcnew System::Windows::Forms::Label());
-			label7 = (gcnew System::Windows::Forms::Label());
+			panel6 = (gcnew System::Windows::Forms::Panel());
+			panel7 = (gcnew System::Windows::Forms::Panel());
 			label8 = (gcnew System::Windows::Forms::Label());
 			panel1->SuspendLayout();
 			flowLayoutPanel1->SuspendLayout();
-			this->panel2->SuspendLayout();
-			this->panel4->SuspendLayout();
-			this->panel8->SuspendLayout();
-			this->panel6->SuspendLayout();
+			panel2->SuspendLayout();
+			panel4->SuspendLayout();
+			panel8->SuspendLayout();
+			panel6->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -135,10 +124,10 @@ namespace Views
 			// 
 			// flowLayoutPanel1
 			// 
-			flowLayoutPanel1->Controls->Add(this->panel2);
-			flowLayoutPanel1->Controls->Add(this->panel4);
-			flowLayoutPanel1->Controls->Add(this->panel8);
-			flowLayoutPanel1->Controls->Add(this->panel6);
+			flowLayoutPanel1->Controls->Add(panel2);
+			flowLayoutPanel1->Controls->Add(panel4);
+			flowLayoutPanel1->Controls->Add(panel8);
+			flowLayoutPanel1->Controls->Add(panel6);
 			flowLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			flowLayoutPanel1->Location = System::Drawing::Point(30, 87);
 			flowLayoutPanel1->Name = L"flowLayoutPanel1";
@@ -148,38 +137,38 @@ namespace Views
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
 				static_cast<System::Int32>(static_cast<System::Byte>(243)));
-			this->panel2->Controls->Add(this->panel3);
-			this->panel2->Controls->Add(label4);
-			this->panel2->Controls->Add(label3);
-			this->panel2->Location = System::Drawing::Point(23, 23);
-			this->panel2->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(330, 150);
-			this->panel2->TabIndex = 0;
+			panel2->Controls->Add(panel3);
+			panel2->Controls->Add(this->totalProductsCountLabel);
+			panel2->Controls->Add(label3);
+			panel2->Location = System::Drawing::Point(23, 23);
+			panel2->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
+			panel2->Name = L"panel2";
+			panel2->Size = System::Drawing::Size(330, 150);
+			panel2->TabIndex = 0;
 			// 
 			// panel3
 			// 
-			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
-			this->panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel3->Location = System::Drawing::Point(20, 49);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(50, 50);
-			this->panel3->TabIndex = 2;
+			panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
+			panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel3->Location = System::Drawing::Point(20, 49);
+			panel3->Name = L"panel3";
+			panel3->Size = System::Drawing::Size(50, 50);
+			panel3->TabIndex = 2;
 			// 
-			// label4
+			// totalProductsCountLabel
 			// 
-			label4->AutoSize = true;
-			label4->BackColor = System::Drawing::Color::Transparent;
-			label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			label4->ForeColor = System::Drawing::Color::White;
-			label4->Location = System::Drawing::Point(90, 83);
-			label4->Name = L"label4";
-			label4->Size = System::Drawing::Size(94, 31);
-			label4->TabIndex = 1;
-			label4->Text = L"99999";
+			this->totalProductsCountLabel->AutoSize = true;
+			this->totalProductsCountLabel->BackColor = System::Drawing::Color::Transparent;
+			this->totalProductsCountLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->totalProductsCountLabel->ForeColor = System::Drawing::Color::White;
+			this->totalProductsCountLabel->Location = System::Drawing::Point(90, 83);
+			this->totalProductsCountLabel->Name = L"totalProductsCountLabel";
+			this->totalProductsCountLabel->Size = System::Drawing::Size(46, 31);
+			this->totalProductsCountLabel->TabIndex = 1;
+			this->totalProductsCountLabel->Text = L"10";
 			// 
 			// label3
 			// 
@@ -196,38 +185,38 @@ namespace Views
 			// 
 			// panel4
 			// 
-			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
 				static_cast<System::Int32>(static_cast<System::Byte>(243)));
-			this->panel4->Controls->Add(this->panel5);
-			this->panel4->Controls->Add(label5);
-			this->panel4->Controls->Add(label6);
-			this->panel4->Location = System::Drawing::Point(396, 23);
-			this->panel4->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(330, 150);
-			this->panel4->TabIndex = 3;
+			panel4->Controls->Add(panel5);
+			panel4->Controls->Add(this->lowStockCountLabel);
+			panel4->Controls->Add(label6);
+			panel4->Location = System::Drawing::Point(396, 23);
+			panel4->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
+			panel4->Name = L"panel4";
+			panel4->Size = System::Drawing::Size(330, 150);
+			panel4->TabIndex = 3;
 			// 
 			// panel5
 			// 
-			this->panel5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel5.BackgroundImage")));
-			this->panel5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel5->Location = System::Drawing::Point(20, 49);
-			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(50, 50);
-			this->panel5->TabIndex = 2;
+			panel5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel5.BackgroundImage")));
+			panel5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel5->Location = System::Drawing::Point(20, 49);
+			panel5->Name = L"panel5";
+			panel5->Size = System::Drawing::Size(50, 50);
+			panel5->TabIndex = 2;
 			// 
-			// label5
+			// lowStockCountLabel
 			// 
-			label5->AutoSize = true;
-			label5->BackColor = System::Drawing::Color::Transparent;
-			label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lowStockCountLabel->AutoSize = true;
+			this->lowStockCountLabel->BackColor = System::Drawing::Color::Transparent;
+			this->lowStockCountLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label5->ForeColor = System::Drawing::Color::White;
-			label5->Location = System::Drawing::Point(90, 83);
-			label5->Name = L"label5";
-			label5->Size = System::Drawing::Size(94, 31);
-			label5->TabIndex = 1;
-			label5->Text = L"99999";
+			this->lowStockCountLabel->ForeColor = System::Drawing::Color::Coral;
+			this->lowStockCountLabel->Location = System::Drawing::Point(90, 83);
+			this->lowStockCountLabel->Name = L"lowStockCountLabel";
+			this->lowStockCountLabel->Size = System::Drawing::Size(30, 31);
+			this->lowStockCountLabel->TabIndex = 1;
+			this->lowStockCountLabel->Text = L"2";
 			// 
 			// label6
 			// 
@@ -238,44 +227,44 @@ namespace Views
 			label6->ForeColor = System::Drawing::Color::White;
 			label6->Location = System::Drawing::Point(91, 32);
 			label6->Name = L"label6";
-			label6->Size = System::Drawing::Size(183, 29);
+			label6->Size = System::Drawing::Size(133, 29);
 			label6->TabIndex = 0;
-			label6->Text = L"Total Products";
+			label6->Text = L"Low Stock";
 			// 
 			// panel8
 			// 
-			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
 				static_cast<System::Int32>(static_cast<System::Byte>(243)));
-			this->panel8->Controls->Add(this->panel9);
-			this->panel8->Controls->Add(label9);
-			this->panel8->Controls->Add(label10);
-			this->panel8->Location = System::Drawing::Point(769, 23);
-			this->panel8->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
-			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(330, 150);
-			this->panel8->TabIndex = 5;
+			panel8->Controls->Add(panel9);
+			panel8->Controls->Add(this->outOfStockCountLabel);
+			panel8->Controls->Add(label10);
+			panel8->Location = System::Drawing::Point(769, 23);
+			panel8->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
+			panel8->Name = L"panel8";
+			panel8->Size = System::Drawing::Size(330, 150);
+			panel8->TabIndex = 5;
 			// 
 			// panel9
 			// 
-			this->panel9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel9.BackgroundImage")));
-			this->panel9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel9->Location = System::Drawing::Point(20, 49);
-			this->panel9->Name = L"panel9";
-			this->panel9->Size = System::Drawing::Size(50, 50);
-			this->panel9->TabIndex = 2;
+			panel9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel9.BackgroundImage")));
+			panel9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel9->Location = System::Drawing::Point(20, 49);
+			panel9->Name = L"panel9";
+			panel9->Size = System::Drawing::Size(50, 50);
+			panel9->TabIndex = 2;
 			// 
-			// label9
+			// outOfStockCountLabel
 			// 
-			label9->AutoSize = true;
-			label9->BackColor = System::Drawing::Color::Transparent;
-			label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->outOfStockCountLabel->AutoSize = true;
+			this->outOfStockCountLabel->BackColor = System::Drawing::Color::Transparent;
+			this->outOfStockCountLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label9->ForeColor = System::Drawing::Color::White;
-			label9->Location = System::Drawing::Point(90, 83);
-			label9->Name = L"label9";
-			label9->Size = System::Drawing::Size(94, 31);
-			label9->TabIndex = 1;
-			label9->Text = L"99999";
+			this->outOfStockCountLabel->ForeColor = System::Drawing::Color::Brown;
+			this->outOfStockCountLabel->Location = System::Drawing::Point(90, 83);
+			this->outOfStockCountLabel->Name = L"outOfStockCountLabel";
+			this->outOfStockCountLabel->Size = System::Drawing::Size(30, 31);
+			this->outOfStockCountLabel->TabIndex = 1;
+			this->outOfStockCountLabel->Text = L"5";
 			// 
 			// label10
 			// 
@@ -286,44 +275,44 @@ namespace Views
 			label10->ForeColor = System::Drawing::Color::White;
 			label10->Location = System::Drawing::Point(91, 32);
 			label10->Name = L"label10";
-			label10->Size = System::Drawing::Size(183, 29);
+			label10->Size = System::Drawing::Size(155, 29);
 			label10->TabIndex = 0;
-			label10->Text = L"Total Products";
+			label10->Text = L"Out of Stock";
 			// 
 			// panel6
 			// 
-			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
 				static_cast<System::Int32>(static_cast<System::Byte>(243)));
-			this->panel6->Controls->Add(this->panel7);
-			this->panel6->Controls->Add(label7);
-			this->panel6->Controls->Add(label8);
-			this->panel6->Location = System::Drawing::Point(1142, 23);
-			this->panel6->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(330, 150);
-			this->panel6->TabIndex = 4;
+			panel6->Controls->Add(panel7);
+			panel6->Controls->Add(this->suppliersCountLabel);
+			panel6->Controls->Add(label8);
+			panel6->Location = System::Drawing::Point(1142, 23);
+			panel6->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
+			panel6->Name = L"panel6";
+			panel6->Size = System::Drawing::Size(330, 150);
+			panel6->TabIndex = 4;
 			// 
 			// panel7
 			// 
-			this->panel7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel7.BackgroundImage")));
-			this->panel7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel7->Location = System::Drawing::Point(20, 49);
-			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(50, 50);
-			this->panel7->TabIndex = 2;
+			panel7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel7.BackgroundImage")));
+			panel7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			panel7->Location = System::Drawing::Point(20, 49);
+			panel7->Name = L"panel7";
+			panel7->Size = System::Drawing::Size(50, 50);
+			panel7->TabIndex = 2;
 			// 
-			// label7
+			// suppliersCountLabel
 			// 
-			label7->AutoSize = true;
-			label7->BackColor = System::Drawing::Color::Transparent;
-			label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->suppliersCountLabel->AutoSize = true;
+			this->suppliersCountLabel->BackColor = System::Drawing::Color::Transparent;
+			this->suppliersCountLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			label7->ForeColor = System::Drawing::Color::White;
-			label7->Location = System::Drawing::Point(90, 83);
-			label7->Name = L"label7";
-			label7->Size = System::Drawing::Size(94, 31);
-			label7->TabIndex = 1;
-			label7->Text = L"99999";
+			this->suppliersCountLabel->ForeColor = System::Drawing::Color::White;
+			this->suppliersCountLabel->Location = System::Drawing::Point(90, 83);
+			this->suppliersCountLabel->Name = L"suppliersCountLabel";
+			this->suppliersCountLabel->Size = System::Drawing::Size(30, 31);
+			this->suppliersCountLabel->TabIndex = 1;
+			this->suppliersCountLabel->Text = L"2";
 			// 
 			// label8
 			// 
@@ -334,9 +323,9 @@ namespace Views
 			label8->ForeColor = System::Drawing::Color::White;
 			label8->Location = System::Drawing::Point(91, 32);
 			label8->Name = L"label8";
-			label8->Size = System::Drawing::Size(183, 29);
+			label8->Size = System::Drawing::Size(125, 29);
 			label8->TabIndex = 0;
-			label8->Text = L"Total Products";
+			label8->Text = L"Suppliers";
 			// 
 			// HomePage
 			// 
@@ -346,20 +335,22 @@ namespace Views
 			this->Controls->Add(panel1);
 			this->Name = L"HomePage";
 			this->Size = System::Drawing::Size(1885, 781);
+			this->Load += gcnew System::EventHandler(this, &HomePage::HomePage_Load);
 			panel1->ResumeLayout(false);
 			panel1->PerformLayout();
 			flowLayoutPanel1->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
-			this->panel8->ResumeLayout(false);
-			this->panel8->PerformLayout();
-			this->panel6->ResumeLayout(false);
-			this->panel6->PerformLayout();
+			panel2->ResumeLayout(false);
+			panel2->PerformLayout();
+			panel4->ResumeLayout(false);
+			panel4->PerformLayout();
+			panel8->ResumeLayout(false);
+			panel8->PerformLayout();
+			panel6->ResumeLayout(false);
+			panel6->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+		System::Void HomePage_Load(System::Object^ sender, System::EventArgs^ e);
 	};
 }

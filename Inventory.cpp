@@ -73,4 +73,31 @@ namespace Models
 		string sql = "UPDATE Inventory SET Stock = Stock - " + std::to_string(quantity) + " WHERE Id = " + std::to_string(id);
 		DatabaseConnection::Instance->Execute(sql);
 	}
+	int Inventory::LowStockCount()
+	{
+		string sql = "SELECT COUNT(*) FROM Inventory WHERE Stock != 0 AND Stock < 5";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		if (rows.empty() || rows[0].empty()) {
+			return 0;
+		}
+		return stoi(rows[0][0]);
+	}
+	int Inventory::OutOfStockCount()
+	{
+		string sql = "SELECT COUNT(*) FROM Inventory WHERE Stock = 0";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		if (rows.empty() || rows[0].empty()) {
+			return 0;
+		}
+		return stoi(rows[0][0]);
+	}
+	int Inventory::Count()
+	{
+		string sql = "SELECT COUNT(*) FROM Inventory";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		if (rows.empty() || rows[0].empty()) {
+			return 0;
+		}
+		return stoi(rows[0][0]);
+	}
 }

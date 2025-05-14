@@ -141,6 +141,7 @@
     <ClCompile Include="ExportsController.cpp" />
     <ClCompile Include="ExportsListPage.cpp" />
     <ClCompile Include="ExportViewPage.cpp" />
+    <ClCompile Include="HomeController.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="Imports.cpp" />
     <ClCompile Include="ImportsController.cpp" />
@@ -245,6 +246,8 @@
     <ClInclude Include="ExportViewPage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="HomeController.h" />
+    <ClInclude Include="HomeDTO.h" />
     <ClInclude Include="HomePage.h">
       <FileType>CppControl</FileType>
     </ClInclude>

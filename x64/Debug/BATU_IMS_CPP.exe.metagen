@@ -397,6 +397,9 @@ Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     GetLikeName(String): PrivateScope, Public, Static, HideBySig
     IncreaseStock(Int32, Int32): PrivateScope, Public, Static, HideBySig
     DecreaseStock(Int32, Int32): PrivateScope, Public, Static, HideBySig
+    Count(): PrivateScope, Public, Static, HideBySig
+    LowStockCount(): PrivateScope, Public, Static, HideBySig
+    OutOfStockCount(): PrivateScope, Public, Static, HideBySig
 Class Views.ExportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Export): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -404,6 +407,28 @@ Class Views.ExportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
 Class Views.ViewOrderItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Core.OrderItem): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Core.HomeDTO: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 TotalProductsCount : Public
+    Int32 LowStockCount : Public
+    Int32 OutOfStockCount : Public
+    Int32 SuppliersCount : Public
+Class Controllers.HomeController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetHomeData(): PrivateScope, Public, Static, HideBySig
+Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetAll(): PrivateScope, Public, Static, HideBySig
+    GetById(Int32): PrivateScope, Public, Static, HideBySig
+    Insert(String, String): PrivateScope, Public, Static, HideBySig
+    Update(Supplier): PrivateScope, Public, Static, HideBySig
+    Delete(Int32): PrivateScope, Public, Static, HideBySig
+    Exists(String): PrivateScope, Public, Static, HideBySig
+    GetLikeName(String): PrivateScope, Public, Static, HideBySig
+    Count(): PrivateScope, Public, Static, HideBySig
 Class Models.Imports: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -427,16 +452,6 @@ Class Views.SupplierViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
 Class Views.SupplierEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Supplier): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Methods:
-    GetAll(): PrivateScope, Public, Static, HideBySig
-    GetById(Int32): PrivateScope, Public, Static, HideBySig
-    Insert(String, String): PrivateScope, Public, Static, HideBySig
-    Update(Supplier): PrivateScope, Public, Static, HideBySig
-    Delete(Int32): PrivateScope, Public, Static, HideBySig
-    Exists(String): PrivateScope, Public, Static, HideBySig
-    GetLikeName(String): PrivateScope, Public, Static, HideBySig
 Class Views.UserEditPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

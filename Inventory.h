@@ -16,5 +16,8 @@ namespace Models
 		static List<Item^>^ GetLikeName(String^ name);
 		static void IncreaseStock(int id, int quantity);
 		static void DecreaseStock(int id, int quantity);
+		static int Count();
+		static int LowStockCount();
+		static int OutOfStockCount();
 	};
 }

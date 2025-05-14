@@ -55,4 +55,10 @@ namespace Models
 		}
 		return items;
 	}
+	int Suppliers::Count()
+	{
+		string sql = "SELECT COUNT(*) FROM Suppliers";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		return !rows.empty() && !rows[0].empty() ? stoi(rows[0][0]) : 0;
+	}
 }
