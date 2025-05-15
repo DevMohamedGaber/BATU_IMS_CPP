@@ -15,6 +15,7 @@ namespace Models
 		static bool Accept(int ImportId, int AccepterId);
 		static void Delete(int ImportId);
 		static List<OrderItem^>^ GetItems(int ImportId);
+		static Dictionary<String^, int>^ GetCountByPeriod(String^ period);
 
 	private:
 		static Supplier^ FetchSupplierData(string& id);

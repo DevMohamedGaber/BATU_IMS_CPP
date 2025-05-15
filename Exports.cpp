@@ -88,6 +88,36 @@ namespace Models
 		auto id = DatabaseConnection::Instance->LastInsertId();
 		return GetItems(id);
 	}
+	Dictionary<String^, int>^ Exports::GetCountByPeriod(String^ period)
+	{
+		Dictionary<String^, int>^ result = gcnew Dictionary<String^, int>();
+		string query;
+
+		if (period == "Annually") {
+			query = "SELECT strftime('%Y', Date) as Period, COUNT(*) as Count FROM Exports GROUP BY strftime('%Y', Date)";
+		}
+		else if (period == "Monthly") {
+			query = "SELECT strftime('%Y-%m', Date) as Period, COUNT(*) as Count FROM Exports GROUP BY strftime('%Y-%m', Date)";
+		}
+		else if (period == "Weekly") {
+			query = "SELECT strftime('%Y-%W', Date) as Period, COUNT(*) as Count FROM Exports GROUP BY strftime('%Y-%W', Date)";
+		}
+		else if (period == "Quarterly") {
+			query = "SELECT strftime('%Y', Date) || '-Q' || ((strftime('%m', Date) + 2)/3 as Period, COUNT(*) as Count FROM Exports GROUP BY strftime('%Y', Date), ((strftime('%m', Date) + 2)/3)";
+		}
+
+		auto rows = DatabaseConnection::Instance->Query(query);
+		for (auto& row : rows) {
+			String^ periodKey = gcnew String(row[0].c_str());
+			// Ensure we have a valid period key
+			if (!String::IsNullOrEmpty(periodKey)) {
+				result[periodKey] = stoi(row[1]);
+			}
+		}
+
+		return result;
+	}
+	// helpers
 	Customer^ Exports::FetchCustomerData(string& id) {
 		auto rows = DatabaseConnection::Instance->Query("SELECT * FROM Customers WHERE Id = " + id + ";");
 		if (rows.empty())

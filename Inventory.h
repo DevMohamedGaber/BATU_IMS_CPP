@@ -19,5 +19,6 @@ namespace Models
 		static int Count();
 		static int LowStockCount();
 		static int OutOfStockCount();
+		static double StockValue();
 	};
 }

@@ -507,6 +507,7 @@ namespace Views
 			// 
 			// _panelContainer
 			// 
+			this->_panelContainer->AutoScroll = true;
 			this->_panelContainer->BackColor = System::Drawing::Color::White;
 			this->_panelContainer->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->_panelContainer->Location = System::Drawing::Point(30, 10);

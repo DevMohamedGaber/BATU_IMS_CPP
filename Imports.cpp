@@ -108,6 +108,35 @@ namespace Models
 		}
 		return items;
 	}
+	Dictionary<String^, int>^ Imports::GetCountByPeriod(String^ period)
+	{
+		Dictionary<String^, int>^ result = gcnew Dictionary<String^, int>();
+		string query;
+
+		if (period == "Annually") {
+			query = "SELECT strftime('%Y', ArrivalDate) as Period, COUNT(*) as Count FROM Imports GROUP BY strftime('%Y', ArrivalDate)";
+		}
+		else if (period == "Monthly") {
+			query = "SELECT strftime('%Y-%m', ArrivalDate) as Period, COUNT(*) as Count FROM Imports GROUP BY strftime('%Y-%m', ArrivalDate)";
+		}
+		else if (period == "Weekly") {
+			query = "SELECT strftime('%Y-%W', ArrivalDate) as Period, COUNT(*) as Count FROM Imports GROUP BY strftime('%Y-%W', ArrivalDate)";
+		}
+		else if (period == "Quarterly") {
+			query = "SELECT strftime('%Y', ArrivalDate) || '-Q' || ((strftime('%m', ArrivalDate) + 2)/3 as Period, COUNT(*) as Count FROM Imports GROUP BY strftime('%Y', ArrivalDate), ((strftime('%m', ArrivalDate) + 2)/3)";
+		}
+
+		auto rows = DatabaseConnection::Instance->Query(query);
+		for (auto& row : rows) {
+			String^ periodKey = gcnew String(row[0].c_str());
+			// Ensure we have a valid period key
+			if (!String::IsNullOrEmpty(periodKey)) {
+				result[periodKey] = stoi(row[1]);
+			}
+		}
+
+		return result;
+	}
 
 	// helpers
 	Supplier^ Imports::FetchSupplierData(string& id) {

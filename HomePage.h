@@ -6,7 +6,7 @@ using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
-
+using namespace System::Windows::Forms::DataVisualization::Charting;
 
 namespace Views
 {
@@ -40,7 +40,10 @@ namespace Views
 		System::Windows::Forms::Label^ lowStockCountLabel;
 		System::Windows::Forms::Label^ outOfStockCountLabel;
 		System::Windows::Forms::Label^ suppliersCountLabel;
-		/// <summary>
+		System::Windows::Forms::Label^ valueOfStockLabel;
+		Chart^ transactionsChart;
+
+		   /// <summary>
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
@@ -68,10 +71,23 @@ namespace Views
 			System::Windows::Forms::Panel^ panel6;
 			System::Windows::Forms::Panel^ panel7;
 			System::Windows::Forms::Label^ label8;
+			System::Windows::Forms::Panel^ panel10;
+			System::Windows::Forms::Panel^ panel12;
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::Panel^ panel13;
+			System::Windows::Forms::ComboBox^ Sales;
+			System::Windows::Forms::Label^ label5;
+			System::Windows::Forms::Panel^ panel11;
+			System::Windows::Forms::Panel^ panel14;
+			System::Windows::Forms::Label^ label2;
 			this->totalProductsCountLabel = (gcnew System::Windows::Forms::Label());
 			this->lowStockCountLabel = (gcnew System::Windows::Forms::Label());
 			this->outOfStockCountLabel = (gcnew System::Windows::Forms::Label());
 			this->suppliersCountLabel = (gcnew System::Windows::Forms::Label());
+			this->transactionsChart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->valueOfStockLabel = (gcnew System::Windows::Forms::Label());
 			label1 = (gcnew System::Windows::Forms::Label());
 			panel1 = (gcnew System::Windows::Forms::Panel());
 			flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
@@ -87,12 +103,25 @@ namespace Views
 			panel6 = (gcnew System::Windows::Forms::Panel());
 			panel7 = (gcnew System::Windows::Forms::Panel());
 			label8 = (gcnew System::Windows::Forms::Label());
+			panel10 = (gcnew System::Windows::Forms::Panel());
+			panel12 = (gcnew System::Windows::Forms::Panel());
+			panel13 = (gcnew System::Windows::Forms::Panel());
+			Sales = (gcnew System::Windows::Forms::ComboBox());
+			label5 = (gcnew System::Windows::Forms::Label());
+			panel11 = (gcnew System::Windows::Forms::Panel());
+			panel14 = (gcnew System::Windows::Forms::Panel());
+			label2 = (gcnew System::Windows::Forms::Label());
 			panel1->SuspendLayout();
 			flowLayoutPanel1->SuspendLayout();
 			panel2->SuspendLayout();
 			panel4->SuspendLayout();
 			panel8->SuspendLayout();
 			panel6->SuspendLayout();
+			panel10->SuspendLayout();
+			panel12->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->transactionsChart))->BeginInit();
+			panel13->SuspendLayout();
+			panel11->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -119,7 +148,7 @@ namespace Views
 			panel1->Location = System::Drawing::Point(0, 0);
 			panel1->Name = L"panel1";
 			panel1->Padding = System::Windows::Forms::Padding(30);
-			panel1->Size = System::Drawing::Size(1885, 330);
+			panel1->Size = System::Drawing::Size(1711, 330);
 			panel1->TabIndex = 1;
 			// 
 			// flowLayoutPanel1
@@ -132,7 +161,7 @@ namespace Views
 			flowLayoutPanel1->Location = System::Drawing::Point(30, 87);
 			flowLayoutPanel1->Name = L"flowLayoutPanel1";
 			flowLayoutPanel1->Padding = System::Windows::Forms::Padding(20);
-			flowLayoutPanel1->Size = System::Drawing::Size(1825, 213);
+			flowLayoutPanel1->Size = System::Drawing::Size(1651, 213);
 			flowLayoutPanel1->TabIndex = 1;
 			// 
 			// panel2
@@ -145,7 +174,7 @@ namespace Views
 			panel2->Location = System::Drawing::Point(23, 23);
 			panel2->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			panel2->Name = L"panel2";
-			panel2->Size = System::Drawing::Size(330, 150);
+			panel2->Size = System::Drawing::Size(340, 150);
 			panel2->TabIndex = 0;
 			// 
 			// panel3
@@ -190,10 +219,10 @@ namespace Views
 			panel4->Controls->Add(panel5);
 			panel4->Controls->Add(this->lowStockCountLabel);
 			panel4->Controls->Add(label6);
-			panel4->Location = System::Drawing::Point(396, 23);
+			panel4->Location = System::Drawing::Point(406, 23);
 			panel4->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			panel4->Name = L"panel4";
-			panel4->Size = System::Drawing::Size(330, 150);
+			panel4->Size = System::Drawing::Size(340, 150);
 			panel4->TabIndex = 3;
 			// 
 			// panel5
@@ -238,10 +267,10 @@ namespace Views
 			panel8->Controls->Add(panel9);
 			panel8->Controls->Add(this->outOfStockCountLabel);
 			panel8->Controls->Add(label10);
-			panel8->Location = System::Drawing::Point(769, 23);
+			panel8->Location = System::Drawing::Point(789, 23);
 			panel8->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			panel8->Name = L"panel8";
-			panel8->Size = System::Drawing::Size(330, 150);
+			panel8->Size = System::Drawing::Size(340, 150);
 			panel8->TabIndex = 5;
 			// 
 			// panel9
@@ -286,10 +315,10 @@ namespace Views
 			panel6->Controls->Add(panel7);
 			panel6->Controls->Add(this->suppliersCountLabel);
 			panel6->Controls->Add(label8);
-			panel6->Location = System::Drawing::Point(1142, 23);
+			panel6->Location = System::Drawing::Point(1172, 23);
 			panel6->Margin = System::Windows::Forms::Padding(3, 3, 40, 3);
 			panel6->Name = L"panel6";
-			panel6->Size = System::Drawing::Size(330, 150);
+			panel6->Size = System::Drawing::Size(340, 150);
 			panel6->TabIndex = 4;
 			// 
 			// panel7
@@ -327,14 +356,149 @@ namespace Views
 			label8->TabIndex = 0;
 			label8->Text = L"Suppliers";
 			// 
+			// panel10
+			// 
+			panel10->Controls->Add(panel12);
+			panel10->Controls->Add(panel11);
+			panel10->Dock = System::Windows::Forms::DockStyle::Top;
+			panel10->Location = System::Drawing::Point(0, 330);
+			panel10->Name = L"panel10";
+			panel10->Padding = System::Windows::Forms::Padding(30);
+			panel10->Size = System::Drawing::Size(1711, 654);
+			panel10->TabIndex = 2;
+			// 
+			// panel12
+			// 
+			panel12->Controls->Add(this->transactionsChart);
+			panel12->Controls->Add(panel13);
+			panel12->Dock = System::Windows::Forms::DockStyle::Fill;
+			panel12->Location = System::Drawing::Point(430, 30);
+			panel12->Name = L"panel12";
+			panel12->Padding = System::Windows::Forms::Padding(20, 0, 20, 0);
+			panel12->Size = System::Drawing::Size(1251, 594);
+			panel12->TabIndex = 2;
+			// 
+			// transactionsChart
+			// 
+			this->transactionsChart->BackColor = System::Drawing::Color::Transparent;
+			this->transactionsChart->BorderlineColor = System::Drawing::Color::SlateBlue;
+			chartArea1->BackColor = System::Drawing::Color::Transparent;
+			chartArea1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+				static_cast<System::Int32>(static_cast<System::Byte>(115)));
+			chartArea1->Name = L"ChartArea1";
+			this->transactionsChart->ChartAreas->Add(chartArea1);
+			this->transactionsChart->Dock = System::Windows::Forms::DockStyle::Fill;
+			legend1->Name = L"Legend1";
+			this->transactionsChart->Legends->Add(legend1);
+			this->transactionsChart->Location = System::Drawing::Point(20, 100);
+			this->transactionsChart->Name = L"transactionsChart";
+			this->transactionsChart->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Excel;
+			series1->ChartArea = L"ChartArea1";
+			series1->Legend = L"Legend1";
+			series1->Name = L"Series1";
+			this->transactionsChart->Series->Add(series1);
+			this->transactionsChart->Size = System::Drawing::Size(1211, 494);
+			this->transactionsChart->TabIndex = 1;
+			// 
+			// panel13
+			// 
+			panel13->Controls->Add(Sales);
+			panel13->Controls->Add(label5);
+			panel13->Dock = System::Windows::Forms::DockStyle::Top;
+			panel13->Location = System::Drawing::Point(20, 0);
+			panel13->Name = L"panel13";
+			panel13->Size = System::Drawing::Size(1211, 100);
+			panel13->TabIndex = 2;
+			// 
+			// Sales
+			// 
+			Sales->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			Sales->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(235)), static_cast<System::Int32>(static_cast<System::Byte>(239)),
+				static_cast<System::Int32>(static_cast<System::Byte>(241)));
+			Sales->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			Sales->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+				static_cast<System::Int32>(static_cast<System::Byte>(115)));
+			Sales->FormattingEnabled = true;
+			Sales->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"Annually", L"Biannual", L"Quarterly", L"Monthly", L"Weekly" });
+			Sales->Location = System::Drawing::Point(1005, 34);
+			Sales->Name = L"Sales";
+			Sales->Size = System::Drawing::Size(175, 28);
+			Sales->TabIndex = 4;
+			Sales->Text = L"Annually";
+			Sales->SelectedIndexChanged += gcnew System::EventHandler(this, &HomePage::Sales_SelectedIndexChanged);
+			// 
+			// label5
+			// 
+			label5->AutoSize = true;
+			label5->BackColor = System::Drawing::Color::Transparent;
+			label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+				static_cast<System::Int32>(static_cast<System::Byte>(115)));
+			label5->Location = System::Drawing::Point(29, 34);
+			label5->Name = L"label5";
+			label5->Size = System::Drawing::Size(283, 31);
+			label5->TabIndex = 3;
+			label5->Text = L"Transactions Statistics";
+			// 
+			// panel11
+			// 
+			panel11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(243)));
+			panel11->Controls->Add(panel14);
+			panel11->Controls->Add(this->valueOfStockLabel);
+			panel11->Controls->Add(label2);
+			panel11->Dock = System::Windows::Forms::DockStyle::Left;
+			panel11->Location = System::Drawing::Point(30, 30);
+			panel11->Name = L"panel11";
+			panel11->Size = System::Drawing::Size(400, 594);
+			panel11->TabIndex = 0;
+			// 
+			// panel14
+			// 
+			panel14->BackColor = System::Drawing::Color::White;
+			panel14->Location = System::Drawing::Point(25, 179);
+			panel14->Name = L"panel14";
+			panel14->Size = System::Drawing::Size(350, 3);
+			panel14->TabIndex = 2;
+			// 
+			// valueOfStockLabel
+			// 
+			this->valueOfStockLabel->AutoSize = true;
+			this->valueOfStockLabel->BackColor = System::Drawing::Color::Transparent;
+			this->valueOfStockLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->valueOfStockLabel->ForeColor = System::Drawing::Color::White;
+			this->valueOfStockLabel->Location = System::Drawing::Point(50, 95);
+			this->valueOfStockLabel->Name = L"valueOfStockLabel";
+			this->valueOfStockLabel->Size = System::Drawing::Size(142, 36);
+			this->valueOfStockLabel->TabIndex = 1;
+			this->valueOfStockLabel->Text = L"$ 999999";
+			// 
+			// label2
+			// 
+			label2->AutoSize = true;
+			label2->BackColor = System::Drawing::Color::Transparent;
+			label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			label2->ForeColor = System::Drawing::Color::White;
+			label2->Location = System::Drawing::Point(50, 44);
+			label2->Name = L"label2";
+			label2->Size = System::Drawing::Size(188, 31);
+			label2->TabIndex = 0;
+			label2->Text = L"Value of Stock";
+			// 
 			// HomePage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::Transparent;
+			this->Controls->Add(panel10);
 			this->Controls->Add(panel1);
 			this->Name = L"HomePage";
-			this->Size = System::Drawing::Size(1885, 781);
+			this->Size = System::Drawing::Size(1711, 1072);
 			this->Load += gcnew System::EventHandler(this, &HomePage::HomePage_Load);
 			panel1->ResumeLayout(false);
 			panel1->PerformLayout();
@@ -347,10 +511,19 @@ namespace Views
 			panel8->PerformLayout();
 			panel6->ResumeLayout(false);
 			panel6->PerformLayout();
+			panel10->ResumeLayout(false);
+			panel12->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->transactionsChart))->EndInit();
+			panel13->ResumeLayout(false);
+			panel13->PerformLayout();
+			panel11->ResumeLayout(false);
+			panel11->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 		System::Void HomePage_Load(System::Object^ sender, System::EventArgs^ e);
+		System::Void UpdateChart(System::Collections::Generic::Dictionary<System::String^, System::Tuple<int, int>^>^ data);
+		System::Void Sales_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
 	};
 }

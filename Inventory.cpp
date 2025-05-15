@@ -100,4 +100,13 @@ namespace Models
 		}
 		return stoi(rows[0][0]);
 	}
+	double Inventory::StockValue()
+	{
+		string sql = "SELECT SUM(Stock * Price) FROM Inventory";
+		vector<vector<string>> rows = DatabaseConnection::Instance->Query(sql);
+		if (rows.empty() || rows[0].empty()) {
+			return 0;
+		}
+		return stod(rows[0][0]);
+	}
 }

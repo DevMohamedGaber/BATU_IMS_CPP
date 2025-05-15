@@ -13,6 +13,7 @@ namespace Models
 		static bool ChangeStatus(int ImportId, int Status);
 		static List<OrderItem^>^ GetItems(int ImportId);
 		static List<OrderItem^>^ GetLastAddedItems();
+		static Dictionary<String^, int>^ GetCountByPeriod(String^ period);
 
 	private:
 		static Customer^ FetchCustomerData(string& id);

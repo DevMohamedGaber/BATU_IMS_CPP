@@ -41,6 +41,8 @@ Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0
 	hash=None, flags=None
 Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
+Assembly System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
 Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
@@ -386,6 +388,7 @@ Class Models.Exports: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldI
     ChangeStatus(Int32, Int32): PrivateScope, Public, Static, HideBySig
     GetItems(Int32): PrivateScope, Public, Static, HideBySig
     GetLastAddedItems(): PrivateScope, Public, Static, HideBySig
+    GetCountByPeriod(String): PrivateScope, Public, Static, HideBySig
 Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -400,6 +403,7 @@ Class Models.Inventory: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFiel
     Count(): PrivateScope, Public, Static, HideBySig
     LowStockCount(): PrivateScope, Public, Static, HideBySig
     OutOfStockCount(): PrivateScope, Public, Static, HideBySig
+    StockValue(): PrivateScope, Public, Static, HideBySig
 Class Views.ExportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Export): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -414,10 +418,13 @@ Class Core.HomeDTO: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 LowStockCount : Public
     Int32 OutOfStockCount : Public
     Int32 SuppliersCount : Public
+    Double ValueOfStock : Public
+    System.Collections.Generic.Dictionary`2[System.String,System.Tuple`2[System.Int32,System.Int32]] TransactionsChartData : Public
 Class Controllers.HomeController: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     GetHomeData(): PrivateScope, Public, Static, HideBySig
+    GetTransactionsChartData(String): PrivateScope, Public, Static, HideBySig
 Class Models.Suppliers: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -441,6 +448,7 @@ Class Models.Imports: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldI
     Accept(Int32, Int32): PrivateScope, Public, Static, HideBySig
     Delete(Int32): PrivateScope, Public, Static, HideBySig
     GetItems(Int32): PrivateScope, Public, Static, HideBySig
+    GetCountByPeriod(String): PrivateScope, Public, Static, HideBySig
 Class Views.ImportViewPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Import): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
