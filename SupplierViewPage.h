@@ -41,7 +41,9 @@ namespace Views {
 		System::Windows::Forms::Label^ noItemsLabel;
 		System::Windows::Forms::Label^ idLabel;
 		System::Windows::Forms::Label^ nameLabel;
-		Supplier^ supplier;
+	private: System::Windows::Forms::Button^ deleteBtn;
+	private: System::Windows::Forms::Button^ editBtn;
+		   Supplier^ supplier;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -52,17 +54,15 @@ namespace Views {
 		{
 			System::Windows::Forms::Label^ label1;
 			System::Windows::Forms::Label^ itemsLabel;
-			System::Windows::Forms::Button^ deleteBtn;
-			System::Windows::Forms::Button^ editBtn;
 			System::Windows::Forms::Button^ returnBtn;
+			this->deleteBtn = (gcnew System::Windows::Forms::Button());
+			this->editBtn = (gcnew System::Windows::Forms::Button());
 			this->contractDateLabel = (gcnew System::Windows::Forms::Label());
 			this->noItemsLabel = (gcnew System::Windows::Forms::Label());
 			this->idLabel = (gcnew System::Windows::Forms::Label());
 			this->nameLabel = (gcnew System::Windows::Forms::Label());
 			label1 = (gcnew System::Windows::Forms::Label());
 			itemsLabel = (gcnew System::Windows::Forms::Label());
-			deleteBtn = (gcnew System::Windows::Forms::Button());
-			editBtn = (gcnew System::Windows::Forms::Button());
 			returnBtn = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -90,33 +90,33 @@ namespace Views {
 			// 
 			// deleteBtn
 			// 
-			deleteBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			deleteBtn->BackColor = System::Drawing::Color::Crimson;
-			deleteBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->deleteBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->deleteBtn->BackColor = System::Drawing::Color::Crimson;
+			this->deleteBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			deleteBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			deleteBtn->Location = System::Drawing::Point(907, 210);
-			deleteBtn->Name = L"deleteBtn";
-			deleteBtn->Size = System::Drawing::Size(174, 51);
-			deleteBtn->TabIndex = 20;
-			deleteBtn->Text = L"Delete";
-			deleteBtn->UseVisualStyleBackColor = false;
-			deleteBtn->Click += gcnew System::EventHandler(this, &SupplierViewPage::deleteBtn_Click);
+			this->deleteBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->deleteBtn->Location = System::Drawing::Point(907, 210);
+			this->deleteBtn->Name = L"deleteBtn";
+			this->deleteBtn->Size = System::Drawing::Size(174, 51);
+			this->deleteBtn->TabIndex = 20;
+			this->deleteBtn->Text = L"Delete";
+			this->deleteBtn->UseVisualStyleBackColor = false;
+			this->deleteBtn->Click += gcnew System::EventHandler(this, &SupplierViewPage::deleteBtn_Click);
 			// 
 			// editBtn
 			// 
-			editBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			editBtn->BackColor = System::Drawing::Color::ForestGreen;
-			editBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->editBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->editBtn->BackColor = System::Drawing::Color::ForestGreen;
+			this->editBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			editBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			editBtn->Location = System::Drawing::Point(907, 136);
-			editBtn->Name = L"editBtn";
-			editBtn->Size = System::Drawing::Size(174, 51);
-			editBtn->TabIndex = 19;
-			editBtn->Text = L"Edit";
-			editBtn->UseVisualStyleBackColor = false;
-			editBtn->Click += gcnew System::EventHandler(this, &SupplierViewPage::editBtn_Click);
+			this->editBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->editBtn->Location = System::Drawing::Point(907, 136);
+			this->editBtn->Name = L"editBtn";
+			this->editBtn->Size = System::Drawing::Size(174, 51);
+			this->editBtn->TabIndex = 19;
+			this->editBtn->Text = L"Edit";
+			this->editBtn->UseVisualStyleBackColor = false;
+			this->editBtn->Click += gcnew System::EventHandler(this, &SupplierViewPage::editBtn_Click);
 			// 
 			// returnBtn
 			// 
@@ -187,8 +187,8 @@ namespace Views {
 			this->Controls->Add(label1);
 			this->Controls->Add(this->noItemsLabel);
 			this->Controls->Add(itemsLabel);
-			this->Controls->Add(deleteBtn);
-			this->Controls->Add(editBtn);
+			this->Controls->Add(this->deleteBtn);
+			this->Controls->Add(this->editBtn);
 			this->Controls->Add(returnBtn);
 			this->Controls->Add(this->idLabel);
 			this->Controls->Add(this->nameLabel);

@@ -1,7 +1,8 @@
+#include "ViewItemPage.h"
+#include "AuthenticationController.h"
 #include "InventoryController.h"
 #include "ViewCategoryPage.h"
 #include "DashboardForm.h"
-#include "ViewItemPage.h"
 #include "ItemListPage.h"
 #include "EditItemPage.h"
 using namespace Controllers;
@@ -24,6 +25,10 @@ namespace Views
 		categoryLabel->Text = item->Category->Name;
 		priceLabel->Text = item->Price.ToString("F2") + " EGP";
 		stockLabel->Text = item->Stock.ToString();
+
+		bool isAdmin = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin);
+		editBtn->Visible = isAdmin;
+		deleteBtn->Visible = isAdmin;
 	}
 
 	Void ViewItemPage::returnBtn_Click(Object^ sender, EventArgs^ e) {

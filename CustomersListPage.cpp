@@ -1,8 +1,9 @@
 #include "CustomersListPage.h"
+#include "AuthenticationController.h"
 #include "CustomersController.h"
-#include "DashboardForm.h"
-#include "AddCustomerPage.h"
 #include "CustomerViewPage.h"
+#include "AddCustomerPage.h"
+#include "DashboardForm.h"
 #include "CustomTable.h"
 
 using namespace Controllers;
@@ -15,6 +16,8 @@ namespace Views {
 	// on page load
     Void CustomersListPage::CustomersListPage_Load(Object^ sender, EventArgs^ e)
     {
+        addNewBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+            || AuthenticationController::CurrentUser->Role->Equals(UserRole::Retailer);
         // Get the customers list from the controller
         List<Customer^>^ customers = CustomersController::GetCustomersList();
         if (customers == nullptr || customers->Count == 0)

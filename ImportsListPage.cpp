@@ -1,8 +1,9 @@
 #include "ImportsListPage.h"
-#include "AddImportPage.h"
+#include "AuthenticationController.h"
 #include "ImportsController.h"
-#include "DashboardForm.h"
 #include "ImportViewPage.h"
+#include "AddImportPage.h"
+#include "DashboardForm.h"
 #include "CustomTable.h"
 
 using namespace Controllers;
@@ -10,6 +11,9 @@ using namespace Controllers;
 namespace Views
 {
     Void ImportsListPage::ImportsListPage_Load(Object^ sender, EventArgs^ e) {
+        // show add button to Admin and Staff roles
+		addNewBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+                        || AuthenticationController::CurrentUser->Role->Equals(UserRole::Staff);
         auto data = ImportsController::GetImportsList();
         if (data == nullptr || data->Count == 0) {
             noDataLabel->Visible = true;

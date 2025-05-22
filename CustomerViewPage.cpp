@@ -1,8 +1,9 @@
 #include "CustomerViewPage.h"
+#include "AuthenticationController.h"
 #include "CustomersController.h"
-#include "DashboardForm.h"
 #include "CustomersListPage.h"
 #include "CustomerEditPage.h"
+#include "DashboardForm.h"
 using namespace Controllers;
 
 namespace Views
@@ -21,6 +22,11 @@ namespace Views
 		this->idLabel->Text = "Id: " + customer->Id;
 		this->nameLabel->Text = customer->FirstName + " " + customer->LastName;
 		this->emailLabel->Text = customer->Email;
+
+		editBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+			|| AuthenticationController::CurrentUser->Role->Equals(UserRole::Retailer);
+
+		deleteBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin);
 	}
 	Void CustomerViewPage::returnBtn_Click(Object^ sender, EventArgs^ e) {
 		DashboardForm::SwitchView(gcnew CustomersListPage());

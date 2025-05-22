@@ -1,8 +1,9 @@
 #include "ItemListPage.h"
+#include "AuthenticationController.h"
 #include "InventoryController.h"
-#include "AddItemPage.h"
 #include "DashboardForm.h"
 #include "ViewItemPage.h"
+#include "AddItemPage.h"
 #include "CustomTable.h"
 
 using namespace Controllers;
@@ -10,6 +11,9 @@ using namespace Controllers;
 namespace Views
 {
 	Void ItemListPage::ItemListPage_Load(Object^ sender, EventArgs^ e) {
+		// show add button to admin only
+		addNewBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin);
+		// fill data list
 		List<Item^>^ data = InventoryController::GetListViewData();
 		if (data == nullptr || data->Count == 0) {
 			return;

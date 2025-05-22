@@ -16,10 +16,8 @@ using namespace Controllers;
 namespace Views
 {
     void DashboardForm::SetMenuButton(Panel^ button, System::EventHandler^ handler, UserRole^ role) {
-		// AuthenticationController::CurrentUser->Role
 		UserRole^ userRole = AuthenticationController::CurrentUser->Role;
 		bool canAppear = (role == nullptr) || userRole->Equals(UserRole::Admin) || userRole->Equals(role);
-
 		button->Visible = canAppear;
 
 		if (!canAppear) {

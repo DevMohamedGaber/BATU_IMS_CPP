@@ -1,8 +1,9 @@
 #include "ExportsListPage.h"
+#include "AuthenticationController.h"
 #include "ExportsController.h"
+#include "ExportViewPage.h"
 #include "AddExportPage.h"
 #include "DashboardForm.h"
-#include "ExportViewPage.h"
 #include "CustomTable.h"
 
 using namespace Controllers;
@@ -10,6 +11,8 @@ using namespace Controllers;
 namespace Views
 {
     Void ExportsListPage::ExportsListPage_Load(Object^ sender, EventArgs^ e) {
+        addNewBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+            || AuthenticationController::CurrentUser->Role->Equals(UserRole::Retailer);
         auto data = ExportsController::GetExportsList();
         if (data == nullptr || data->Count == 0) {
             noDataLabel->Visible = true;

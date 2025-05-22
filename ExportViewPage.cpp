@@ -1,4 +1,5 @@
 #include "ExportViewPage.h"
+#include "AuthenticationController.h"
 #include "ExportsController.h"
 #include "CustomerViewPage.h"
 #include "ExportsListPage.h"
@@ -19,6 +20,14 @@ namespace Views
 		SetData(exportData);
 	}
 	void ExportViewPage::SetData(Export^ exportData) {
+		// handle buttons based on roles
+		cancelBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+			|| AuthenticationController::CurrentUser->Role->Equals(UserRole::Staff);
+		confirmBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+			|| AuthenticationController::CurrentUser->Role->Equals(UserRole::Staff);
+		deleteBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin);
+
+		// set up data in table
 		this->exportData = exportData;
 		idLabel->Text = exportData->Id.ToString();
 		customerLabel->Text = exportData->Customer->GetFullName();

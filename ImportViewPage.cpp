@@ -20,6 +20,12 @@ namespace Views
 		SetData(import);
 	}
 	void ImportViewPage::SetData(Import^ import) {
+		acceptBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+			|| AuthenticationController::CurrentUser->Role->Equals(UserRole::Staff);
+		reviewBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+			|| AuthenticationController::CurrentUser->Role->Equals(UserRole::Staff);
+		deleteBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin);
+
 		this->import = import;
 		idLabel->Text = import->Id.ToString();
 		supplierLabel->Text = import->Supplier->Name;

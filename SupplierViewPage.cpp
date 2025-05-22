@@ -1,8 +1,9 @@
 #include "SupplierViewPage.h"
+#include "AuthenticationController.h"
 #include "SuppliersController.h"
-#include "DashboardForm.h"
-#include "SupplierEditPage.h"
 #include "SuppliersListPage.h"
+#include "SupplierEditPage.h"
+#include "DashboardForm.h"
 
 using namespace Controllers;
 
@@ -17,6 +18,12 @@ namespace Views
 		SetData(supplier);
 	}
 	void SupplierViewPage::SetData(Supplier^ supplier) {
+		// set up buttons based on current user role
+		editBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+			|| AuthenticationController::CurrentUser->Role->Equals(UserRole::Staff);
+		deleteBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin);
+
+		// fill in data
 		this->supplier = supplier;
 		nameLabel->Text = supplier->Name;
 		idLabel->Text = "ID: " + supplier->Id.ToString();

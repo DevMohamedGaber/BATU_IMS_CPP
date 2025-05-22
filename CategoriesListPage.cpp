@@ -1,9 +1,11 @@
 #include "CategoriesListPage.h"
+#include "AuthenticationController.h"
 #include "CategoriesController.h"
-#include "DashboardForm.h"
-#include "AddCategoryPage.h"
 #include "ViewCategoryPage.h"
+#include "AddCategoryPage.h"
+#include "DashboardForm.h"
 #include "CustomTable.h"
+
 using namespace Controllers;
 using namespace System;
 using namespace Models;
@@ -14,6 +16,9 @@ namespace Views
 		DashboardForm::SwitchView(gcnew AddCategoryPage());
 	}
     Void CategoriesListPage::CategoriesListPage_Load(Object^ sender, EventArgs^ e) {
+        // prepare controll buttons
+        addNewBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin);
+
         List<Category^>^ categories = CategoriesController::GetCategoriesList();
         if (categories == nullptr || categories->Count == 0) {
             noDataLabel->Visible = true;

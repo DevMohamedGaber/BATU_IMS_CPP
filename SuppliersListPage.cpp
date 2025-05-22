@@ -1,5 +1,6 @@
-#include "SuppliersController.h"
 #include "SuppliersListPage.h"
+#include "AuthenticationController.h"
+#include "SuppliersController.h"
 #include "SupplierViewPage.h"
 #include "AddSupplierPage.h"
 #include "DashboardForm.h"
@@ -12,7 +13,12 @@ namespace Views {
 		DashboardForm::SwitchView(gcnew AddSupplierPage());
 	}
     Void SuppliersListPage::SuppliersListPage_Load(Object^ sender, EventArgs^ e) {
+        // setup buttons to handle role
+        addNewBtn->Visible = AuthenticationController::CurrentUser->Role->Equals(UserRole::Admin)
+            || AuthenticationController::CurrentUser->Role->Equals(UserRole::Staff);
+
         List<Supplier^>^ suppliers = SuppliersController::GetSuppliersList();
+
         if (suppliers == nullptr || suppliers->Count == 0) {
             noDataLabel->Visible = true;
             return;

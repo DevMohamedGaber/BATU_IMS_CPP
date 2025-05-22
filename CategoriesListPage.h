@@ -41,6 +41,7 @@ namespace Views {
 
 
 	private: System::Windows::Forms::Label^ noDataLabel;
+	private: System::Windows::Forms::Button^ addNewBtn;
 	protected:
 
 	private:
@@ -57,11 +58,10 @@ namespace Views {
 		void InitializeComponent(void)
 		{
 			System::Windows::Forms::Label^ headerlabel;
-			System::Windows::Forms::Button^ addNewBtn;
+			this->addNewBtn = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->noDataLabel = (gcnew System::Windows::Forms::Label());
 			headerlabel = (gcnew System::Windows::Forms::Label());
-			addNewBtn = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -80,23 +80,23 @@ namespace Views {
 			// 
 			// addNewBtn
 			// 
-			addNewBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			addNewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
+			this->addNewBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->addNewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(115)),
 				static_cast<System::Int32>(static_cast<System::Byte>(115)));
-			addNewBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->addNewBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			addNewBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			addNewBtn->Location = System::Drawing::Point(606, 35);
-			addNewBtn->Name = L"addNewBtn";
-			addNewBtn->Size = System::Drawing::Size(121, 39);
-			addNewBtn->TabIndex = 1;
-			addNewBtn->Text = L"Add New";
-			addNewBtn->UseVisualStyleBackColor = false;
-			addNewBtn->Click += gcnew System::EventHandler(this, &CategoriesListPage::addNewBtn_Click);
+			this->addNewBtn->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->addNewBtn->Location = System::Drawing::Point(606, 35);
+			this->addNewBtn->Name = L"addNewBtn";
+			this->addNewBtn->Size = System::Drawing::Size(121, 39);
+			this->addNewBtn->TabIndex = 1;
+			this->addNewBtn->Text = L"Add New";
+			this->addNewBtn->UseVisualStyleBackColor = false;
+			this->addNewBtn->Click += gcnew System::EventHandler(this, &CategoriesListPage::addNewBtn_Click);
 			// 
 			// panel1
 			// 
-			this->panel1->Controls->Add(addNewBtn);
+			this->panel1->Controls->Add(this->addNewBtn);
 			this->panel1->Controls->Add(headerlabel);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(30, 30);
