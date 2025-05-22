@@ -1,4 +1,5 @@
 #pragma once
+#include "UserRole.h"
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -569,6 +570,7 @@ namespace Views
 		}
 
 #pragma endregion
+		void SetMenuButton(Panel^ button, EventHandler^ handler, Core::UserRole^ role);
 		System::Void DashboardForm_Load(System::Object^ sender, System::EventArgs^ e);
 		System::Void logoutBtn_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void homeBtn_Click(System::Object^ sender, System::EventArgs^ e);

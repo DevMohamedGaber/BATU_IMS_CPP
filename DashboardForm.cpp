@@ -15,74 +15,38 @@ using namespace Controllers;
 
 namespace Views
 {
+    void DashboardForm::SetMenuButton(Panel^ button, System::EventHandler^ handler, UserRole^ role) {
+		// AuthenticationController::CurrentUser->Role
+		UserRole^ userRole = AuthenticationController::CurrentUser->Role;
+		bool canAppear = (role == nullptr) || userRole->Equals(UserRole::Admin) || userRole->Equals(role);
+
+		button->Visible = canAppear;
+
+		if (!canAppear) {
+			return;
+		}
+
+		button->Click += handler;
+		for each(auto child in button->Controls)
+		{
+			auto childCast = dynamic_cast<Control^>(child);
+			if (childCast != nullptr) {
+				childCast->Click += handler;
+			}
+		}
+    }
 	// Event handlers for buttons
 	Void DashboardForm::DashboardForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		
-		homeBtn->Click += gcnew System::EventHandler(this, &DashboardForm::homeBtn_Click);
-		for each (auto child in homeBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::homeBtn_Click);
-			}
-		}
-		inventoryBtn->Click += gcnew System::EventHandler(this, &DashboardForm::inventoryBtn_Click);
-		for each (auto child in inventoryBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::inventoryBtn_Click);
-			}
-		}
-		categoriesBtn->Click += gcnew System::EventHandler(this, &DashboardForm::categoriesBtn_Click);
-		for each (auto child in categoriesBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::categoriesBtn_Click);
-			}
-		}
-		suppliersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::suppliersBtn_Click);
-		for each (auto child in suppliersBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::suppliersBtn_Click);
-			}
-		}
-		customersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::customersBtn_Click);
-		for each (auto child in customersBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::customersBtn_Click);
-			}
-		}
-		importsBtn->Click += gcnew System::EventHandler(this, &DashboardForm::importsBtn_Click);
-		for each (auto child in importsBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::importsBtn_Click);
-			}
-		}
-		exportsBtn->Click += gcnew System::EventHandler(this, &DashboardForm::exportsBtn_Click);
-		for each (auto child in exportsBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::exportsBtn_Click);
-			}
-		}
-		usersBtn->Click += gcnew System::EventHandler(this, &DashboardForm::usersBtn_Click);
-		for each (auto child in usersBtn->Controls)
-		{
-			auto childCast = dynamic_cast<Control^>(child);
-			if (childCast != nullptr) {
-				childCast->Click += gcnew System::EventHandler(this, &DashboardForm::usersBtn_Click);
-			}
-		}
+		SetMenuButton(homeBtn, gcnew EventHandler(this, &DashboardForm::homeBtn_Click), nullptr);
+		SetMenuButton(inventoryBtn, gcnew EventHandler(this, &DashboardForm::inventoryBtn_Click), nullptr);
+		SetMenuButton(categoriesBtn, gcnew EventHandler(this, &DashboardForm::categoriesBtn_Click), nullptr);
+		SetMenuButton(suppliersBtn, gcnew EventHandler(this, &DashboardForm::suppliersBtn_Click), UserRole::Staff);
+		SetMenuButton(customersBtn, gcnew EventHandler(this, &DashboardForm::customersBtn_Click), UserRole::Retailer);
+		SetMenuButton(importsBtn, gcnew EventHandler(this, &DashboardForm::importsBtn_Click), UserRole::Staff);
+		SetMenuButton(exportsBtn, gcnew EventHandler(this, &DashboardForm::exportsBtn_Click), UserRole::Retailer);
+		SetMenuButton(usersBtn, gcnew EventHandler(this, &DashboardForm::usersBtn_Click), UserRole::Admin);
 	}
+
 	Void DashboardForm::logoutBtn_Click(Object^ sender, EventArgs^ e) {
 		AuthenticationController::Logout();
 		Instance = nullptr;
