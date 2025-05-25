@@ -368,6 +368,11 @@ Class Views.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Views.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityManager.PasswordHasher: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    HashPassword(String): PrivateScope, Public, Static, HideBySig
+    VerifyPassword(String, String): PrivateScope, Public, Static, HideBySig
 Class Views.EditCategoryPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(Models.Category): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

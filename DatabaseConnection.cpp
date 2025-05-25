@@ -1,11 +1,15 @@
 #include "DatabaseConnection.h"
 #include "sqlite/sqlite3.h"
+#include "PasswordHasher.h"
+#include "Utilities.h"
 #include <iostream>
 #include <string>
 #include <vector>
 
 using namespace System;
 using namespace std;
+using namespace SecurityManager;
+using namespace Core;
 
 namespace Models
 {
@@ -39,25 +43,51 @@ namespace Models
 
         Instance = gcnew DatabaseConnection(dbName);
 
-        // ensure all tables are created
+        // ensure all tables are created and seeded for testing
         if (!Instance->TableExists("Users")) {
             Instance->Execute("CREATE TABLE Users (Id INTEGER PRIMARY KEY AUTOINCREMENT, Username TEXT NOT NULL UNIQUE, FirstName TEXT, LastName TEXT, Password TEXT NOT NULL, Email TEXT NOT NULL, Role INTEGER NOT NULL)");
 			// seed the database with 1 of each role
-            Instance->Execute("INSERT INTO Users VALUES (null, 'admin', 'Administrator', null, 'admin', 'admin@system.com', 0)");
-            Instance->Execute("INSERT INTO Users VALUES (null, 'staff', 'Staff', null, 'staff', 'staff@system.com', 1)");
-            Instance->Execute("INSERT INTO Users VALUES (null, 'retailer', 'Retailer', null, 'retailer', 'retailer@system.com', 2)");
+			string adminQuery = "INSERT INTO Users VALUES (null, 'admin', 'Administrator', null, '" + Utilities::GetNativeString(PasswordHasher::HashPassword("admin")) + "', 'admin@system.com', 0)";
+            Instance->Execute(adminQuery);
+			string staffPassword = Utilities::GetNativeString(PasswordHasher::HashPassword("staff"));
+            Instance->Execute("INSERT INTO Users VALUES (null, 'staff', 'Staff', null, '" + staffPassword + "', 'staff@system.com', 1)");
+			string retailerPassword = Utilities::GetNativeString(PasswordHasher::HashPassword("retailer"));
+            Instance->Execute("INSERT INTO Users VALUES (null, 'retailer', 'Retailer', null, '" + retailerPassword + "', 'retailer@system.com', 2)");
         }
         if (!Instance->TableExists("Inventory")) {
             Instance->Execute("CREATE TABLE Inventory (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE, Stock INTEGER, Price REAL, CategoryId INTEGER)");
+			// seed the database with 20 random inventory items
+			for (int i = 1; i <= 20; ++i) {
+				string itemName = "Item" + to_string(i);
+				Instance->Execute("INSERT INTO Inventory (Name, Stock, Price, CategoryId) VALUES ('" + itemName + "', " + to_string(rand() % 100) + ", " + to_string(rand() % 1000 / 10.0) + ", " + to_string(rand() % 5 + 1) + ")");
+			}
         }
         if (!Instance->TableExists("Categories")) {
             Instance->Execute("CREATE TABLE Categories (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE)");
+			// seed the database with 20 random categories
+            for (int i = 1; i <= 20; ++i) {
+				string categoryName = "Category" + to_string(i);
+				Instance->Execute("INSERT INTO Categories (Name) VALUES ('" + categoryName + "')");
+			}
         }
 		if (!Instance->TableExists("Customers")) {
 			Instance->Execute("CREATE TABLE Customers (Id INTEGER PRIMARY KEY AUTOINCREMENT, FirstName TEXT NOT NULL, LastName TEXT NOT NULL, Email TEXT NOT NULL UNIQUE)");
+			// seed the database with 20 random customers
+			for (int i = 1; i <= 20; ++i) {
+				string firstName = "First" + to_string(i);
+				string lastName = "Last" + to_string(i);
+				string email = firstName + "." + lastName + "@example.com";
+				Instance->Execute("INSERT INTO Customers (FirstName, LastName, Email) VALUES ('" + firstName + "', '" + lastName + "', '" + email + "')");
+			}
 		}   
         if (!Instance->TableExists("Suppliers")) {
 			Instance->Execute("CREATE TABLE Suppliers (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL UNIQUE, ContractAt TEXT NOT NULL)");
+			// seed the database with 20 random suppliers
+            for (int i = 1; i <= 20; ++i) {
+                string supplierName = "Supplier" + to_string(i);
+                string contractDate = "2023-01-" + to_string(i % 31 + 1); // Random date in January 2023
+                Instance->Execute("INSERT INTO Suppliers (Name, ContractAt) VALUES ('" + supplierName + "', '" + contractDate + "')");
+            }
         }
         if (!Instance->TableExists("Imports")) {
             Instance->Execute("CREATE TABLE Imports (Id INTEGER PRIMARY KEY AUTOINCREMENT, ArrivalDate TEXT NOT NULL UNIQUE, Status INTEGER NOT NULL, ItemCount INTEGER, SupplierId INTEGER NOT NULL, AdderUserId INTEGER NOT NULL, ReviewerUserId INTEGER, AccepterUserId INTEGER)");

@@ -71,6 +71,8 @@ namespace Views {
 			// 
 			// bodyPanel
 			// 
+			this->bodyPanel->AutoScroll = true;
+			this->bodyPanel->AutoSize = true;
 			this->bodyPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->bodyPanel->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->bodyPanel->Location = System::Drawing::Point(0, 82);
@@ -90,6 +92,7 @@ namespace Views {
 			this->Size = System::Drawing::Size(1049, 415);
 			this->Load += gcnew System::EventHandler(this, &CustomTable::CustomTable_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion

@@ -1,7 +1,9 @@
 #include "UsersController.h"  
-#include "Users.h"  
+#include "Users.h"
+#include "PasswordHasher.h"
 
 using namespace Models;  
+using namespace SecurityManager;
 
 namespace Controllers  
 {  
@@ -45,7 +47,7 @@ namespace Controllers
 			return "Username already exists";
 		}*/
 		// todo: hash password here
-		if (!Models::Users::Insert(FirstName, LastName, Username, Password, Email, RoleId)) {
+		if (!Models::Users::Insert(FirstName, LastName, Username, PasswordHasher::HashPassword(Password), Email, RoleId)) {
 			return "Faild to register new user";
 		}
 		return nullptr;

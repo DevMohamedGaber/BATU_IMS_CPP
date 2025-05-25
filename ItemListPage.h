@@ -101,6 +101,7 @@ namespace Views {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->Controls->Add(panel1);
 			this->Name = L"ItemListPage";
 			this->Padding = System::Windows::Forms::Padding(30);

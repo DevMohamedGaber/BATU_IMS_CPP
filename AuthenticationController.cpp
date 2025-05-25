@@ -3,10 +3,12 @@
 #include "User.h"
 #include "Users.h"
 #include "Utilities.h"
+#include "PasswordHasher.h"
 
 using namespace System;
 using namespace Models;
 using namespace Core;
+using namespace SecurityManager;
 
 namespace Controllers
 {
@@ -24,9 +26,8 @@ namespace Controllers
 		if (user == nullptr) {
 			return "Username not found";
 		}
-			
-		// TODO: check hashed password
-		if (user->Password != password) {
+		
+		if (!PasswordHasher::VerifyPassword(password, user->Password)) {
 			return "Incorrect Password";
 		}
 		CurrentUser = user;

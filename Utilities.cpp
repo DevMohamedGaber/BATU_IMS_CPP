@@ -7,7 +7,7 @@ using namespace std;
 
 namespace Core
 {
-	
+
 	public ref class Utilities sealed
 	{
 	public:

@@ -9,7 +9,7 @@ namespace Views
 {
 	void EntryPoint()
 	{
-		DatabaseConnection::Start("IMS_SQLite_Database.db");
+		DatabaseConnection::Start("Database_IMS_SQLite.db");
 
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);

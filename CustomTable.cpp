@@ -3,6 +3,7 @@
 namespace Views {
 	Void CustomTable::CustomTable_Load(System::Object^ sender, System::EventArgs^ e) {
 		Dock = DockStyle::Fill;
+        //bodyPanel->FlowDirection = FlowDirection::TopDown;
 	}
 
     void CustomTable::AddColumn(String^ name, int width) {
